@@ -1,0 +1,47 @@
+/* ПитСтоп: графит и бирюза, гараж: палитра сайта. Правило Андрея: H1 жирный и в 3D, кнопки объёмные с бегущим бликом (навык zagolovok-3d). */
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&display=swap");
+:root {
+  --c-canvas: #0f1416; --c-surface: #182125; --c-ink: #eaf3f3; --c-ink-soft: #9db2b4;
+  --c-accent: #35b3b0; --c-accent-ink: #041211; --c-accent-deep: #7fd6d3;
+  --f-display: "Unbounded", Georgia, serif;
+}
+.s-hero__text { container-type: inline-size; }
+.s-hero h1 {
+  font-family: var(--f-display); font-weight: 800; white-space: nowrap; line-height: 1.12;
+  font-size: 4.1cqw; letter-spacing: -.005em; color: #e4f6f5; hyphens: none; overflow-wrap: normal; text-wrap: nowrap;
+  text-shadow: .015em .015em 0 #8fdcd9, .03em .03em 0 #53c1be, .045em .045em 0 #2f918e, .06em .06em 0 #1c6563, .075em .075em 0 #0f3b3a, .1em .14em .14em rgba(0,0,0,.65);
+}
+@media (max-width: 700px) { .s-hero h1 { white-space: normal; text-wrap: balance; font-size: clamp(1.9rem, 9.2vw, 2.8rem); } }
+h2, h3 { font-family: var(--f-display); font-weight: 700; hyphens: none; overflow-wrap: normal; word-break: normal; }
+.s-btn {
+  position: relative; overflow: hidden; font-weight: 800; border: 0;
+  background: linear-gradient(180deg, #5fcfcb 0%, #35b3b0 60%); color: #041211;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.4), 0 2px 0 #2f918e, 0 4px 0 #1c6563, 0 6px 0 #0f3b3a, 0 14px 20px -4px rgba(0,0,0,.65);
+  text-shadow: 0 1px 0 rgba(0,0,0,.35), 0 2px 0 #0f3b3a;
+  translate: 0 -4px; animation: s3-bob 2.6s ease-in-out infinite;
+}
+.s-btn::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%); transform: translateX(-130%); animation: s3-wave 2.6s ease-in-out infinite; }
+.s-btn:hover { filter: none; animation-play-state: paused; translate: 0 -1px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.4), 0 2px 0 #2f918e, 0 4px 0 #1c6563, 0 8px 14px -4px rgba(0,0,0,.65); }
+.s-btn:active { translate: 0 2px; box-shadow: inset 0 2px 0 rgba(255,255,255,.3), 0 1px 0 #1c6563; }
+.s-btn.s-btn--ghost {
+  background: linear-gradient(180deg, #182125, #0f1416); color: #eaf3f3; border: 0;
+  box-shadow: inset 0 0 0 1.5px #35b3b0, 0 3px 0 #050809, 0 6px 0 #030505, 0 12px 16px -6px rgba(0,0,0,.65);
+  text-shadow: 0 1px 0 rgba(0,0,0,.6); translate: 0 -2px; animation: none; }
+.s-btn.s-btn--ghost::after { display: none; }
+@keyframes s3-wave { 0% { transform: translateX(-130%); } 55%, 100% { transform: translateX(130%); } }
+@keyframes s3-bob { 0%, 100% { translate: 0 -4px; } 50% { translate: 0 -6px; } }
+@media (prefers-reduced-motion: reduce) { .s-btn { animation: none; } .s-btn::after { animation: none; display: none; } }
+
+:root { color-scheme: dark; }
+.s-hero__bg::after { background: linear-gradient(180deg, color-mix(in srgb, #0f1416 55%, transparent), #0f1416 96%); }
+/* hero-side: фото справа под главной надписью (правило Андрея 12.10.2026) */
+.s-hero__side { display: none; }
+@media (min-width: 901px) {
+  .s-hero__text { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 34%); column-gap: 28px; align-content: start; }
+  .s-hero__text > .s-eyebrow, .s-hero__text > h1, .s-hero__text > .s-hero__photo { grid-column: 1 / -1; }
+  .s-hero__text > .s-lead, .s-hero__text > .s-ticks, .s-hero__text > .s-rating { grid-column: 1; }
+  .s-hero__side { display: block; grid-column: 2; grid-row: 3 / span 3; margin: 18px 0 0; align-self: start; }
+  .s-hero__side img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--r); border: 1px solid var(--hair); box-shadow: 0 18px 30px -14px rgba(0,0,0,.45); }
+}

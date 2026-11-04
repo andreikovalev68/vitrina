@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Запись на занятие – NO SHAME</title>
+<meta name="description" content="Запишитесь на занятие в школе NO SHAME.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800;900&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="logo" href="index.html">NO <b>SHAME</b></a>
+    <button class="burger" aria-label="Меню" aria-expanded="false" onclick="var t=document.getElementById('top');var o=t.classList.toggle('open');this.setAttribute('aria-expanded',o)">&#9776;</button>
+    <nav class="nav" aria-label="Разделы">
+      <a href="index.html">Главная</a>
+      <a href="o-shkole.html">О школе</a>
+      <a href="kurs.html">Курсы</a>
+      <a href="urok.html">Как проходит урок</a>
+      <a href="kontakty.html" aria-current="page">Запись</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="hero"><div class="wrap">
+  <div class="h1box"><span class="wave3d wave-blue" style="font-size:5.3cqw" data-t="ШКОЛА АКТЁРСКОГО&#10;МАСТЕРСТВА И РЕЧИ" role="heading" aria-level="1">ШКОЛА АКТЁРСКОГО
+МАСТЕРСТВА И РЕЧИ</span></div>
+  <div class="h1box" style="margin-top:18px"><a class="wave3d wave-red live" style="font-size:5.6cqw" href="#forma" data-t="ЗАПИСЬ">ЗАПИСЬ</a></div>
+  <p class="sub">Оставьте имя и контакт, мы свяжемся и подберём группу</p>
+</div></section>
+
+<section id="forma"><div class="wrap split">
+  <form id="f" novalidate>
+    <label>Имя<input name="name" autocomplete="name" placeholder="Как к вам обращаться" required></label>
+    <label>Телефон или Telegram<input name="phone" autocomplete="tel" placeholder="+7 ___ ___ __ __ или @ник" required></label>
+    <label>Что интересно
+      <select name="topic">
+        <option>Голос и речь</option>
+        <option>Снятие зажимов</option>
+        <option>Актёрское мастерство</option>
+        <option>Ораторское искусство</option>
+        <option>Пока не знаю</option>
+      </select>
+    </label>
+    <button class="btn-3d" type="submit">Записаться</button>
+    <p class="ok" id="ok" role="status">Это демо-версия: заявка никуда не отправляется. В готовом сайте здесь будет отправка вам в Telegram.</p>
+  </form>
+  <div class="contacts">
+    <h2>Контакты</h2>
+    <a href="#">Telegram – ссылка будет добавлена</a>
+    <a href="#">Instagram – ссылка будет добавлена</a>
+    <span class="note">Детская группа: Спиридоновка, 27/24</span>
+    <span class="note">Взрослая группа: Б. Патриарший пер., 8, стр. 2</span>
+    <span class="note">noshame.school</span>
+    <figure class="photo wide" style="margin-top:12px"><img src="img/lesson-blue.jpg" alt="Занятие в школе NO SHAME" width="1400" height="788" loading="lazy"></figure>
+  </div>
+</div></section>
+</main>
+<script>
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();document.getElementById('ok').style.display='block';});
+</script>
+<nav class="tabbar" aria-label="Разделы сайта">
+  <a href="index.html">Главная</a> <a href="o-shkole.html">О школе</a> <a href="kurs.html">Курсы</a> <a href="urok.html">Урок</a> <a href="kontakty.html" aria-current="page" class="tab-cta">Запись</a>
+</nav>
+<footer>
+  <div class="wrap">
+    <span>NO SHAME – школа актёрского мастерства и речи</span>
+    <span>Демо-версия сайта по материалам заказчика.</span>
+  </div>
+</footer>
+</body>
+</html>

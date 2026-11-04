@@ -1,19 +1,187 @@
 <!doctype html>
-<html lang="ru"><head>
+<html lang="ru">
+<head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="2; url=https://andreikovalev68.github.io/short-landing/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Демо-сайт</title>
+<meta name="robots" content="noindex, nofollow">
+<title>Шорт-лендинг · пример</title>
+<meta name="description" content="Короткий лендинг из пяти блоков: оффер, преимущества, шаги, цены, заявка. Пример композиции с условными данными.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 <style>
-body{font-family:Arial,sans-serif;background:#0f172a;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;margin:0;text-align:center;padding:20px}
-a.btn{display:inline-block;margin-top:24px;padding:16px 34px;background:#2563eb;color:#fff;font-size:20px;text-decoration:none;border-radius:12px}
-p{color:#cbd5e1;font-size:18px;max-width:520px}
-small{color:#64748b;margin-top:20px}
-</style></head>
+:root{
+  --bg:#f4f1ea; --surface:#ffffff; --ink:#14201c; --soft:#52605a; --hair:#d9d4c7;
+  --a:#0f6b57; --a-deep:#0a4a3d; --a-hi:#35b394; --coral:#e8604c; --coral-deep:#b53b2a;
+  --c-canvas:#0e211c; --c-surface:#14322a; --c-ink:#f3efe6; --c-ink-soft:#b9c4be; --c-accent:#35b394; --c-accent-ink:#06322a;
+  --r:20px; --f-d:"Playfair Display",Georgia,serif; --f-t:"Onest",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 1.05rem/1.55 var(--f-t);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.tag{display:inline-block;font:700 .72rem/1 var(--f-t);letter-spacing:.12em;text-transform:uppercase;color:var(--a);border:1px dashed var(--a);border-radius:99px;padding:6px 10px}
+/* шапка */
+.bar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.brand{white-space:nowrap;font:800 1.05rem var(--f-d);display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand i{width:14px;height:14px;border-radius:5px;background:var(--a);box-shadow:3px 3px 0 var(--coral)}
+.bar nav{display:flex;gap:22px;font-weight:500;font-size:.95rem}
+.bar nav a{text-decoration:none;color:var(--soft)}
+@media(max-width:760px){.bar nav{display:none}}
+/* кнопки 3D */
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 28px;border:0;border-radius:14px;
+  font:800 1rem var(--f-t);text-decoration:none;cursor:pointer;color:#fff;
+  background:linear-gradient(180deg,#f48a78 0%,var(--coral) 60%);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.4),0 2px 0 #cf4a38,0 4px 0 var(--coral-deep),0 6px 0 #7e2519,0 14px 20px -6px rgba(20,32,28,.45);
+  text-shadow:0 1px 0 rgba(0,0,0,.25),0 2px 0 #7e2519;translate:0 -4px;animation:bob 2.6s ease-in-out infinite}
+.btn::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-130%);animation:wave 2.6s ease-in-out infinite}
+.btn:hover{animation-play-state:paused;translate:0 -1px}
+.btn:active{translate:0 2px}
+.btn--g{background:linear-gradient(180deg,#2c9a80,var(--a) 60%);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.35),0 2px 0 #0c5a49,0 4px 0 var(--a-deep),0 6px 0 #06322a,0 14px 20px -6px rgba(20,32,28,.45);
+  text-shadow:0 1px 0 rgba(0,0,0,.25),0 2px 0 #06322a}
+.btn--sm{min-height:42px;padding:0 16px;font-size:.88rem;white-space:nowrap}
+@keyframes wave{0%{transform:translateX(-130%)}55%,100%{transform:translateX(130%)}}
+@keyframes bob{0%,100%{translate:0 -4px}50%{translate:0 -6px}}
+@media(prefers-reduced-motion:reduce){.btn,.btn::after{animation:none}.btn::after{display:none}}
+/* hero */
+.hero{padding:clamp(28px,5vw,64px) 0 clamp(36px,6vw,80px)}
+.hero .wrap{container-type:inline-size}
+.hero h1{font:800 10.2cqw/1.08 var(--f-d);letter-spacing:-.01em;white-space:nowrap;color:#0a4a3d;margin:16px 0 22px;
+  text-shadow:.012em .012em 0 #1e8b73,.024em .024em 0 #177a63,.036em .036em 0 #0f6b57,.048em .048em 0 #0c5c4a,.06em .06em 0 #08382e,.08em .1em .08em rgba(20,32,28,.5)}
+.hero__row{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,4vw,56px);align-items:center}
+@media(max-width:860px){.hero__row{grid-template-columns:1fr}}
+.lead{font-size:1.18rem;color:var(--soft);max-width:34em;margin-bottom:26px}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero__note{font-size:.9rem;color:var(--soft)}
+.dev{position:relative;margin-top:6px}
+.dev__card{background:var(--surface);border:1px solid var(--hair);border-radius:var(--r);box-shadow:0 30px 50px -28px rgba(20,32,28,.55);padding:14px}
+.dev__top{display:flex;gap:6px;margin-bottom:12px}.dev__top i{width:9px;height:9px;border-radius:50%;background:var(--hair)}
+.dev__hero{border-radius:14px;min-height:190px;background:linear-gradient(135deg,var(--a) 0%,var(--a-hi) 70%);padding:22px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;gap:6px}
+.dev__hero b{font:800 1.5rem var(--f-d)}
+.dev__hero span{opacity:.9;font-size:.92rem}
+.dev__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.dev__grid i{display:block;height:64px;border-radius:12px;background:var(--bg);border:1px solid var(--hair)}
+.dev__grid i:nth-child(2){background:color-mix(in srgb,var(--coral) 18%,var(--bg))}
+.dev__badge{position:absolute;right:-6px;bottom:-18px;background:var(--ink);color:#fff;border-radius:14px;padding:12px 16px;font-size:.88rem;box-shadow:0 14px 24px -12px rgba(0,0,0,.5)}
+.dev__badge b{display:block;font:800 1.2rem var(--f-d)}
+/* секции */
+section{padding:clamp(48px,7vw,96px) 0}
+.head{margin-bottom:34px;max-width:40em}
+h2{font:800 clamp(1.7rem,4vw,2.7rem)/1.12 var(--f-d);margin:12px 0 10px}
+.head p{color:var(--soft)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:860px){.cards{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--hair);border-radius:var(--r);padding:26px;box-shadow:0 18px 30px -22px rgba(20,32,28,.5)}
+.card .n{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--a);color:#fff;font:800 1.1rem var(--f-d);margin-bottom:16px;box-shadow:3px 3px 0 var(--coral)}
+.card h3{font:700 1.2rem var(--f-d);margin-bottom:8px}
+.card p{color:var(--soft)}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:860px){.steps{grid-template-columns:1fr}}
+.step{position:relative;border-top:3px solid var(--a);padding-top:18px}
+.step::before{counter-increment:s;content:"0" counter(s);font:800 2.2rem var(--f-d);color:var(--coral)}
+.step h3{font:700 1.2rem var(--f-d);margin:4px 0 6px}
+.step p{color:var(--soft)}
+.band{background:var(--ink);color:#f3efe6}
+.band .head p{color:#b9c4be}
+.band .tag{color:#7fd1b9;border-color:#7fd1b9}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+@media(max-width:860px){.prices{grid-template-columns:1fr}}
+.price{background:#1d2c27;border:1px solid #2f433c;border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:10px}
+.price.is-top{background:linear-gradient(180deg,#14584a,#0f4a3e);border-color:#35b394}
+.price h3{font:700 1.15rem var(--f-d)}
+.price .v{font:800 2.2rem var(--f-d);color:#fff;text-shadow:.02em .02em 0 #0a4a3d,.04em .05em 0 #06322a}
+.price ul{list-style:none;padding:0;display:grid;gap:8px;color:#cdd7d2;font-size:.97rem;margin-bottom:10px}
+.price li::before{content:"✓";color:#7fd1b9;margin-right:8px;font-weight:800}
+.price .btn{margin-top:auto}
+/* форма */
+.form{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,48px);align-items:start}
+@media(max-width:860px){.form{grid-template-columns:1fr}}
+.f{background:var(--surface);border:1px solid var(--hair);border-radius:var(--r);padding:24px;display:grid;gap:14px}
+.f label{display:grid;gap:6px;font-weight:500;font-size:.92rem}
+.f input,.f textarea{font:inherit;padding:13px 14px;border:1px solid var(--hair);border-radius:12px;background:var(--bg);color:var(--ink)}
+.contacts{display:grid;gap:12px;margin-top:18px;color:var(--soft)}
+.contacts b{color:var(--ink)}
+footer{padding:30px 0 90px;color:var(--soft);font-size:.9rem;border-top:1px solid var(--hair)}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;padding:10px 16px;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-top:1px solid var(--hair)}
+.dock .btn{width:100%}
+@media(max-width:700px){.dock{display:block}}
+</style>
+</head>
 <body>
-<h1>Демо-сайт открывается на GitHub</h1>
-<p>Нажмите кнопку – откроется демо. Если автоматически не перекинуло, кнопка всегда работает.</p>
-<a class="btn" href="https://andreikovalev68.github.io/short-landing/">Открыть демо-сайт</a>
-<small>andreikovalev68.github.io/short-landing/</small>
-<script>setTimeout(function(){location.replace("https://andreikovalev68.github.io/short-landing/");},2000);</script>
-</body></html>
+<header class="bar"><div class="wrap">
+  <a class="brand" href="#top"><i></i>Лендинг-пример</a>
+  <nav><a href="#plus">Преимущества</a><a href="#steps">Как работаем</a><a href="#price">Цены</a><a href="#order">Заявка</a></nav>
+  <a class="btn btn--sm" href="#order">Оставить заявку</a>
+</div></header>
+<main id="top">
+  <section class="hero"><div class="wrap">
+    <span class="tag">Пример композиции</span>
+    <h1>Лендинг для заявок</h1>
+    <div class="hero__row">
+      <div>
+        <p class="lead">Одна страница, пять блоков: оффер, преимущества, шаги, цены и форма. Всё читается с телефона и компьютера, кнопка всегда под рукой.</p>
+        <div class="hero__cta"><a class="btn" href="#order">Оставить заявку</a><a class="btn btn--g" href="#price">Посмотреть цены</a></div>
+        <p class="hero__note" style="margin-top:16px">Тексты, цены и контакты на странице условные: заказчик подставляет свои.</p>
+      </div>
+      <div class="dev" aria-hidden="true">
+        <div class="dev__card">
+          <div class="dev__top"><i></i><i></i><i></i></div>
+          <div class="dev__hero"><b>Ваш оффер здесь</b><span>Короткая фраза и кнопка действия</span></div>
+          <div class="dev__grid"><i></i><i></i><i></i></div>
+        </div>
+        <div class="dev__badge"><b>5 блоков</b>на одной странице</div>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="plus"><div class="wrap">
+    <div class="head"><span class="tag">Преимущества</span><h2>Три причины оставить заявку</h2><p>Короткие формулировки, которые видно за пару секунд прокрутки.</p></div>
+    <div class="cards">
+      <article class="card"><div class="n">1</div><h3>Понятно с первого экрана</h3><p>Оффер, кнопка и главный довод стоят в самом верху, до прокрутки.</p></div>
+      <article class="card"><div class="n">2</div><h3>Удобно с телефона</h3><p>Крупные кнопки, читаемый текст и закреплённая кнопка заявки внизу экрана.</p></div>
+      <article class="card"><div class="n">3</div><h3>Цена без сюрпризов</h3><p>Три понятных пакета с перечнем того, что входит, без мелкого шрифта.</p></div>
+    </div>
+  </div></section>
+
+  <section id="steps" style="background:#ebe6d9"><div class="wrap">
+    <div class="head"><span class="tag">Как работаем</span><h2>Три шага до результата</h2></div>
+    <div class="steps">
+      <div class="step"><h3>Оставляете заявку</h3><p>Имя и телефон – больше ничего не нужно.</p></div>
+      <div class="step"><h3>Согласуем детали</h3><p>Коротко обсуждаем задачу и фиксируем договорённости.</p></div>
+      <div class="step"><h3>Получаете результат</h3><p>Принимаете работу и вносите правки, если они нужны.</p></div>
+    </div>
+  </div></section>
+
+  <section id="price" class="band"><div class="wrap">
+    <div class="head"><span class="tag">Цены · условные данные</span><h2>Выберите свой пакет</h2><p>Три тарифа с понятным составом. Названия и суммы – пример.</p></div>
+    <div class="prices">
+      <div class="price"><h3>Старт</h3><div class="v">от 5 000 ₽</div><ul><li>Один блок задачи</li><li>Одна правка</li><li>Срок – 3 дня</li></ul><a class="btn btn--sm" href="#order">Выбрать</a></div>
+      <div class="price is-top"><h3>Стандарт</h3><div class="v">от 12 000 ₽</div><ul><li>Всё из «Старта»</li><li>Три правки</li><li>Срок – 5 дней</li></ul><a class="btn btn--sm" href="#order">Выбрать</a></div>
+      <div class="price"><h3>Максимум</h3><div class="v">от 20 000 ₽</div><ul><li>Всё из «Стандарта»</li><li>Пять правок</li><li>Поддержка 14 дней</li></ul><a class="btn btn--sm" href="#order">Выбрать</a></div>
+    </div>
+  </div></section>
+
+  <section id="order"><div class="wrap">
+    <div class="form">
+      <div>
+        <span class="tag">Заявка</span><h2>Оставьте контакты – ответим</h2>
+        <p class="lead" style="margin:0">Форма в одно касание: имя, телефон и короткий комментарий.</p>
+        <div class="contacts"><div><b>Телефон:</b> +7 (900) 000-00-00 · условный</div><div><b>Почта:</b> info@example.ru · условная</div></div>
+      </div>
+      <form class="f" onsubmit="return false">
+        <label>Имя<input type="text" placeholder="Как к вам обращаться"></label>
+        <label>Телефон<input type="tel" placeholder="+7"></label>
+        <label>Комментарий<textarea rows="3" placeholder="Коротко о задаче"></textarea></label>
+        <button class="btn" type="submit">Отправить заявку</button>
+      </form>
+    </div>
+  </div></section>
+</main>
+<footer><div class="wrap">Лендинг-пример · концепт композиции, данные условные</div></footer>
+<div class="dock"><a class="btn" href="#order">Оставить заявку</a></div>
+</body>
+</html>

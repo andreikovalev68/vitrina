@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Сайт артиста и музыкального проекта (концепт)</title>
+<meta name="description" content="Светлый концепт сайта артиста: обложка с призывом к действию, о проекте, релизы, афиша с фильтром по городу, стриминги и видео, контакты и форма заявки. Тексты, даты и контакты условные.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23FF5A4E'/%3E%3Ccircle cx='50' cy='50' r='14' fill='%230F0F14'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF8F2;
+  --bg-2:#F2EDE3;
+  --card:#FFFFFF;
+  --cream:#1C1820;
+  --soft:#4A4550;
+  --muted:#6F6A76;
+  --coral:#E8473B;
+  --coral-hi:#C93428;
+  --coral-lo:#8F211A;
+  --on-coral:#1A0806;
+  --line:rgba(28,24,32,.16);
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--cream);font:400 17px/1.65 'Golos Text',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--coral-hi);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+.disp{font-family:'Oswald','Impact',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.01em}
+
+/* 3D-надпись */
+.t3d{
+  color:#F2503F;
+  text-shadow:0 .014em 0 #DB4234,0 .028em 0 #C8392C,0 .044em 0 #B53126,0 .06em 0 #A2291F,
+    0 .076em 0 #8F211A,0 .092em 0 #7A1913,0 .11em .06em rgba(60,10,6,.35),0 .18em .16em rgba(60,10,6,.25);
+}
+
+/* кнопки */
+.btn{
+  position:relative;overflow:hidden;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:56px;padding:0 30px;border:0;border-radius:6px;cursor:pointer;
+  background:linear-gradient(180deg,#FF8F82 0%,#FF5A4E 50%,#E24238 100%);color:var(--on-coral);
+  font:700 17px/1 'Oswald',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;
+  text-shadow:0 1px 0 rgba(255,225,220,.85),0 2px 0 rgba(255,225,220,.3),0 3px 2px rgba(80,10,5,.35);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 1px 0 #A5281F,0 2px 0 #96231B,0 3px 0 #871F18,0 4px 0 #781B14,0 5px 0 #691711,0 10px 16px rgba(0,0,0,.5);
+  transform:translateY(-3px);
+  transition:transform .12s,box-shadow .12s;
+  animation:bob 3.4s ease-in-out infinite;
+}
+.btn::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);animation:wave 3.2s ease-in-out infinite}
+.btn:hover{filter:brightness(1.07)}
+.btn:active{transform:translateY(1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 1px 0 #691711,0 3px 6px rgba(0,0,0,.5)}
+.btn-dark{
+  background:linear-gradient(180deg,#34343F 0%,#24242D 50%,#1A1A22 100%);color:#F4EFE6;
+  text-shadow:0 1px 0 #000,0 2px 0 rgba(0,0,0,.5),0 3px 3px rgba(0,0,0,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 1px 0 #0A0A0E,0 2px 0 #08080C,0 3px 0 #060609,0 4px 0 #050507,0 5px 0 #040406,0 10px 16px rgba(0,0,0,.5);
+}
+.btn-sm{min-height:44px;padding:0 20px;font-size:15px}
+.btn[disabled],.btn.off{cursor:default;filter:grayscale(1) brightness(.6);animation:none}
+.btn.off::after,.btn[disabled]::after{display:none}
+@keyframes wave{0%{left:-60%}55%,100%{left:130%}}
+@keyframes bob{0%,100%{transform:translateY(-3px)}50%{transform:translateY(-5px)}}
+
+/* шапка */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(251,248,242,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 24px/1 'Oswald',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.brand i{width:14px;height:14px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 4px rgba(255,90,78,.25)}
+.nav{display:flex;gap:28px}
+.nav a{color:var(--soft);text-decoration:none;font-weight:500}
+.nav a:hover{color:var(--coral-hi)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:0 0 clamp(36px,4vw,64px);background:radial-gradient(70% 70% at 50% 62%,rgba(232,71,59,.14),transparent 70%),var(--bg)}
+.h1w{container-type:inline-size;padding:0 clamp(16px,2.5vw,40px)}
+.h1{margin:0;font:700 7cqw/1.1 'Oswald','Impact',system-ui,sans-serif;text-transform:uppercase;white-space:nowrap;letter-spacing:.005em}
+.h1-sub{display:block;width:100%;text-align:center;margin:.3em 0 0;font:700 3cqw/1.15 'Oswald','Impact',system-ui,sans-serif;text-transform:uppercase;white-space:nowrap;letter-spacing:.02em}
+.hero-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(28px,5vw,72px);align-items:center;margin-top:clamp(24px,3.4vw,48px)}
+.sub{margin:0;max-width:34ch;font-size:clamp(19px,2vw,24px);line-height:1.45;color:var(--soft)}
+.cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:34px}
+.soc{display:flex;flex-wrap:wrap;gap:10px;margin:34px 0 0;padding:0;list-style:none}
+.soc a{display:inline-flex;align-items:center;min-height:42px;padding:0 16px;border:1px solid var(--line);border-radius:999px;color:var(--soft);text-decoration:none;font-weight:500;font-size:15px}
+.soc a:hover{border-color:var(--coral);color:var(--coral-hi)}
+.ph{position:relative;padding:0 14px 14px 0}
+.ph::before{content:"";position:absolute;inset:14px 0 0 14px;border:2px solid var(--coral)}
+.ph img{position:relative;display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;background:var(--card);filter:contrast(1.04)}
+
+
+/* Image Stream Hero (ruixen.ui, 21st.dev): две ленты карточек едут из точки схода к краям; геометрия перенесена из исходного компонента */
+.stream{position:relative;overflow:hidden;container-type:inline-size;height:min(38vw,540px);min-height:260px;margin-top:0}
+.stream .persp{position:absolute;inset:0;pointer-events:none}
+.stream .ish3d{position:absolute;inset:0;transform-style:preserve-3d}
+.stream .ish-card{position:absolute;overflow:hidden;backface-visibility:hidden;background:var(--card);box-shadow:0 .5cqw 1.6cqw rgba(28,24,32,.25)}
+.stream .ish-card img{display:block;width:100%;height:100%;object-fit:cover}
+.hero-cta{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:clamp(24px,3vw,40px)}
+.hero-cta .sub{max-width:44ch}
+.hero-cta .cta{justify-content:center}
+.hero-cta .soc{justify-content:center}
+
+
+/* лейбл-логотип в левом верхнем углу: объёмная плашка */
+.label-row{position:relative;z-index:1;display:flex;padding:clamp(8px,1vw,14px) clamp(16px,2.5vw,40px) 0}
+.label3d{display:inline-flex;flex-direction:row;align-items:center;gap:18px;text-decoration:none;perspective:700px}
+.label3d .tile{position:relative;overflow:hidden;width:clamp(84px,7.5vw,112px);aspect-ratio:1;background:#fff;border-radius:10px;padding:5px;
+  transform:rotateY(-16deg) rotateX(6deg);transform-style:preserve-3d;animation:swing 6s ease-in-out infinite alternate;
+  box-shadow:1px 1px 0 var(--coral),2px 2px 0 var(--coral),3px 3px 0 var(--coral),4px 4px 0 var(--coral-lo),5px 5px 0 var(--coral-lo),
+    6px 6px 0 var(--coral-lo),7px 7px 0 var(--coral-lo),8px 8px 0 var(--coral-lo),14px 18px 24px rgba(0,0,0,.45)}
+.label3d .tile img{display:block;width:100%;height:100%;object-fit:contain;border-radius:6px}
+.label3d .tile::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-20deg);animation:wave 4.2s ease-in-out infinite}
+.label3d .cap{font:500 14px/1.3 'Golos Text',system-ui,sans-serif;color:var(--soft);text-align:left;max-width:14ch}
+@keyframes swing{from{transform:rotateY(-18deg) rotateX(7deg)}to{transform:rotateY(14deg) rotateX(3deg)}}
+
+
+/* заголовок справа от лейбла, подзаголовок крупно по центру */
+.label-row{align-items:center;gap:clamp(16px,2.5vw,40px)}
+.label-row .h1top{flex:1;min-width:0;padding:0}
+.label-row .h1top .h1{text-align:left}
+@media (max-width:760px){
+  .label-row{flex-wrap:wrap}
+  .label-row .h1top{flex-basis:100%}
+}
+
+/* секции */
+.sec{padding:clamp(56px,8vw,104px) 0;border-top:1px solid var(--line)}
+.sec-alt{background:var(--bg-2)}
+.eyebrow{display:block;margin:0 0 12px;font:600 14px/1 'Golos Text',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--coral)}
+.h2{margin:0;font:700 clamp(32px,4.6vw,60px)/1.05 'Oswald',system-ui,sans-serif;text-transform:uppercase}
+.sample{display:inline-block;margin-left:12px;padding:4px 10px;border:1px dashed var(--coral);border-radius:3px;font:500 12px/1.3 'Golos Text',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--coral-hi);vertical-align:middle}
+
+/* о проекте */
+.about{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(28px,6vw,80px);margin-top:clamp(24px,3vw,40px);align-items:start}
+.about p{margin:0 0 1em;max-width:58ch;font-size:19px;color:var(--soft)}
+.facts{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+.fact{padding:14px 20px;border:1px solid var(--line);border-radius:6px;background:var(--card);min-width:150px}
+.fact b{display:block;font:700 34px/1 'Oswald',sans-serif;color:var(--coral)}
+.fact span{display:block;margin-top:4px;font-size:14px;color:var(--muted)}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.gal img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--card)}
+.gal img:first-child{grid-column:1/-1;aspect-ratio:16/10}
+
+/* релизы */
+.rel{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,24px);margin-top:clamp(28px,4vw,48px)}
+.rc{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;box-shadow:0 10px 24px -16px rgba(28,24,32,.35)}
+.rc img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
+.rc div{display:flex;flex-direction:column;gap:6px;padding:16px;flex:1}
+.rc b{font:600 20px/1.2 'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.02em}
+.rc small{color:var(--muted);font-size:14px}
+.rc .btn{margin-top:auto;width:100%}
+
+/* афиша */
+.filter{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.fb{appearance:none;cursor:pointer;min-height:42px;padding:0 18px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--soft);font:500 15px/1 'Golos Text',sans-serif;transition:background .15s,color .15s,border-color .15s}
+.fb:hover{border-color:var(--coral);color:var(--coral-hi)}
+.fb[aria-pressed="true"]{background:var(--coral);border-color:var(--coral);color:var(--on-coral);font-weight:600}
+.ev{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid var(--line)}
+.ev li{display:grid;grid-template-columns:110px minmax(0,1fr) 190px;gap:20px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}
+.ev li[hidden]{display:none}
+.date{font:700 clamp(26px,3vw,36px)/1 'Oswald',sans-serif;text-transform:uppercase;color:var(--coral)}
+.date small{display:block;margin-top:4px;font:500 14px/1 'Golos Text',sans-serif;letter-spacing:.08em;color:var(--muted)}
+.ev h3{margin:0;font:600 22px/1.2 'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.02em}
+.ev p{margin:2px 0 0;color:var(--muted);font-size:15px}
+.st{display:flex;justify-content:flex-end}
+.st .tag{display:inline-block;padding:10px 16px;border:1px solid var(--line);border-radius:6px;color:var(--soft);font-weight:500;font-size:15px;text-align:center}
+
+/* медиа */
+.media{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(24px,4vw,56px);margin-top:clamp(28px,4vw,48px);align-items:start}
+.video{position:relative;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.streams{display:grid;gap:12px}
+.streams a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;border:1px solid var(--line);border-radius:6px;background:var(--card);text-decoration:none;font:600 20px/1.2 'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.03em}
+.streams a:hover{border-color:var(--coral);color:var(--coral-hi)}
+.streams span{font:500 14px/1 'Golos Text',sans-serif;color:var(--muted);text-transform:none;letter-spacing:0}
+
+/* контакты */
+.cont{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,5vw,72px);margin-top:clamp(24px,3vw,40px);align-items:start}
+.facts-l{margin:0 0 28px;display:grid;gap:18px}
+.facts-l dt{font-size:14px;color:var(--muted)}
+.facts-l dd{margin:2px 0 0;font-size:21px;font-weight:500}
+.msgs{display:flex;flex-wrap:wrap;gap:12px}
+form.req{display:grid;gap:16px;padding:clamp(20px,3vw,32px);background:var(--card);border:1px solid var(--line);border-radius:6px}
+.req label{display:grid;gap:6px;font-size:15px;color:var(--soft)}
+.req input,.req select,.req textarea{width:100%;min-height:52px;padding:12px 14px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--cream);font:400 17px/1.4 'Golos Text',sans-serif}
+.req textarea{min-height:110px;resize:vertical}
+.req input:focus,.req select:focus,.req textarea:focus{outline:2px solid var(--coral-hi);outline-offset:1px}
+.req .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.err{margin:0;min-height:1.3em;color:#B3261E;font-size:15px}
+.done{padding:clamp(20px,3vw,32px);background:var(--card);border:1px solid var(--coral);border-radius:6px}
+.done h3{margin:0 0 10px;font:700 26px/1.1 'Oswald',sans-serif;text-transform:uppercase;color:var(--coral-hi)}
+.done p{margin:0 0 14px;color:var(--soft)}
+.done .row{display:flex;flex-wrap:wrap;gap:14px}
+.map{margin-top:clamp(28px,4vw,48px);border:1px solid var(--line)}
+.map iframe{display:block;width:100%;height:340px;border:0;filter:grayscale(.3) contrast(1.05)}
+
+/* подвал */
+.foot{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:14px}
+.foot-in{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between}
+.foot a{color:var(--soft)}
+.foot ul{display:flex;gap:18px;margin:0;padding:0;list-style:none;flex-wrap:wrap}
+.up{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-weight:500}
+.up:hover{border-color:var(--coral);color:var(--coral-hi)}
+.notice{background:var(--card);color:var(--soft);font-size:14px;line-height:1.4;padding:8px 0;border-bottom:1px solid var(--line)}
+.notice b{color:var(--coral-hi);font-weight:600}
+.callbar{display:none}
+
+@media (max-width:1000px){
+  .rel{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  .hero-grid,.about,.media,.cont{grid-template-columns:1fr}
+  .ph{max-width:420px}
+}
+@media (max-width:760px){
+  .nav{display:none}
+  .h1-sub{white-space:normal;font-size:5cqw}
+  .h1{white-space:normal;font-size:11.5cqw;line-height:1.08}
+  .ev li{grid-template-columns:84px minmax(0,1fr);gap:12px 16px}
+  .st{grid-column:1/-1;justify-content:flex-start}
+  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;justify-content:center;align-items:center;min-height:calc(58px + env(safe-area-inset-bottom,0px));padding-bottom:env(safe-area-inset-bottom,0px);background:linear-gradient(180deg,#FF8F82,#FF5A4E);color:var(--on-coral);font:700 18px/1 'Oswald',sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+  body{padding-bottom:66px}
+}
+@media (max-width:560px){
+  .rel{grid-template-columns:1fr}
+  .btn{width:100%}
+  .sample{display:block;margin:10px 0 0;width:max-content}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .btn,.btn::after{animation:none}
+  *{transition:none !important}
+}
+</style>
+</head>
+<body>
+
+<div class="notice"><div class="wrap"><b>Концепт-дизайн.</b> Структура по описанию задачи. Названия, даты, города, телефон и контакты условные; фото и обложки – пример наполнения.</div></div>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand disp" href="#top"><i aria-hidden="true"></i>Название проекта</a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#about">О проекте</a>
+      <a href="#releases">Релизы</a>
+      <a href="#events">Афиша</a>
+      <a href="#media">Медиа</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="btn btn-sm" href="#events">Купить билет</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <div class="label-row">
+    <a class="label3d" href="#contacts" aria-label="Здесь будет ваш лейбл">
+      <span class="tile"><img src="img/logo-guild.jpg" alt="Логотип «Гильдия Артистов Эстрады» (пример лейбла)" width="440" height="440"></span>
+      <span class="cap">Здесь будет ваш лейбл</span>
+    </a>
+    <div class="h1w h1top">
+      <h1 class="h1 t3d">Артист, которого вы ждали</h1>
+    </div>
+  </div>
+  <div class="h1w">
+    <p class="h1-sub t3d">Живая музыка, живая сцена</p>
+  </div>
+  <div class="stream" id="stream" aria-hidden="true"><div class="persp" id="persp"><div class="ish3d" id="ish3d"></div></div></div>
+  <div class="wrap hero-cta">
+    <p class="sub">Концерты, новые релизы и шоу-программы – всё о проекте в одном месте. Выберите дату и приходите.</p>
+    <div class="cta">
+      <a class="btn" href="#events">Купить билет</a>
+      <a class="btn btn-dark" href="#releases">Слушать релизы</a>
+    </div>
+    <ul class="soc" aria-label="Соцсети">
+      <li><a href="#contacts">VK</a></li>
+      <li><a href="#contacts">Telegram</a></li>
+      <li><a href="#media">YouTube</a></li>
+      <li><a href="#media">Яндекс Музыка</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="about">
+  <div class="wrap">
+    <span class="eyebrow">О проекте</span>
+    <h2 class="h2">Кто мы и чем занимаемся</h2>
+    <div class="about">
+      <div>
+        <p>Здесь будет рассказ о проекте или артисте: с чего всё началось, в каком жанре работаете и чем отличаетесь от других.</p>
+        <p>Второй абзац – про сцену и аудиторию: где выступали, с кем работали, какие программы и форматы предлагаете зрителям и организаторам.</p>
+        <p>Третий абзац – зачем зрителю прийти: какие эмоции и что именно он получит на концерте.</p>
+        <div class="facts">
+          <div class="fact"><b>[год]</b><span>начало деятельности</span></div>
+          <div class="fact"><b>[город]</b><span>где базируемся</span></div>
+        </div>
+      </div>
+      <div class="gal">
+        <img src="img/foto-1.jpg" alt="Фото с выступления (пример)" width="900" height="560">
+        <img src="img/foto-2.jpg" alt="Фото с выступления (пример)" width="600" height="600">
+        <img src="img/foto-3.jpg" alt="Афиша концерта (пример)" width="600" height="600">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-alt" id="releases">
+  <div class="wrap">
+    <span class="eyebrow">Репертуар</span>
+    <h2 class="h2">Релизы <span class="sample">пример данных</span></h2>
+    <div class="rel">
+      <article class="rc"><img src="img/rel-khoroshiy.jpg" alt="Обложка релиза «Хороший Я»" width="600" height="600"><div><b>Хороший Я</b><small>Сингл</small><a class="btn btn-sm" href="https://band.link/BNjaX" rel="noopener">Слушать</a></div></article>
+      <article class="rc"><img src="img/rel-zhdi.jpg" alt="Обложка релиза «Жди меня»" width="600" height="600"><div><b>Жди меня</b><small>Сингл · 29.09.2026</small><a class="btn btn-sm" href="https://band.link/TKZv3" rel="noopener">Слушать</a></div></article>
+      <article class="rc"><img src="img/rel-angelina.jpg" alt="Обложка релиза «Анджелина ДжолЯ»" width="600" height="600"><div><b>Анджелина ДжолЯ</b><small>Сингл · 01.10.2026</small><a class="btn btn-sm" href="https://band.link/lXKEV" rel="noopener">Слушать</a></div></article>
+      <article class="rc"><img src="img/rel-shine.jpg" alt="Обложка релиза «Shine So Beautiful»" width="600" height="600"><div><b>Shine So Beautiful</b><small>Сингл</small><a class="btn btn-sm btn-dark" href="#media">Подробнее</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="events">
+  <div class="wrap">
+    <span class="eyebrow">Афиша</span>
+    <h2 class="h2">Ближайшие события <span class="sample">условные даты</span></h2>
+    <div class="filter" role="group" aria-label="Фильтр по городу">
+      <button class="fb" type="button" data-city="all" aria-pressed="true">Все города</button>
+      <button class="fb" type="button" data-city="Москва" aria-pressed="false">Москва</button>
+      <button class="fb" type="button" data-city="Санкт-Петербург" aria-pressed="false">Санкт-Петербург</button>
+      <button class="fb" type="button" data-city="Ставрополь" aria-pressed="false">Ставрополь</button>
+    </div>
+    <ul class="ev" id="evList">
+      <li data-city="Москва">
+        <div class="date">15<small>НОЯБРЯ</small></div>
+        <div><h3>Сольный концерт</h3><p>Москва · клуб (название места)</p></div>
+        <div class="st"><a class="btn btn-sm" href="#contacts">Купить</a></div>
+      </li>
+      <li data-city="Санкт-Петербург">
+        <div class="date">28<small>НОЯБРЯ</small></div>
+        <div><h3>Программа «Живой звук»</h3><p>Санкт-Петербург · концертный зал (название места)</p></div>
+        <div class="st"><span class="tag">Sold out</span></div>
+      </li>
+      <li data-city="Ставрополь">
+        <div class="date">12<small>ДЕКАБРЯ</small></div>
+        <div><h3>Новогодний концерт</h3><p>Ставрополь · площадка (название места)</p></div>
+        <div class="st"><a class="btn btn-sm" href="#contacts">Купить</a></div>
+      </li>
+      <li data-city="Москва">
+        <div class="date">20<small>ДЕКАБРЯ</small></div>
+        <div><h3>Презентация нового релиза</h3><p>Москва · бар (название места)</p></div>
+        <div class="st"><span class="tag">Билеты скоро</span></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec sec-alt" id="media">
+  <div class="wrap">
+    <span class="eyebrow">Медиа</span>
+    <h2 class="h2">Слушайте и смотрите</h2>
+    <div class="media">
+      <div class="video">
+        <iframe src="https://www.youtube-nocookie.com/embed/UHqC5jBXKvo" title="Видеофрагмент (пример)" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+      <div class="streams">
+        <a href="https://band.link/BNjaX" rel="noopener">Яндекс Музыка <span>открыть</span></a>
+        <a href="https://band.link/TKZv3" rel="noopener">VK Музыка <span>открыть</span></a>
+        <a href="https://www.youtube.com/@AndreyKovalev68" rel="noopener">YouTube <span>канал</span></a>
+        <a href="https://band.link/lXKEV" rel="noopener">Все площадки <span>смартлинк</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contacts">
+  <div class="wrap">
+    <span class="eyebrow">Контакты</span>
+    <h2 class="h2">Пригласить на мероприятие</h2>
+    <div class="cont">
+      <div>
+        <dl class="facts-l">
+          <div><dt>Телефон</dt><dd><a href="tel:+79000000000" style="text-decoration:none">+7 (900) 000-00-00</a></dd></div>
+          <div><dt>Почта</dt><dd>info@example.ru</dd></div>
+          <div><dt>Город</dt><dd>Москва <span style="font-size:15px;color:var(--muted);font-weight:400">– условный адрес</span></dd></div>
+        </dl>
+        <div class="msgs">
+          <a class="btn btn-sm btn-dark" href="https://t.me/" rel="noopener">Telegram</a>
+          <a class="btn btn-sm btn-dark" href="https://wa.me/79000000000" rel="noopener">WhatsApp</a>
+          <a class="btn btn-sm btn-dark" href="#">VK</a>
+        </div>
+      </div>
+      <div id="formBox">
+        <form class="req" id="req" novalidate>
+          <label>Ваше имя<input name="name" autocomplete="name"></label>
+          <label>Телефон или Telegram<input name="contact" autocomplete="tel"></label>
+          <label>Что хотите обсудить
+            <select name="topic">
+              <option>Концерт на мероприятие</option>
+              <option>Выступление в клубе или на площадке</option>
+              <option>Сотрудничество</option>
+              <option>Другое</option>
+            </select>
+          </label>
+          <label>Сообщение<textarea name="msg" placeholder="Дата, город, формат мероприятия"></textarea></label>
+          <label class="hp" aria-hidden="true">Сайт<input name="website" tabindex="-1" autocomplete="off"></label>
+          <p class="err" id="err" role="alert"></p>
+          <button class="btn" type="submit">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+    <div class="map">
+      <iframe title="Карта (пример)" loading="lazy" src="https://yandex.ru/map-widget/v1/?ll=37.617%2C55.756&z=11&l=map"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>© 2026 Название проекта. Все права защищены.</span>
+    <ul aria-label="Соцсети и документы">
+      <li><a href="#">VK</a></li>
+      <li><a href="#">Telegram</a></li>
+      <li><a href="#">YouTube</a></li>
+      <li><a href="#">Политика конфиденциальности</a></li>
+    </ul>
+    <a class="up" href="#top">Наверх ↑</a>
+  </div>
+</footer>
+
+<a class="callbar" href="#events">Купить билет</a>
+
+<script>
+/* Перенос формул Image Stream Hero (ruixen.ui) на чистый JS: те же параметры по умолчанию */
+(function(){
+  var P = {perspective:30, cardWidth:18, cardHeight:25, cardRadius:0.4, birthHeight:2.6, exitHeight:46,
+           railBirth:-11, railExit:44, fan:3.3, turnBirth:6, turnExit:28, stops:24};
+  var CARDS = 9, SPEED = 18, AXIS = 50;
+  var IMAGES = ['portret','rel-shine','foto-1','rel-zhdi','foto-3','rel-angelina','foto-2','rel-khoroshiy'];
+  var ALT = 'Фото и обложки (пример)';
+
+  function keyframes(dir, name){
+    var steps = [];
+    for (var s = 0; s <= P.stops; s++){
+      var u = s / P.stops;
+      var scale = (P.birthHeight / P.cardHeight) * Math.pow(P.exitHeight / P.birthHeight, u);
+      var z = P.perspective * (1 - 1 / scale);
+      var rail = P.railExit - (P.railExit - P.railBirth) * Math.pow(1 - u, P.fan);
+      var turn = P.turnBirth + (P.turnExit - P.turnBirth) * u;
+      steps.push((u * 100).toFixed(2) + '%{transform:translate3d(' + (dir * rail).toFixed(2) + 'cqw,0,' + z.toFixed(2) + 'cqw) rotateY(' + (-dir * turn).toFixed(2) + 'deg)}');
+    }
+    return '@keyframes ' + name + '{' + steps.join('') + '}';
+  }
+
+  var st = document.createElement('style');
+  st.textContent = keyframes(1, 'ish-r') + keyframes(-1, 'ish-l');
+  document.head.appendChild(st);
+
+  var persp = document.getElementById('persp');
+  persp.style.perspective = P.perspective + 'cqw';
+  persp.style.perspectiveOrigin = '50% ' + AXIS + '%';
+  var root = document.getElementById('ish3d');
+
+  ['ish-r', 'ish-l'].forEach(function(name){
+    for (var i = 0; i < CARDS; i++){
+      var d = document.createElement('div');
+      d.className = 'ish-card';
+      d.style.cssText = 'left:50%;top:' + AXIS + '%;width:' + P.cardWidth + 'cqw;height:' + P.cardHeight + 'cqw;' +
+        'margin-left:' + (-P.cardWidth / 2) + 'cqw;margin-top:' + (-P.cardHeight / 2) + 'cqw;border-radius:' + P.cardRadius + 'cqw;' +
+        'animation:' + name + ' ' + SPEED + 's linear infinite;animation-delay:' + (-(i * SPEED) / CARDS) + 's';
+      var im = new Image();
+      im.src = 'img/' + IMAGES[i % IMAGES.length] + '.jpg';
+      im.alt = ''; im.decoding = 'async'; im.draggable = false;
+      d.appendChild(im);
+      root.appendChild(d);
+    }
+  });
+})();
+</script>
+<script>
+(function(){
+  /* фильтр афиши */
+  var btns = Array.prototype.slice.call(document.querySelectorAll('.fb'));
+  var items = Array.prototype.slice.call(document.querySelectorAll('#evList li'));
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      var c = b.getAttribute('data-city');
+      btns.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      items.forEach(function(li){ li.hidden = !(c === 'all' || li.getAttribute('data-city') === c); });
+    });
+  });
+
+  /* форма заявки (демо) */
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  document.getElementById('req').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target, err = document.getElementById('err');
+    if (f.website.value) return;
+    var name = f.name.value.trim(), contact = f.contact.value.trim();
+    if (!name || !contact){ err.textContent = 'Укажите имя и телефон или Telegram – так мы сможем ответить.'; return; }
+    var text = 'Здравствуйте! Заявка с сайта. Тема: ' + f.topic.value + '. ' + (f.msg.value.trim() ? 'Сообщение: ' + f.msg.value.trim() + '. ' : '') + 'Меня зовут ' + name + ', связь: ' + contact + '.';
+    document.getElementById('formBox').innerHTML =
+      '<div class="done"><h3>Заявка собрана, ' + esc(name) + '</h3>' +
+      '<p>' + esc(text) + '</p>' +
+      '<div class="row"><a class="btn btn-sm" href="https://wa.me/79000000000?text=' + encodeURIComponent(text) + '" rel="noopener">Отправить в WhatsApp</a>' +
+      '<a class="btn btn-sm btn-dark" href="https://t.me/share/url?url=%20&text=' + encodeURIComponent(text) + '" rel="noopener">Отправить в Telegram</a></div>' +
+      '<p style="margin-top:16px;font-size:14px;color:var(--muted)">Демо-версия: в рабочем проекте заявка уходит на почту, в CRM и в мессенджер.</p></div>';
+  });
+})();
+</script>
+</body>
+</html>

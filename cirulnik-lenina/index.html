@@ -1,19 +1,146 @@
 <!doctype html>
-<html lang="ru"><head>
+<html lang="ru">
+<head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="2; url=https://andreikovalev68.github.io/cirulnik-lenina/">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Демо-сайт</title>
-<style>
-body{font-family:Arial,sans-serif;background:#0f172a;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;margin:0;text-align:center;padding:20px}
-a.btn{display:inline-block;margin-top:24px;padding:16px 34px;background:#2563eb;color:#fff;font-size:20px;text-decoration:none;border-radius:12px}
-p{color:#cbd5e1;font-size:18px;max-width:520px}
-small{color:#64748b;margin-top:20px}
-</style></head>
-<body>
-<h1>Демо-сайт открывается на GitHub</h1>
-<p>Нажмите кнопку – откроется демо. Если автоматически не перекинуло, кнопка всегда работает.</p>
-<a class="btn" href="https://andreikovalev68.github.io/cirulnik-lenina/">Открыть демо-сайт</a>
-<small>andreikovalev68.github.io/cirulnik-lenina/</small>
-<script>setTimeout(function(){location.replace("https://andreikovalev68.github.io/cirulnik-lenina/");},2000);</script>
-</body></html>
+<meta name="robots" content="noindex, nofollow" data-publish>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Цирюльникъ · Парикмахерская в Ставрополе</title>
+<meta name="description" content="Выбираете услугу, день и время – запись уходит в Telegram. Стрижка – от 499 ₽.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Стрижки и педикюр в Ставрополе">
+<meta property="og:description" content="Выбираете услугу, день и время – запись уходит в Telegram. Стрижка – от 499 ₽.">
+<meta property="og:image" content="assets/hero.webp">
+<link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%276%27 y=%276%27 width=%2720%27 height=%2720%27 rx=%275%27 fill=%27%23b4531f%27/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/tenor-sans-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/onest-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face { font-family: "Onest"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/fonts/onest-400-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Onest"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/fonts/onest-400-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Onest"; font-style: normal; font-weight: 500; font-display: swap; src: url("assets/fonts/onest-500-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Onest"; font-style: normal; font-weight: 500; font-display: swap; src: url("assets/fonts/onest-500-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Onest"; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/fonts/onest-600-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Onest"; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/fonts/onest-600-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Tenor Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/fonts/tenor-sans-400-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Tenor Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/fonts/tenor-sans-400-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+:root { --c-canvas: #f6f2ec; --c-surface: #ffffff; --c-ink: #1f1c1a; --c-ink-soft: #615a53; --c-accent: #c8553d; --c-accent-ink: #fff8f3; --c-accent-deep: #a8432d; --f-display: "Tenor Sans", "Georgia", serif; --f-text: "Onest", "Segoe UI", system-ui, sans-serif; --h1k: 1; }
+</style>
+<link rel="stylesheet" href="style-prod.css">
+<link rel="stylesheet" href="style-3d.css">
+</head>
+<body class="s-prod" id="top" data-wa="" data-tg="89881114468" data-max="89881114468">
+<header class="s-bar" data-s-bar>
+  <a class="s-bar__brand" href="#top"><i aria-hidden="true"></i>Цирюльникъ</a>
+  <div class="s-bar__right">
+    <a class="s-bar__tel" href="tel:+79881114468">+7 (988) 111-44-68</a>
+    <a class="s-btn s-btn--sm" href="#widget">Записаться онлайн</a>
+  </div>
+</header>
+<main>
+  <section class="s-hero">
+    <div class="s-hero__text">
+      <p class="s-eyebrow">Парикмахерская и педикюр · Ставрополь</p>
+      <h1>Стрижки и педикюр в Ставрополе</h1>
+      <p class="s-lead">Выбираете услугу, день и время – запись уходит в Telegram. Стрижка – от 499 ₽.</p>
+      <ul class="s-ticks"><li>5,0 на Яндекс Картах, 123 отзыва</li><li>Открыто до 20:00</li><li>Стрижка – от 499 ₽, ламинирование – 1300 ₽</li></ul>
+      <p class="s-rating"><b>5,0</b> на Яндекс.Картах · 123 отзыва</p>
+      <figure class="s-hero__photo"><img class="" src="assets/hero.webp" alt="Работа мастера: длинные волосы до и после ухода" loading="lazy" decoding="async"></figure>
+    </div>
+    <div class="s-hero__widget" id="widget"><form class="s-widget" data-s-booking data-days="7" data-closed="" data-slots="10:00,11:00,12:00,13:00,14:00,15:00,16:00,17:00,18:00,19:00" data-message="Здравствуйте! Хочу записаться в «Цирюльникъ»: {услуга}, {день} в {время}." onsubmit="return false">
+      <h2 class="s-widget__title">Запись в «Цирюльникъ»</h2>
+      <fieldset><legend>Услуга</legend>
+        <div class="s-chips s-chips--col"><label class="s-chip s-chip--row"><input type="radio" name="svc" value="0" data-name="Стрижка" data-price="499" data-from="1" data-min="" checked><span>Стрижка</span><b>от 499 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="1" data-name="Ламинирование" data-price="1300" data-from="" data-min=""><span>Ламинирование</span><b>1 300 ₽</b></label></div>
+      </fieldset>
+      <fieldset><legend>День</legend><div class="s-chips" data-s-days></div></fieldset>
+      <fieldset><legend>Время</legend><div class="s-chips" data-s-times></div></fieldset>
+      <div class="s-bubble" aria-live="polite"><span class="s-bubble__label">Ваше сообщение</span><p data-s-bubble></p></div>
+      <div class="s-send">
+        <a class="s-btn s-btn--wide" data-s-msg="telegram" href="#">Записаться в Telegram</a>
+      </div>
+      <p class="s-send__note" data-s-copied hidden>Текст скопирован – вставьте его в чат.</p>
+      
+    </form></div>
+    <figure class="s-hero__bg" aria-hidden="true"><img class="" src="assets/hero.webp" alt="Работа мастера: длинные волосы до и после ухода" decoding="async" fetchpriority="high"></figure>
+  </section>
+
+  
+
+  <section class="s-section s-reveal" id="prices">
+    <header class="s-section__head"><h2>Прайс Цирюльникъ</h2><p>Цены с карточки на Яндекс Картах.</p></header>
+    <div class="s-board"><div class="s-board__group">
+      <h3 class="s-board__title">Стрижки</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">Стрижка<em>цена по карточке – от 499 ₽</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">от 499 ₽</span></li>
+      </ul>
+    </div>
+<div class="s-board__group">
+      <h3 class="s-board__title">Брови, ресницы, волосы</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">Ламинирование бровей, ресниц, волос</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 300 ₽</span></li>
+      </ul>
+    </div>
+<div class="s-board__group">
+      <h3 class="s-board__title">Педикюр</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">Педикюр<em>цену назовут при записи</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">уточнить</span></li>
+      </ul>
+    </div></div>
+    <p class="s-note">Прайс на карточке не обновлялся давно: актуальную цену уточняйте при записи.</p>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Как записаться</h2></header>
+    <ol class="s-steps">
+      <li class="s-steps__item"><span class="s-steps__n">01</span><h3>Выбираете услугу, день и время</h3><p>Ниже, в форме записи: сообщение уходит в Telegram с готовым текстом.</p></li>
+      <li class="s-steps__item"><span class="s-steps__n">02</span><h3>Или пишете и звоните сами</h3><p>Контакты – в конце страницы, работаем до 20:00.</p></li>
+      <li class="s-steps__item"><span class="s-steps__n">03</span><h3>Приходите: улица Ленина, 328/13</h3><p>Адрес и карта – в конце страницы.</p></li>
+    </ol>
+  </section>
+
+  <section class="s-photos s-reveal" aria-label="Фото"><figure><img class="" src="assets/cvet.webp" alt="Окрашивание волос в яркие пряди" loading="lazy" decoding="async"><figcaption>Окрашивание</figcaption></figure><figure><img class="" src="assets/nogti.webp" alt="Маникюр лавандового цвета" loading="lazy" decoding="async"><figcaption>Маникюр</figcaption></figure><figure><img class="" src="assets/strizhka.webp" alt="Стрижка с выбритым узором" loading="lazy" decoding="async"><figcaption>Стрижка с узором</figcaption></figure></section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Что вас ждёт</h2></header>
+    <ul class="s-promises">
+      <li><h3>Запись без проблем</h3><p>Гость пишет в отзыве: записался без проблем, приняли вовремя.</p></li>
+      <li><h3>Чай и кофе</h3><p>Об этом пишут гости в отзывах.</p></li>
+      <li><h3>Чисто</h3><p>Гости отмечают чистоту в помещении.</p></li>
+      <li><h3>Награда «Хорошее место 2026»</h3><p>Награда пользователей Яндекс Карт указана на карточке.</p></li>
+    </ul>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head s-section__head--reviews"><h2>Отзывы с Яндекс.Карт</h2><p class="s-reviews__rating"><span class="s-reviews__num">5,0</span><span class="s-reviews__stars" style="--r: 5" aria-label="рейтинг 5,0 из 5"></span><span class="s-reviews__count">123 отзыва</span><a class="s-reviews__all" href="https://yandex.ru/maps/org/tsiryulnik/168514084010/" target="_blank" rel="noopener">Читать все отзывы на Яндекс.Картах</a></p></header>
+    <ul class="s-reviews">
+      <li><blockquote>«Отличное место. Записался без проблем, приняли вовремя. Мастер Давид сделал именно то, что нужно: аккуратная стрижка, четкие переходы. Никакой лишней болтовни, если не настроен на разговор, но при этом атмосфера дружелюбная. Ценник адекватный качеству. Рекомендую»</blockquote><p class="s-reviews__who">LAB · 24 сентября</p></li>
+      <li><blockquote>«Администратор Супер. Мастер педикюра Мария сделала быстро педикюр. Вообщем довольна посещением. Чисто в помещении, предложили чай и кофе.»</blockquote><p class="s-reviews__who">Евгения | Ставрополь · 20 июня</p></li>
+      <li><blockquote>«Подстригся здесь довольно быстро и качественно, очень понравилось. Настоятельно рекомендую»</blockquote><p class="s-reviews__who">Егор Тихомиров · 1 марта</p></li>
+    </ul>
+    <p class="s-note">Отзывы с карточки на Яндекс.Картах, без правок.</p>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Частые вопросы</h2></header>
+    <div class="s-faq"><details><summary>Сколько стоит стрижка?</summary><p>На карточке указано: стрижка – от 499 ₽. Точную цену называют мастера.</p></details><details><summary>Делаете педикюр?</summary><p>Да, педикюр есть – об этом пишут гости в отзывах.</p></details><details><summary>Как записаться?</summary><p>Через форму на сайте (сообщение уйдёт в Telegram), в MAX или по телефону +7 (988) 111-44-68.</p></details><details><summary>Где вы находитесь?</summary><p>Ставрополь, улица Ленина, 328/13. На карточке указано: открыто до 20:00.</p></details></div>
+  </section>
+
+  <section class="s-section s-final s-reveal" id="contacts">
+    <header class="s-section__head"><h2>Запишитесь на удобное время</h2></header>
+    <div class="s-contacts">
+      <dl>
+        <div><dt>Адрес</dt><dd>улица Ленина, 328/13, Ставрополь</dd></div>
+        <div><dt>Часы</dt><dd>открыто до 20:00</dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+79881114468">+7 (988) 111-44-68</a></dd></div>
+      </dl>
+      <div class="s-contacts__actions">
+        <a class="s-btn" href="#widget">Записаться онлайн</a>
+        
+        <a class="s-btn s-btn--ghost" data-s-msg="telegram" href="#">Telegram</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="s-foot"><p>Цирюльникъ · Ставрополь</p><p>Стрижки, ламинирование бровей, ресниц и волос, педикюр</p></footer>
+<nav class="s-dock" aria-label="Быстрая связь"><a class="s-btn" href="#widget">Записаться онлайн</a><a class="s-btn s-btn--ghost" href="tel:+79881114468">Позвонить</a></nav>
+<script src="style.js" defer></script>
+</body>
+</html>

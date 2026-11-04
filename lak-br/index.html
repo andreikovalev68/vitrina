@@ -1,19 +1,159 @@
 <!doctype html>
-<html lang="ru"><head>
+<html lang="ru">
+<head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="2; url=https://andreikovalev68.github.io/lak-br/">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Демо-сайт</title>
+<meta name="robots" content="noindex, nofollow" data-publish>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Л. А. К · Студия красоты</title>
+<meta name="description" content="Выбираете услугу, день и время – запись уходит в WhatsApp. Стрижки, окрашивание, маникюр и брови. Пн–сб 09:00–20:00, вс 09:00–18:00.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Салон «Л. А. К» в Брянске">
+<meta property="og:description" content="Выбираете услугу, день и время – запись уходит в WhatsApp. Стрижки, окрашивание, маникюр и брови. Пн–сб 09:00–20:00, вс 09:00–18:00.">
+<meta property="og:image" content="assets/hero.webp">
+<link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%276%27 y=%276%27 width=%2720%27 height=%2720%27 rx=%275%27 fill=%27%23c8a25c%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-body{font-family:Arial,sans-serif;background:#0f172a;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;margin:0;text-align:center;padding:20px}
-a.btn{display:inline-block;margin-top:24px;padding:16px 34px;background:#2563eb;color:#fff;font-size:20px;text-decoration:none;border-radius:12px}
-p{color:#cbd5e1;font-size:18px;max-width:520px}
-small{color:#64748b;margin-top:20px}
-</style></head>
-<body>
-<h1>Демо-сайт открывается на GitHub</h1>
-<p>Нажмите кнопку – откроется демо. Если автоматически не перекинуло, кнопка всегда работает.</p>
-<a class="btn" href="https://andreikovalev68.github.io/lak-br/">Открыть демо-сайт</a>
-<small>andreikovalev68.github.io/lak-br/</small>
-<script>setTimeout(function(){location.replace("https://andreikovalev68.github.io/lak-br/");},2000);</script>
-</body></html>
+:root { --c-canvas: #1e1815; --c-surface: #2a221d; --c-ink: #f2e9dd; --c-ink-soft: #b9ab9b; --c-accent: #c8a25c; --c-accent-ink: #1f170f; --c-accent-deep: #c8a25c; --f-display: "Unbounded", "Arial Black", system-ui, sans-serif; --f-text: "Golos Text", "Segoe UI", system-ui, sans-serif; --h1k: 0.8; }
+</style>
+<link rel="stylesheet" href="style-prod.css">
+<link rel="stylesheet" href="style-3d.css">
+</head>
+<body class="s-prod" id="top" data-wa="79103332211" data-tg="lak_nails32" data-max="">
+<header class="s-bar" data-s-bar>
+  <a class="s-bar__brand" href="#top"><i aria-hidden="true"></i>Л. А. К</a>
+  <div class="s-bar__right">
+    <a class="s-bar__tel" href="tel:+79103332211">+7 (910) 333-22-11</a>
+    <a class="s-btn s-btn--sm" href="#widget">Записаться онлайн</a>
+  </div>
+</header>
+<main>
+  <section class="s-hero">
+    <div class="s-hero__text">
+      <p class="s-eyebrow">Парикмахерская · маникюр · брови</p>
+      <h1>Салон «Л. А. К» в Брянске</h1>
+      <p class="s-lead">Выбираете услугу, день и время – запись уходит в WhatsApp. Стрижки, окрашивание, маникюр и брови. Пн–сб 09:00–20:00, вс 09:00–18:00.</p>
+      <figure class="s-hero__side"><img src="assets/side.webp" alt="Русые волосы с мягким переходом цвета со спины" decoding="async"></figure>
+      <ul class="s-ticks"><li>4,9 на Яндекс Картах, 73 оценки</li><li>Пн–сб 09:00–20:00, вс 09:00–18:00</li><li>Окрашивание в один тон – 2 000 ₽</li></ul>
+      <p class="s-rating"><b>4,9</b> на Яндекс.Картах · 44 отзыва</p>
+      <figure class="s-hero__photo"><img class="" src="assets/hero.webp" alt="Маникюр с зелёным рисунком на сером фоне" loading="lazy" decoding="async"></figure>
+    </div>
+    <div class="s-hero__widget" id="widget"><form class="s-widget" data-s-booking data-days="7" data-closed="" data-slots="09:00,10:00,11:00,12:00,13:00,14:00,15:00,16:00,17:00,18:00,19:00" data-message="Здравствуйте! Хочу записаться в «Л. А. К»: {услуга}, {день} в {время}." onsubmit="return false">
+      <h2 class="s-widget__title">Запись в «Л. А. К»</h2>
+      <fieldset><legend>Услуга</legend>
+        <div class="s-chips s-chips--col"><label class="s-chip s-chip--row"><input type="radio" name="svc" value="0" data-name="Женская стрижка" data-price="650" data-from="" data-min="" checked><span>Женская стрижка</span><b>650 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="1" data-name="Окрашивание в один тон" data-price="2000" data-from="" data-min=""><span>Окрашивание в один тон</span><b>2 000 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="2" data-name="Маникюр с покрытием" data-price="1000" data-from="" data-min=""><span>Маникюр с покрытием</span><b>1 000 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="3" data-name="Ламинирование бровей" data-price="1400" data-from="" data-min=""><span>Ламинирование бровей</span><b>1 400 ₽</b></label></div>
+      </fieldset>
+      <fieldset><legend>День</legend><div class="s-chips" data-s-days></div></fieldset>
+      <fieldset><legend>Время</legend><div class="s-chips" data-s-times></div></fieldset>
+      <div class="s-bubble" aria-live="polite"><span class="s-bubble__label">Ваше сообщение</span><p data-s-bubble></p></div>
+      <div class="s-send">
+        <a class="s-btn s-btn--wide" data-s-msg="whatsapp" href="#">Записаться в WhatsApp</a>
+        <a class="s-btn s-btn--ghost" data-s-msg="telegram" href="#">Telegram</a>
+      </div>
+      <p class="s-send__note" data-s-copied hidden>Текст скопирован – вставьте его в чат.</p>
+      
+    </form></div>
+    <figure class="s-hero__bg" aria-hidden="true"><img class="" src="assets/hero.webp" alt="Маникюр с зелёным рисунком на сером фоне" decoding="async" fetchpriority="high"></figure>
+  </section>
+
+  
+
+  <section class="s-section s-reveal" id="prices">
+    <header class="s-section__head"><h2>Услуги и цены</h2><p>Цены с карточки на Яндекс Картах.</p></header>
+    <div class="s-board"><div class="s-board__group">
+      <h3 class="s-board__title">Стрижки и укладка</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">Женская стрижка</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">650 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Мужская стрижка</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">400 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Стрижка кончиков</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">400 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Стрижка чёлки</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">300 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Укладка феном</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">700 ₽</span></li>
+      </ul>
+    </div>
+<div class="s-board__group">
+      <h3 class="s-board__title">Окрашивание</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">Окрашивание в один тон</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Мелирование, эйртач (с тонировкой)</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">4 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Тонировка без аммиака</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 500 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Смывка цвета</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 000 ₽</span></li>
+      </ul>
+    </div>
+<div class="s-board__group">
+      <h3 class="s-board__title">Реконструкция волос</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">Кератин</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">3 500 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Ботокс</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">3 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Hair Care 4 в 1</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 500 ₽</span></li>
+      </ul>
+    </div>
+<div class="s-board__group">
+      <h3 class="s-board__title">Ногти и брови</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">Маникюр с покрытием</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Наращивание ногтей</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 500 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Окрашивание бровей</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">800 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Ламинирование и коррекция бровей</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 400 ₽</span></li>
+      </ul>
+    </div></div>
+    <p class="s-note">Полный прайс – на карточке «Л. А. К» на Яндекс Картах.</p>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Как записаться</h2></header>
+    <ol class="s-steps">
+      <li class="s-steps__item"><span class="s-steps__n">01</span><h3>Выбираете услугу, день и время</h3><p>Ниже, в форме записи: сообщение уходит в WhatsApp с готовым текстом.</p></li>
+      <li class="s-steps__item"><span class="s-steps__n">02</span><h3>Или пишете и звоните сами</h3><p>Контакты – в конце страницы, работаем пн–сб 09:00–20:00.</p></li>
+      <li class="s-steps__item"><span class="s-steps__n">03</span><h3>Приходите: Красноармейская улица, 172</h3><p>Адрес и карта – в конце страницы.</p></li>
+    </ol>
+  </section>
+
+  <section class="s-photos s-reveal" aria-label="Фото"><figure><img class="" src="assets/p1.webp" alt="Фиолетовый французский маникюр" loading="lazy" decoding="async"><figcaption>Френч</figcaption></figure><figure><img class="" src="assets/p2.webp" alt="Голубой маникюр с блёстками" loading="lazy" decoding="async"><figcaption>Дизайн</figcaption></figure><figure><img class="" src="assets/p3.webp" alt="Розовый маникюр с блёстками" loading="lazy" decoding="async"><figcaption>Покрытие</figcaption></figure></section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Что вас ждёт</h2></header>
+    <ul class="s-promises">
+      <li><h3>Салон для всей семьи</h3><p>Клиенты пишут, что стригутся всей семьёй и делают маникюр здесь много лет.</p></li>
+      <li><h3>Напоминаем о записи</h3><p>Клиентка отмечает: мастера напомнят о записи и помогут с дизайном.</p></li>
+      <li><h3>Чай для гостей</h3><p>В отзывах – про добрый и весёлый персонал и вкусный чай.</p></li>
+    </ul>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head s-section__head--reviews"><h2>Отзывы с Яндекс.Карт</h2><p class="s-reviews__rating"><span class="s-reviews__num">4,9</span><span class="s-reviews__stars" style="--r: 4.9" aria-label="рейтинг 4,9 из 5"></span><span class="s-reviews__count">44 отзыва</span><a class="s-reviews__all" href="https://yandex.ru/maps/org/l_a_k/137031106029/" target="_blank" rel="noopener">Читать все отзывы на Яндекс.Картах</a></p></header>
+    <ul class="s-reviews">
+      <li><blockquote>«Хожу в этот салон прекрасный уже 2 года почти , персонал очень добрый и веселый , опаздываю почти постоянно , Светик мой прекрасный мастер понимает . Ещё всей семьёй делаем модные стрижки . А ещё, в этом прекрасном салоне можно попить вкусного чая . Очень всё нравится , спасибо за всё»</blockquote><p class="s-reviews__who">Елизавета Горюнова · 14 декабря 2024</p></li>
+      <li><blockquote>«Уже более 10 лет пользуюсь услугами мастеров этого салона!всегда доброжелательны,вежливы,аккуратны и конечно профессионалы своего дела.одни мастера маникюр сделают качественно и дизайн подберут под настроение,другие ребенка подстригут и тебе укладку сделают!очень довольна этим салон.рекомендую»</blockquote><p class="s-reviews__who">Татьяна Г. · 5 декабря 2024</p></li>
+      <li><blockquote>«Посещаю студию маникюра и педикюра 15 лет, мастера  грамотные , внимательные , аккуратные , всегда подберут время на запись  , напомнят о записи  ,помогут с  дизайном.  Спасибо  за профессионализм и заботу !!»</blockquote><p class="s-reviews__who">Алла Р. · 2 января 2025</p></li>
+    </ul>
+    <p class="s-note">Отзывы с карточки на Яндекс.Картах, без правок.</p>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Частые вопросы</h2></header>
+    <div class="s-faq"><details><summary>Сколько стоит женская стрижка?</summary><p>650 ₽ по прайсу на карточке Яндекс Карт.</p></details><details><summary>Какие услуги есть?</summary><p>Стрижки, окрашивание, реконструкция волос, маникюр, педикюр, брови, макияж.</p></details><details><summary>Где вы находитесь?</summary><p>Брянск, Красноармейская улица, 172.</p></details></div>
+  </section>
+
+  <section class="s-section s-final s-reveal" id="contacts">
+    <header class="s-section__head"><h2>Запишитесь на удобное время</h2></header>
+    <div class="s-contacts">
+      <dl>
+        <div><dt>Адрес</dt><dd>Красноармейская улица, 172, Брянск</dd></div>
+        <div><dt>Часы</dt><dd>пн–сб 09:00–20:00, вс 09:00–18:00</dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+79103332211">+7 (910) 333-22-11</a></dd></div>
+      </dl>
+      <div class="s-contacts__actions">
+        <a class="s-btn" href="#widget">Записаться онлайн</a>
+        <a class="s-btn s-btn--ghost" data-s-msg="whatsapp" href="#">WhatsApp</a>
+        <a class="s-btn s-btn--ghost" data-s-msg="telegram" href="#">Telegram</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="s-foot"><p>Л. А. К · Брянск</p><p>Парикмахерская, маникюр, брови, макияж</p></footer>
+<nav class="s-dock" aria-label="Быстрая связь"><a class="s-btn" href="#widget">Записаться онлайн</a><a class="s-btn s-btn--ghost" href="tel:+79103332211">Позвонить</a></nav>
+<script src="style.js" defer></script>
+</body>
+</html>

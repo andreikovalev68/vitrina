@@ -1,19 +1,448 @@
 <!doctype html>
-<html lang="ru"><head>
+<html lang="ru">
+<head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="2; url=https://andreikovalev68.github.io/kardan-servis/">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Демо-сайт</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Кардан Сервис – ремонт Audi Q7 и других иномарок (концепт)</title>
+<meta name="description" content="Концепт сайта автосервиса: ремонт и обслуживание иномарок, специализация Audi Q7. Название, телефон и адрес условные.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%94%A7%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-body{font-family:Arial,sans-serif;background:#0f172a;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;margin:0;text-align:center;padding:20px}
-a.btn{display:inline-block;margin-top:24px;padding:16px 34px;background:#2563eb;color:#fff;font-size:20px;text-decoration:none;border-radius:12px}
-p{color:#cbd5e1;font-size:18px;max-width:520px}
-small{color:#64748b;margin-top:20px}
-</style></head>
+:root{
+  --black:#0A0A0A;
+  --coal:#141312;
+  --coal-2:#1C1A18;
+  --line:rgba(201,162,75,.28);
+  --ink:#F2EDE3;
+  --soft:#CFC8B8;
+  --muted:#A29A8A;
+  --gold:#C9A24B;
+  --gold-hi:#F0D48A;
+  --gold-lo:#9A7423;
+  --gold-grad:linear-gradient(135deg,#F3DC9B 0%,#C9A24B 48%,#A47C2A 100%);
+  --on-gold:#15110A;
+  --open:#5CC98A;
+  color-scheme:dark;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{
+  background:var(--black);
+  scroll-behavior:smooth;
+  scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));
+}
+body{
+  margin:0;
+  background:var(--black);
+  color:var(--ink);
+  font:400 17px/1.6 'Golos Text',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold-hi);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+.disp{font-family:'Jost','Futura','Century Gothic',system-ui,sans-serif}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--black);border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font:500 24px/1 'Jost','Futura','Century Gothic',system-ui,sans-serif;letter-spacing:.02em}
+.brand svg{width:28px;height:28px;flex:none}
+.nav{display:flex;gap:30px}
+.nav a{color:var(--muted);text-decoration:none;font-weight:500}
+.nav a:hover{color:var(--gold-hi)}
+.tel{display:inline-flex;align-items:center;min-height:42px;padding:0 18px;border:1px solid var(--gold);border-radius:3px;color:var(--gold-hi);font-weight:500;text-decoration:none;white-space:nowrap;transition:background .15s,color .15s}
+.tel:hover{background:var(--gold);color:var(--on-gold)}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:54px;padding:0 28px;border-radius:3px;border:1px solid transparent;
+  background:var(--gold-grad);color:var(--on-gold);
+  font-weight:600;font-size:17px;text-decoration:none;
+  transition:filter .15s,background .15s,color .15s;
+}
+.btn:hover{filter:brightness(1.1)}
+.btn-line{background:transparent;color:var(--gold-hi);border-color:var(--gold)}
+.btn-line:hover{filter:none;background:var(--gold);color:var(--on-gold)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* hero */
+.hero{padding:clamp(36px,5vw,72px) 0 clamp(52px,7vw,96px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);align-items:center}
+.h1{
+  margin:0;
+  font:500 clamp(36px,5vw,68px)/1.06 'Jost','Futura','Century Gothic',system-ui,sans-serif;
+  letter-spacing:-.012em;
+}
+.lede{margin:22px 0 0;max-width:34ch;font-size:19px;line-height:1.5;color:var(--soft)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.status{display:flex;align-items:center;gap:9px;margin-top:22px;font-size:15px;color:var(--muted)}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--muted);flex:none}
+.status.open i{background:var(--open);box-shadow:0 0 0 3px rgba(92,201,138,.22)}
+
+.viewer{min-width:0}
+.frame{position:relative;padding:0 16px 16px 0}
+.frame::before{content:"";position:absolute;inset:16px 0 0 16px;border:1px solid var(--gold);pointer-events:none}
+.shot{position:relative;z-index:1;aspect-ratio:4/3;overflow:hidden;background:#000;animation:reveal 1s cubic-bezier(.2,.7,.2,1) both}
+.shot img{display:block;width:100%;height:100%;transform-origin:0 0;transition:transform .9s cubic-bezier(.2,.7,.2,1);will-change:transform}
+@keyframes reveal{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chip{
+  appearance:none;-webkit-appearance:none;cursor:pointer;
+  min-height:42px;padding:0 16px;border:1px solid var(--line);border-radius:3px;background:transparent;
+  font:500 15px/1 'Golos Text',system-ui,sans-serif;color:var(--soft);
+  transition:background .15s,color .15s,border-color .15s;
+}
+.chip:hover{border-color:var(--gold);color:var(--gold-hi)}
+.chip[aria-pressed="true"]{background:var(--gold-grad);border-color:transparent;color:var(--on-gold)}
+.detail{min-height:132px;margin-top:20px;padding-left:16px}
+.detail h3{margin:0 0 8px;font:500 clamp(22px,2.4vw,28px)/1.2 'Jost','Futura',system-ui,sans-serif;color:var(--gold-hi)}
+.detail p{margin:0 0 12px;max-width:54ch;color:var(--soft)}
+.detail a{color:var(--gold-hi);font-weight:500;text-decoration-line:underline;text-decoration-color:var(--gold);text-decoration-thickness:1.5px;text-underline-offset:5px}
+.detail a[hidden]{display:none}
+
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px);margin-top:clamp(28px,4vw,52px)}
+.svc h3{margin:0;padding-top:16px;border-top:1px solid var(--gold);font:500 clamp(22px,2.4vw,28px)/1.2 'Jost','Futura',system-ui,sans-serif;color:var(--gold-hi)}
+.svc ul{list-style:none;margin:14px 0 0;padding:0}
+.svc li{padding:12px 0;border-bottom:1px solid var(--line);font-size:18px;line-height:1.35}
+.svc li:last-child{border-bottom:0}
+
+/* brands */
+.brands{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin:clamp(28px,4vw,52px) 0 0;padding:1px;background:var(--line)}
+.brands div{background:var(--black);padding:clamp(22px,3vw,36px) clamp(16px,2.4vw,32px);font:500 clamp(24px,3.2vw,42px)/1.1 'Jost','Futura',system-ui,sans-serif;letter-spacing:.01em}
+.brands small{display:block;margin-top:8px;font:400 14px/1.4 'Golos Text',system-ui,sans-serif;letter-spacing:0;color:var(--gold)}
+
+/* sections */
+.sec{padding:clamp(56px,8vw,112px) 0;border-top:1px solid var(--line)}
+.alt{background:var(--coal)}
+.h2{margin:0;font:500 clamp(30px,4vw,54px)/1.08 'Jost','Futura','Century Gothic',system-ui,sans-serif;letter-spacing:-.01em}
+.two{display:grid;grid-template-columns:5fr 6fr;gap:clamp(24px,6vw,88px);align-items:start}
+.lead{margin:0 0 1em;max-width:50ch;font-size:20px;line-height:1.55;color:var(--soft)}
+.lead:last-child{margin-bottom:0}
+.lead b{color:var(--gold-hi);font-weight:500}
+.price-note{margin:18px 0 0;max-width:56ch;font-size:19px;color:var(--soft)}
+.steps{list-style:none;margin:clamp(28px,4vw,52px) 0 0;padding:0;counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,40px)}
+.steps li{counter-increment:s;border-top:1px solid var(--gold);padding-top:18px}
+.steps li::before{
+  content:counter(s);display:block;margin-bottom:12px;
+  font:500 60px/1 'Jost','Futura',system-ui,sans-serif;
+  color:var(--gold);
+  background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.steps b{display:block;font-weight:600;font-size:19px;line-height:1.3;margin-bottom:6px}
+.steps span{display:block;color:var(--muted)}
+
+/* contacts */
+.contacts{position:relative;overflow:hidden}
+.contacts .in{position:relative;z-index:1;max-width:620px}
+.facts{margin:32px 0 36px;display:grid;gap:22px}
+.facts dt{font-size:15px;color:var(--muted)}
+.facts dd{margin:2px 0 0;font-size:22px;font-weight:500;line-height:1.35}
+.facts a.phone{
+  font:500 clamp(36px,5.4vw,68px)/1.05 'Jost','Futura',system-ui,sans-serif;text-decoration:none;letter-spacing:.005em;
+  color:var(--gold);
+  background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.facts a.phone:hover{text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:3px;text-underline-offset:8px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.disc{position:absolute;right:-140px;top:50%;width:min(620px,60vw);height:auto;transform:translateY(-50%);overflow:visible;pointer-events:none}
+.disc .d-plate{fill:#181614}
+.disc .d-slots{fill:none;stroke:var(--black);stroke-width:72;stroke-dasharray:5 16}
+.disc .d-edge{fill:none;stroke:var(--gold);stroke-opacity:.55;stroke-width:1.5}
+.disc .d-hat{fill:#221F1C}
+.disc .d-bolt{fill:var(--gold)}
+.disc .d-center{fill:var(--black);stroke:var(--gold);stroke-opacity:.6;stroke-width:1.5}
+.disc .d-caliper{fill:none;stroke:var(--gold);stroke-width:46;stroke-linecap:round;opacity:.9}
+
+.foot{border-top:1px solid var(--line);color:var(--muted);font-size:14px;padding:22px 0}
+.callbar{display:none}
+
+@media (max-width:1000px){
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .svc{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
+  .disc{right:-190px;top:auto;bottom:-190px;transform:none;width:460px;opacity:.4}
+}
+@media (max-width:760px){
+  .nav{display:none}
+  .callbar{
+    display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;
+    justify-content:center;align-items:center;gap:10px;
+    min-height:calc(58px + env(safe-area-inset-bottom,0px));
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    background:var(--gold-grad);color:var(--on-gold);
+    font-weight:600;font-size:18px;text-decoration:none;
+  }
+  .callbar svg{width:20px;height:20px}
+  body{padding-bottom:66px}
+}
+@media (max-width:560px){
+  .tel{display:none}
+  .top-in{min-height:60px}
+  .steps{grid-template-columns:1fr}
+  .steps li::before{font-size:48px}
+  .svc{grid-template-columns:1fr}
+  .brands{grid-template-columns:repeat(2,1fr)}
+  .brands div:last-child{grid-column:1/-1}
+  .detail{padding-left:0}
+  .frame{padding:0 10px 10px 0}
+  .frame::before{inset:10px 0 0 10px}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .shot{animation:none}
+  *{transition:none !important}
+}
+</style>
+</head>
 <body>
-<h1>Демо-сайт открывается на GitHub</h1>
-<p>Нажмите кнопку – откроется демо. Если автоматически не перекинуло, кнопка всегда работает.</p>
-<a class="btn" href="https://andreikovalev68.github.io/kardan-servis/">Открыть демо-сайт</a>
-<small>andreikovalev68.github.io/kardan-servis/</small>
-<script>setTimeout(function(){location.replace("https://andreikovalev68.github.io/kardan-servis/");},2000);</script>
-</body></html>
+
+<div style="background:#1C1A18;color:#CFC8B8;font-size:14px;line-height:1.4;padding:8px 0;border-bottom:1px solid rgba(201,162,75,.28)"><div class="wrap"><b style="color:#F0D48A;font-weight:600">Концепт-дизайн.</b> Название, телефон и адрес условные – сайт сделан для портфолио.</div></div>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#top" aria-label="Кардан Сервис, на главную">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3DC9B"/><stop offset=".5" stop-color="#C9A24B"/><stop offset="1" stop-color="#A47C2A"/></linearGradient></defs><path d="M12 2 20 5v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z" fill="url(#gb)"/><path d="m8 12 3 3 5-6" fill="none" stroke="#15110A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Кардан Сервис
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#services">Услуги</a>
+      <a href="#brands">Марки</a>
+      <a href="#price">Стоимость</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="tel" href="tel:+79000000000">+7 (900) 000-00-00</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 class="h1">Ремонт Audi Q7 и других иномарок</h1>
+      <p class="lede">Ремонт и обслуживание иномарок. Стоимость называем после диагностики.</p>
+      <div class="hero-cta">
+        <a class="btn" href="tel:+79000000000">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          Позвонить
+        </a>
+        <a class="btn btn-line" href="#contacts">Как проехать</a>
+      </div>
+      <div class="status" id="status"><i></i><span id="statusText">Ежедневно с 9:00 до 18:00</span></div>
+    </div>
+
+    <div class="viewer" id="stage">
+      <div class="frame">
+        <div class="shot">
+          <img id="photo" alt="Чёрный Audi Q7 с колёсами на 20 дюймах" width="1920" height="1440" src="img/audi-q7.jpg">
+        </div>
+      </div>
+      <div class="chips" role="group" aria-label="Что мы делаем: выберите узел, чтобы приблизить фото">
+        <button class="chip" type="button" data-k="engine" aria-pressed="false">Двигатель и коробка</button>
+        <button class="chip" type="button" data-k="brakes" aria-pressed="false">Тормоза</button>
+        <button class="chip" type="button" data-k="suspension" aria-pressed="false">Ходовая часть</button>
+        <button class="chip" type="button" data-k="diag" aria-pressed="false">Диагностика и электроника</button>
+        <button class="chip" type="button" data-k="service" aria-pressed="false">Обслуживание</button>
+      </div>
+      <div class="detail" aria-live="polite">
+        <h3 id="dTitle">Чем мы занимаемся</h3>
+        <p id="dText">Выберите узел автомобиля, и мы приблизим фото и расскажем, что с ним делаем.</p>
+        <a id="dLink" href="tel:+79000000000" hidden>Описать неисправность по телефону</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="services">
+  <div class="wrap">
+    <h2 class="h2">Виды работ</h2>
+    <div class="svc">
+      <div>
+        <h3>Ремонт</h3>
+        <ul>
+          <li>Ремонт двигателя</li>
+          <li>Ремонт АКПП</li>
+          <li>Ремонт КПП</li>
+          <li>Ремонт тормозной системы</li>
+          <li>Ремонт ходовой части</li>
+          <li>Ремонт выхлопной системы</li>
+          <li>Ремонт автоэлектрики</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Обслуживание и диагностика</h3>
+        <ul>
+          <li>Компьютерная диагностика автомобиля</li>
+          <li>Полное сервисное обслуживание</li>
+          <li>Замена масла</li>
+          <li>Предрейсовый техосмотр</li>
+          <li>Чистка форсунок</li>
+          <li>Промывка инжектора</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Кузов и оборудование</h3>
+        <ul>
+          <li>Покраска автомобиля</li>
+          <li>Установка парктроника</li>
+          <li>Сигнализация</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="brands">
+  <div class="wrap">
+    <div class="two">
+      <h2 class="h2">Работаем с европейскими и японскими иномарками</h2>
+      <div>
+        <p class="lead">Ремонтируем и обслуживаем легковые импортные автомобили. Основная специализация: <b>Audi Q7</b>.</p>
+        <p class="lead">Если вашей марки нет в списке, позвоните: скажем, возьмёмся ли мы за неё.</p>
+      </div>
+    </div>
+    <div class="brands">
+      <div>Audi<small>основная специализация: Q7</small></div>
+      <div>Porsche</div>
+      <div>Volkswagen</div>
+      <div>ŠKODA</div>
+      <div>SEAT</div>
+      <div>Ford</div>
+      <div>Honda</div>
+      <div>Nissan</div>
+      <div>Toyota</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="price">
+  <div class="wrap">
+    <h2 class="h2">Стоимость называем после осмотра</h2>
+    <p class="price-note">Единого прайса у нас нет: цена зависит от машины, пробега и того, что покажет диагностика. Поэтому сначала смотрим автомобиль, а потом называем сумму.</p>
+    <ol class="steps">
+      <li><b>Позвоните</b><span>Расскажите, что происходит с машиной: стук, ошибка на панели, вибрация, посторонний звук.</span></li>
+      <li><b>Привезите машину на осмотр</b><span>Мы работаем ежедневно с 9:00 до 18:00.</span></li>
+      <li><b>Согласуйте работы и стоимость</b><span>После диагностики скажем, что нужно сделать и сколько это будет стоить.</span></li>
+      <li><b>Заберите машину</b><span>Когда ремонт закончен, вам позвонят.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec contacts" id="contacts">
+  <svg class="disc" viewBox="-200 -200 400 400" aria-hidden="true">
+    <circle class="d-plate" r="190"/>
+    <circle class="d-slots" r="150"/>
+    <circle class="d-edge" r="190"/>
+    <circle class="d-edge" r="118"/>
+    <circle class="d-hat" r="86"/>
+    <circle class="d-bolt" cx="0" cy="-56" r="9"/>
+    <circle class="d-bolt" cx="0" cy="-56" r="9" transform="rotate(72)"/>
+    <circle class="d-bolt" cx="0" cy="-56" r="9" transform="rotate(144)"/>
+    <circle class="d-bolt" cx="0" cy="-56" r="9" transform="rotate(216)"/>
+    <circle class="d-bolt" cx="0" cy="-56" r="9" transform="rotate(288)"/>
+    <circle class="d-center" r="22"/>
+    <path class="d-caliper" d="M172 -78A190 190 0 0 1 172 78"/>
+  </svg>
+  <div class="wrap">
+    <div class="in">
+      <h2 class="h2">Как нас найти</h2>
+      <dl class="facts">
+        <div><dt>Телефон</dt><dd><a class="phone" href="tel:+79000000000">+7 (900) 000-00-00</a></dd></div>
+        <div><dt>Адрес</dt><dd>Город, улица, дом <span style="font-size:15px;color:var(--muted);font-weight:400">– условный адрес</span></dd></div>
+        <div><dt>Время работы</dt><dd>Ежедневно с 9:00 до 18:00</dd></div>
+      </dl>
+      <div class="actions">
+        <a class="btn" href="tel:+79000000000">Позвонить</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">Концепт сайта автосервиса. Название, телефон и адрес условные.</div>
+</footer>
+
+<a class="callbar" href="tel:+79000000000">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+  Позвонить в Кардан Сервис
+</a>
+
+<script>
+(function(){
+  // x, y – точка на фото (доли от ширины и высоты), z – во сколько раз приблизить
+  var parts = {
+    engine:{x:.33, y:.50, z:2.2, t:'Двигатель и коробка передач', d:'Ремонт двигателя, АКПП и КПП. Разбираемся с потерей мощности, шумами, вибрациями и рывками при переключении передач.'},
+    brakes:{x:.52, y:.80, z:3.2, t:'Тормозная система', d:'Ремонт тормозной системы. Если тормоза скрипят, вибрируют или педаль стала мягкой, приезжайте на осмотр.'},
+    suspension:{x:.53, y:.68, z:2.3, t:'Ходовая часть', d:'Ремонт ходовой части. Ищем причину стуков, скрипов и увода в сторону.'},
+    diag:{x:.375, y:.575, z:3, t:'Диагностика и электроника', d:'Компьютерная диагностика автомобиля и ремонт автоэлектрики: считываем ошибки, находим причину горящих индикаторов на панели.'},
+    service:{x:.16, y:.64, z:2.4, t:'Обслуживание', d:'Полное сервисное обслуживание, замена масла, чистка форсунок, промывка инжектора, предрейсовый техосмотр.'}
+  };
+  var home = {t:'Чем мы занимаемся', d:'Выберите узел автомобиля, и мы приблизим фото и расскажем, что с ним делаем.'};
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var img = document.getElementById('photo');
+  var dTitle = document.getElementById('dTitle');
+  var dText = document.getElementById('dText');
+  var dLink = document.getElementById('dLink');
+  var current = null;
+
+  function frame(k){
+    if (!k){ img.style.transform = 'none'; return; }
+    var p = parts[k], z = p.z;
+    var x = Math.max(.5 / z, Math.min(1 - .5 / z, p.x));
+    var y = Math.max(.5 / z, Math.min(1 - .5 / z, p.y));
+    var tx = (.5 - x * z) * 100, ty = (.5 - y * z) * 100;
+    img.style.transform = 'translate(' + tx + '%,' + ty + '%) scale(' + z + ')';
+  }
+
+  function select(k){
+    current = (current === k) ? null : k;
+    chips.forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-k') === current ? 'true' : 'false'); });
+    frame(current);
+    if (current){
+      dTitle.textContent = parts[current].t;
+      dText.textContent = parts[current].d;
+      dLink.hidden = false;
+    } else {
+      dTitle.textContent = home.t;
+      dText.textContent = home.d;
+      dLink.hidden = true;
+    }
+  }
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){ select(b.getAttribute('data-k')); });
+  });
+
+  // Открыто / закрыто по московскому времени
+  try {
+    var p = new Intl.DateTimeFormat('en-GB', {timeZone:'Europe/Moscow', hour:'2-digit', minute:'2-digit', hourCycle:'h23'}).formatToParts(new Date());
+    var h = +p.filter(function(x){return x.type === 'hour';})[0].value;
+    var m = +p.filter(function(x){return x.type === 'minute';})[0].value;
+    var t = h * 60 + m;
+    var box = document.getElementById('status');
+    var txt = document.getElementById('statusText');
+    if (t >= 540 && t < 1080){
+      box.classList.add('open');
+      txt.textContent = 'Сейчас открыто, работаем до 18:00';
+    } else if (t < 540){
+      txt.textContent = 'Сейчас закрыто, откроемся сегодня в 9:00';
+    } else {
+      txt.textContent = 'Сейчас закрыто, откроемся завтра в 9:00';
+    }
+  } catch (err) {}
+})();
+</script>
+</body>
+</html>

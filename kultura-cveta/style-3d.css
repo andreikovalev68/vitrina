@@ -1,0 +1,43 @@
+/* Культура цвета: палитра по зданию салона (малиново-розовый фасад) и тёплым бежевым интерьерам. Правило Андрея: H1 жирный и в 3D, кнопки объёмные с бегущим бликом (навык zagolovok-3d). */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap");
+:root {
+  --c-canvas: #f7efe8; --c-surface: #fffaf6; --c-ink: #2a1520; --c-ink-soft: #6b5560;
+  --c-accent: #b02a69; --c-accent-ink: #fff6f9; --c-accent-deep: #8a1f50;
+  --f-display: "Playfair Display", "Tenor Sans", Georgia, serif;
+}
+.s-hero__text { container-type: inline-size; }
+.s-hero h1 {
+  font-family: var(--f-display); font-weight: 800; white-space: nowrap; line-height: 1.12;
+  font-size: 5.3cqw; letter-spacing: -.005em; color: #d4558c; hyphens: none; overflow-wrap: normal; text-wrap: nowrap;
+  text-shadow:
+    .015em .015em 0 #bf3b78, .03em .03em 0 #a2285f, .045em .045em 0 #861f4d,
+    .06em .06em 0 #6a173c, .075em .075em 0 #4a102a, .1em .14em .14em rgba(42,21,32,.45);
+}
+@media (max-width: 700px) {
+  .s-hero h1 { white-space: normal; text-wrap: balance; font-size: clamp(1.9rem, 9.4vw, 2.9rem); }
+}
+h2, h3 { font-family: var(--f-display); font-weight: 700; hyphens: none; overflow-wrap: normal; word-break: normal; }
+.s-btn {
+  position: relative; overflow: hidden; font-weight: 800; border: 0;
+  background: linear-gradient(180deg, #e0679e 0%, #b02a69 60%); color: #fff6f9;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.4), 0 2px 0 #861f4d, 0 4px 0 #6a173c, 0 6px 0 #4a102a, 0 14px 20px -4px rgba(42,21,32,.45);
+  text-shadow: 0 1px 0 rgba(0,0,0,.35), 0 2px 0 rgba(74,16,42,.5);
+  translate: 0 -4px; animation: s3-bob 2.6s ease-in-out infinite;
+}
+.s-btn::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%);
+  transform: translateX(-130%); animation: s3-wave 2.6s ease-in-out infinite;
+}
+.s-btn:hover { filter: none; animation-play-state: paused; translate: 0 -1px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.4), 0 2px 0 #861f4d, 0 4px 0 #6a173c, 0 8px 14px -4px rgba(42,21,32,.45); }
+.s-btn:active { translate: 0 2px; box-shadow: inset 0 2px 0 rgba(255,255,255,.3), 0 1px 0 #6a173c; }
+.s-btn.s-btn--ghost {
+  background: linear-gradient(180deg, #fffdfb, #f3e4da); color: #6a173c; border: 0;
+  box-shadow: inset 0 0 0 1.5px rgba(176,42,105,.55), 0 3px 0 #d9bfb3, 0 6px 0 #c4a89b, 0 12px 16px -6px rgba(42,21,32,.35);
+  text-shadow: 0 1px 0 rgba(255,255,255,.9); translate: 0 -2px; animation: none;
+}
+.s-btn.s-btn--ghost::after { display: none; }
+@keyframes s3-wave { 0% { transform: translateX(-130%); } 55%, 100% { transform: translateX(130%); } }
+@keyframes s3-bob { 0%, 100% { translate: 0 -4px; } 50% { translate: 0 -6px; } }
+@media (prefers-reduced-motion: reduce) { .s-btn { animation: none; } .s-btn::after { animation: none; display: none; } }

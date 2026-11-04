@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Проверка телефона</title>
+<style>
+  body{margin:0;padding:16px;font:18px/1.45 system-ui,sans-serif;background:#065193;color:#fff}
+  h1{font-size:22px;margin:0 0 12px}
+  .row{background:rgba(255,255,255,.1);border-radius:10px;padding:10px 12px;margin:8px 0}
+  .ok{color:#8dffa8}.bad{color:#ffb3ad}
+  .stage{height:90px;perspective:300px;overflow:hidden;background:rgba(0,0,0,.2);border-radius:10px;margin:8px 0}
+  .box{width:60px;height:60px;background:#d2271f;margin:15px 0 0 0;animation:go 3s linear infinite}
+  @keyframes go{from{transform:translateX(0)}to{transform:translateX(250px)}}
+  .box3{width:80px;height:60px;background:#f1d79f;margin:15px auto;transform-style:preserve-3d;animation:spin 3s linear infinite}
+  @keyframes spin{from{transform:rotateY(0)}to{transform:rotateY(360deg)}}
+  small{opacity:.8}
+</style>
+</head>
+<body>
+<h1>Проверка телефона</h1>
+<div id="out"></div>
+<div class="stage"><div class="box" id="b1"></div></div>
+<div class="stage"><div class="box3" id="b3"></div></div>
+<small>Красный квадрат и жёлтый прямоугольник должны двигаться. Пришлите скриншот этой страницы.</small>
+<script>
+var out=document.getElementById('out');
+function line(t,ok){var d=document.createElement('div');d.className='row '+(ok?'ok':'bad');d.textContent=(ok?'ДА – ':'НЕТ – ')+t;out.appendChild(d)}
+function info(t){var d=document.createElement('div');d.className='row';d.textContent=t;out.appendChild(d)}
+info('Браузер: '+navigator.userAgent.replace(/^Mozilla\/5.0 /,''));
+info('Экран: '+innerWidth+' px, плотность '+devicePixelRatio);
+line('Режим «уменьшить движение» ВЫКЛЮЧЕН (так и надо)', !matchMedia('(prefers-reduced-motion: reduce)').matches);
+line('Поддерживаются единицы cqw (контейнерные)', !!(window.CSS&&CSS.supports&&CSS.supports('width','1cqw')));
+line('Поддерживается container-type', !!(window.CSS&&CSS.supports&&CSS.supports('container-type','size')));
+line('Поддерживается mask-image', !!(window.CSS&&CSS.supports&&(CSS.supports('mask-image','linear-gradient(#000,#000)')||CSS.supports('-webkit-mask-image','linear-gradient(#000,#000)'))));
+var frames=0,t0=performance.now();
+function tick(){frames++;requestAnimationFrame(tick)}requestAnimationFrame(tick);
+setTimeout(function(){
+  var fps=Math.round(frames/((performance.now()-t0)/1000));
+  var a=(document.getAnimations?document.getAnimations():[]);
+  var moved=false;
+  if(a.length){var c1=a[0].currentTime;setTimeout(function(){
+    moved=(a[0].currentTime||0)!==(c1||0);
+    line('Анимации CSS идут (время анимации растёт)', moved);
+    line('Скорость кадров: '+fps+' в секунду (норма 30–60)', fps>=20);
+  },700);}else{
+    line('Анимации CSS доступны (document.getAnimations)', false);
+    line('Скорость кадров: '+fps+' в секунду (норма 30–60)', fps>=20);
+  }
+},1200);
+</script>
+</body>
+</html>

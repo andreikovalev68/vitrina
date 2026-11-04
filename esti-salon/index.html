@@ -1,19 +1,136 @@
 <!doctype html>
-<html lang="ru"><head>
+<html lang="ru">
+<head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="2; url=https://andreikovalev68.github.io/esti-salon/">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Демо-сайт</title>
-<style>
-body{font-family:Arial,sans-serif;background:#0f172a;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;margin:0;text-align:center;padding:20px}
-a.btn{display:inline-block;margin-top:24px;padding:16px 34px;background:#2563eb;color:#fff;font-size:20px;text-decoration:none;border-radius:12px}
-p{color:#cbd5e1;font-size:18px;max-width:520px}
-small{color:#64748b;margin-top:20px}
-</style></head>
-<body>
-<h1>Демо-сайт открывается на GitHub</h1>
-<p>Нажмите кнопку – откроется демо. Если автоматически не перекинуло, кнопка всегда работает.</p>
-<a class="btn" href="https://andreikovalev68.github.io/esti-salon/">Открыть демо-сайт</a>
-<small>andreikovalev68.github.io/esti-salon/</small>
-<script>setTimeout(function(){location.replace("https://andreikovalev68.github.io/esti-salon/");},2000);</script>
-</body></html>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Эсти · Салон красоты в Нижнем Новгороде</title>
+<meta name="description" content="Салон красоты «Эсти» на улице Бориса Корнилова в Нижнем Новгороде: стрижки, маникюр, педикюр, косметология, эпиляция, солярий. Запись по телефону.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Салон красоты «Эсти», Нижний Новгород">
+<meta property="og:description" content="Стрижки, маникюр, педикюр, косметология, эпиляция и солярий. Бориса Корнилова, 5, корп. 1.">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="preload" as="image" href="assets/anna.jpg" fetchpriority="high">
+<link rel="preload" href="assets/fonts/tenor-sans-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/onest-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face { font-family: "Onest"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/fonts/onest-400-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Onest"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/fonts/onest-400-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Onest"; font-style: normal; font-weight: 500; font-display: swap; src: url("assets/fonts/onest-500-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Onest"; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/fonts/onest-600-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+:root { --c-canvas: #fbf7f4; --c-surface: #ffffff; --c-ink: #2b2328; --c-ink-soft: #6c5f66; --c-accent: #d4326b; --c-accent-ink: #ffffff; --c-accent-deep: #a8214f; --f-display: "Playfair Display", Georgia, serif; --f-text: "Onest", "Segoe UI", system-ui, sans-serif; --h1k: 1; }
+</style>
+<link rel="stylesheet" href="style-prod.css">
+<link rel="stylesheet" href="style-light.css">
+</head>
+<body class="s-prod" id="top" data-wa="" data-tg="+79601904063" data-max="">
+<header class="s-bar" data-s-bar>
+  <a class="s-bar__brand" href="#top"><i aria-hidden="true"></i>Эсти</a>
+  <div class="s-bar__right">
+    <a class="s-bar__tel" href="tel:+78314684451">+7 (831) 468-44-51</a>
+    <a class="s-btn s-btn--sm" href="#widget">Записаться</a>
+  </div>
+</header>
+<main>
+  <section class="s-hero">
+    <div class="s-hero__text">
+      <p class="s-eyebrow">Салон красоты · парикмахерская · маникюр · солярий</p>
+      <h1>Салон красоты «Эсти»</h1>
+      <p class="s-lead">Стрижки, маникюр и педикюр, косметология, эпиляция и солярий на улице Бориса Корнилова в Нижнем Новгороде. Выберите услугу, день и время – запись по телефону.</p>
+      <figure class="s-hero__side"><img src="assets/anna.jpg" alt="Анна Колес, хозяйка салона красоты «Эсти»" decoding="async"><figcaption>Анна Колес, хозяйка салона красоты «Эсти»</figcaption></figure>
+      <ul class="s-ticks"><li>4,6 на Яндекс.Картах, 184 оценки</li><li>ул. Бориса Корнилова, 5, корп. 1</li></ul>
+      <p class="s-rating"><b>4,6</b> на Яндекс.Картах · 82 отзыва</p>
+    </div>
+    <div class="s-hero__widget" id="widget"><form class="s-widget" data-s-booking data-days="7" data-closed="" data-slots="09:00,10:00,11:00,12:00,13:00,14:00,15:00,16:00,17:00,18:00,19:00" data-message="Здравствуйте! Хочу записаться в «Эсти»: {услуга}, {день} в {время}." onsubmit="return false">
+      <h2 class="s-widget__title">Запись в «Эсти»</h2>
+      <fieldset><legend>Услуга</legend>
+        <div class="s-chips s-chips--col"><label class="s-chip s-chip--row"><input type="radio" name="svc" value="0" data-name="Женская стрижка" data-price="" data-from="" data-min="" checked><span>Женская стрижка</span><b>от 850 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="1" data-name="Мужская стрижка" data-price="" data-from="" data-min=""><span>Мужская стрижка</span><b>от 500 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="2" data-name="Маникюр" data-price="" data-from="" data-min=""><span>Маникюр</span><b>цена по запросу</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="3" data-name="Педикюр" data-price="" data-from="" data-min=""><span>Педикюр</span><b>цена по запросу</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="4" data-name="Солярий" data-price="" data-from="" data-min=""><span>Солярий</span><b>цена по запросу</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="5" data-name="Косметология и эпиляция" data-price="" data-from="" data-min=""><span>Косметология и эпиляция</span><b>цена по запросу</b></label></div>
+      </fieldset>
+      <fieldset><legend>День</legend><div class="s-chips" data-s-days></div></fieldset>
+      <fieldset><legend>Время</legend><div class="s-chips" data-s-times></div></fieldset>
+      <div class="s-bubble" aria-live="polite"><span class="s-bubble__label">Что назвать по телефону</span><p data-s-bubble></p></div>
+      <div class="s-send">
+        <a class="s-btn s-btn--wide" data-s-msg="telegram" href="#">Записаться в Telegram</a>
+        <a class="s-btn s-btn--wide s-btn--ghost" href="tel:+78314684451">Позвонить в салон</a>
+      </div>
+      <p class="s-send__note" data-s-copied hidden>Текст скопирован – вставьте его в чат.</p>
+      <p class="s-send__note">В Telegram откроется чат: вставьте скопированный текст. По телефону назовите услугу, день и время.</p>
+    </form></div>
+    <figure class="s-hero__bg" aria-hidden="true"><img src="assets/hero.jpg" alt="" decoding="async"></figure>
+  </section>
+
+  <section class="s-section s-reveal" id="prices">
+    <header class="s-section__head"><h2>Услуги и цены</h2><p>Список услуг и цены на стрижки взяты с карточки салона на Яндекс.Картах. Остальное уточняйте по телефону.</p></header>
+    <div class="s-svc2">
+      <article class="s-svc2__card"><h3>Парикмахерские услуги</h3><p>Женская и мужская стрижка, льготная стрижка.</p><span class="s-svc2__price">женская от 850 ₽ · мужская от 500 ₽</span></article>
+      <article class="s-svc2__card"><h3>Маникюр и педикюр</h3><p>Уход за руками и ногами.</p><span class="s-svc2__price">цену называют при записи</span></article>
+      <article class="s-svc2__card"><h3>Косметология</h3><p>Татуаж, коррекция бровей, перманентный макияж губ, массаж лица, коррекция фигуры.</p><span class="s-svc2__price">цену называют при записи</span></article>
+      <article class="s-svc2__card"><h3>Эпиляция</h3><p>Шугаринг и восковая депиляция.</p><span class="s-svc2__price">цену называют при записи</span></article>
+      <article class="s-svc2__card"><h3>Солярий</h3><p>Загар в салоне, рядом с остальными услугами.</p><span class="s-svc2__price">цену называют при записи</span></article>
+    </div>
+    <p class="s-note">Уточнить цену и записаться – по телефону +7 (831) 468-44-51.</p>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Как записаться</h2></header>
+    <ol class="s-steps">
+      <li class="s-steps__item"><span class="s-steps__n">01</span><h3>Выбираете услугу, день и время</h3><p>В форме вверху страницы: она подскажет, что назвать администратору.</p></li>
+      <li class="s-steps__item"><span class="s-steps__n">02</span><h3>Звоните</h3><p>+7 (831) 468-44-51. Предварительная запись есть, салон работает по записи.</p></li>
+      <li class="s-steps__item"><span class="s-steps__n">03</span><h3>Приходите на Бориса Корнилова, 5</h3><p>Корпус 1. Вывеска «Эсти. Салон красоты» над входом, рядом парковка.</p></li>
+    </ol>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Как нас найти</h2><p>Фотографии с карточки салона на Яндекс.Картах.</p></header>
+    <div class="s-photos">
+      <figure><img src="assets/vyveska-vecher.jpg" alt="Вывеска «Эсти. Салон красоты» над входом вечером" loading="lazy" decoding="async"><figcaption>Вывеска над входом</figcaption></figure>
+      <figure><img src="assets/dver-grafik.jpg" alt="Дверь салона с графиком работы" loading="lazy" decoding="async"><figcaption>Дверь с графиком работы</figcaption></figure>
+      <figure><img src="assets/vhod.jpg" alt="Вход в салон под козырьком" loading="lazy" decoding="async"><figcaption>Вход под козырьком</figcaption></figure>
+      <figure><img src="assets/dvor.jpg" alt="Дом на улице Бориса Корнилова, вход в салон" loading="lazy" decoding="async"><figcaption>Дом на Бориса Корнилова</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Удобства</h2></header>
+    <ul class="s-promises">
+      <li><h3>Предварительная запись</h3><p>Выбираете время заранее и приходите без очереди.</p></li>
+      <li><h3>Оплата картой</h3><p>Можно оплатить услугу картой.</p></li>
+      <li><h3>Парковка и Wi-Fi</h3><p>Рядом есть парковка, в салоне – Wi-Fi.</p></li>
+      <li><h3>Подарочный сертификат</h3><p>Можно подарить близким визит в салон. Можно прийти с собакой.</p></li>
+    </ul>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head s-section__head--reviews"><h2>Отзывы с Яндекс.Карт</h2><p class="s-reviews__rating"><span class="s-reviews__num">4,6</span><span class="s-reviews__stars" style="--r: 4.6" aria-label="рейтинг 4,6 из 5"></span><span class="s-reviews__count">82 отзыва</span><a class="s-reviews__all" href="https://yandex.ru/maps/org/esti/1070186209/reviews/" target="_blank" rel="noopener">Читать все отзывы на Яндекс.Картах</a></p></header>
+    <ul class="s-reviews">
+      <li><blockquote>«Хожу в салон «Эсти» на маникюр и педикюр много лет. Мастера замечательные. Аккуратно и бережно приводят в порядок ручки-ножки. Вообще атмосфера очень приятная и располагающая.»</blockquote><p class="s-reviews__who">Наталья Г. · 3 июня</p></li>
+      <li><blockquote>«Наконец-то нашла отличное место, где можно привести себя в порядок! Мастера здесь очень внимательные и настоящие профессионалы своего дела. Мне очень понравилось, как меня подстригли, получилось именно то, что я хотела. Атмосфера в салоне очень приятная и располагающая к отдыху.»</blockquote><p class="s-reviews__who">Ксения Мартынова · 14 февраля</p></li>
+    </ul>
+    <p class="s-note">Отзывы с карточки на Яндекс.Картах, без правок. Здесь показаны два из 82.</p>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Частые вопросы</h2></header>
+    <div class="s-faq"><details><summary>Сколько стоит?</summary><p>Женская стрижка – от 850 ₽, мужская – от 500 ₽. Цены на остальные услуги называют при записи: +7 (831) 468-44-51.</p></details><details><summary>Как записаться?</summary><p>По телефону +7 (831) 468-44-51 или в Telegram (+7 960 190-40-63). Салон принимает по предварительной записи.</p></details><details><summary>Где вы находитесь?</summary><p>Нижний Новгород, улица Бориса Корнилова, 5, корпус 1. Ищите вывеску «Эсти. Салон красоты» над входом.</p></details><details><summary>До скольких работаете?</summary><p>На карточке указано, что салон открыт до 20:00; на двери – график с 9:00 до 20:00. Выходные дни уточняйте при записи.</p></details></div>
+  </section>
+
+  <section class="s-section s-final s-reveal" id="contacts">
+    <header class="s-section__head"><h2>Запишитесь на удобное время</h2></header>
+    <div class="s-contacts">
+      <dl>
+        <div><dt>Адрес</dt><dd>ул. Бориса Корнилова, 5, корп. 1, Нижний Новгород</dd></div>
+        <div><dt>Часы</dt><dd>до 20:00, график по дням уточняйте при записи</dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+78314684451">+7 (831) 468-44-51</a></dd></div>
+        <div><dt>Telegram и ВК</dt><dd>+7 (960) 190-40-63</dd></div>
+      </dl>
+      <div class="s-contacts__actions">
+        <a class="s-btn" data-s-msg="telegram" href="#">Написать в Telegram</a>
+        <a class="s-btn s-btn--ghost" href="tel:+78314684451">Позвонить</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="s-foot"><p>Эсти · Нижний Новгород</p><p>Салон красоты: парикмахерская, маникюр, педикюр, косметология, эпиляция, солярий</p></footer>
+<nav class="s-dock" aria-label="Быстрая связь"><a class="s-btn" href="#widget">Записаться</a><a class="s-btn s-btn--ghost" href="tel:+78314684451">Позвонить</a></nav>
+<script src="style.js" defer></script>
+</body>
+</html>

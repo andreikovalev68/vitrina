@@ -1,0 +1,49 @@
+/* Анри: палитра сайта. Правило Андрея: H1 жирный и в 3D, кнопки объёмные с бегущим бликом (навык zagolovok-3d). */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@600;700;800&display=swap");
+:root {
+  --c-canvas: #180f0f; --c-surface: #251616; --c-ink: #f7eaea; --c-ink-soft: #bfa3a3;
+  --c-accent: #dc4a43; --c-accent-ink: #1d0505; --c-accent-deep: #f08a84;
+  --f-display: "Rubik", Georgia, serif;
+}
+.s-hero__text { container-type: inline-size; }
+.s-hero h1 {
+  font-family: var(--f-display); font-weight: 800; white-space: nowrap; line-height: 1.12;
+  font-size: 3.98cqw; letter-spacing: -.005em; color: #ffe5e3; hyphens: none; overflow-wrap: normal; text-wrap: nowrap;
+  text-shadow: .015em .015em 0 #f6b0ab, .03em .03em 0 #e47972, .045em .045em 0 #b8433d, .06em .06em 0 #7d2622, .075em .075em 0 #4a1411, .1em .14em .14em rgba(0,0,0,.6);
+}
+@media (max-width: 700px) { .s-hero h1 { white-space: normal; text-wrap: balance; font-size: clamp(1.9rem, 9.2vw, 2.8rem); } }
+h2, h3 { font-family: var(--f-display); font-weight: 700; hyphens: none; overflow-wrap: normal; word-break: normal; }
+.s-btn {
+  position: relative; overflow: hidden; font-weight: 800; border: 0;
+  background: linear-gradient(180deg, #ee6a62 0%, #dc4a43 60%); color: #1d0505;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.4), 0 2px 0 #b8433d, 0 4px 0 #7d2622, 0 6px 0 #4a1411, 0 14px 20px -4px rgba(0,0,0,.6);
+  text-shadow: 0 1px 0 rgba(0,0,0,.35), 0 2px 0 #4a1411;
+  translate: 0 -4px; animation: s3-bob 2.6s ease-in-out infinite;
+}
+.s-btn::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%); transform: translateX(-130%); animation: s3-wave 2.6s ease-in-out infinite; }
+.s-btn:hover { filter: none; animation-play-state: paused; translate: 0 -1px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.4), 0 2px 0 #b8433d, 0 4px 0 #7d2622, 0 8px 14px -4px rgba(0,0,0,.6); }
+.s-btn:active { translate: 0 2px; box-shadow: inset 0 2px 0 rgba(255,255,255,.3), 0 1px 0 #7d2622; }
+.s-btn.s-btn--ghost {
+  background: linear-gradient(180deg, #251616, #180f0f); color: #f7eaea; border: 0;
+  box-shadow: inset 0 0 0 1.5px #dc4a43, 0 3px 0 #0a0505, 0 6px 0 #050202, 0 12px 16px -6px rgba(0,0,0,.6);
+  text-shadow: 0 1px 0 rgba(0,0,0,.6); translate: 0 -2px; animation: none; }
+.s-btn.s-btn--ghost::after { display: none; }
+@keyframes s3-wave { 0% { transform: translateX(-130%); } 55%, 100% { transform: translateX(130%); } }
+@keyframes s3-bob { 0%, 100% { translate: 0 -4px; } 50% { translate: 0 -6px; } }
+@media (prefers-reduced-motion: reduce) { .s-btn { animation: none; } .s-btn::after { animation: none; display: none; } }
+
+:root { color-scheme: dark; }
+.s-hero__bg::after { background: linear-gradient(180deg, color-mix(in srgb, #180f0f 55%, transparent), #180f0f 96%); }
+/* hero-side: фото справа под главной надписью, на всех экранах (правило Андрея 12.10.2026) */
+.s-hero__side { display: block; float: right; margin: 6px 0 10px 14px; width: min(170px, 40%); }
+.s-hero__text::after { content: ""; display: block; clear: both; }
+.s-hero__side img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: var(--r); border: 1px solid var(--hair); box-shadow: 0 18px 30px -14px rgba(0,0,0,.45); }
+.s-hero__side figcaption { margin-top: 10px; font-weight: 700; font-size: 1.02rem; color: var(--c-ink); text-align: right; }
+@media (min-width: 901px) {
+  .s-hero__text { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 34%); column-gap: 28px; align-content: start; }
+  .s-hero__text > .s-eyebrow, .s-hero__text > h1, .s-hero__text > .s-hero__photo { grid-column: 1 / -1; }
+  .s-hero__text > .s-lead, .s-hero__text > .s-ticks, .s-hero__text > .s-rating { grid-column: 1; }
+  .s-hero__side { grid-column: 2; grid-row: 3 / span 3; margin: 18px 0 0; width: auto; float: none; align-self: start; }
+}

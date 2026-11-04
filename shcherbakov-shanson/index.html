@@ -1,19 +1,98 @@
 <!doctype html>
-<html lang="ru"><head>
+<html lang="ru">
+<head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="2; url=https://andreikovalev68.github.io/shcherbakov-shanson/">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Демо-сайт</title>
-<style>
-body{font-family:Arial,sans-serif;background:#0f172a;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;margin:0;text-align:center;padding:20px}
-a.btn{display:inline-block;margin-top:24px;padding:16px 34px;background:#2563eb;color:#fff;font-size:20px;text-decoration:none;border-radius:12px}
-p{color:#cbd5e1;font-size:18px;max-width:520px}
-small{color:#64748b;margin-top:20px}
-</style></head>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Валерий Щербаков – автор-исполнитель</title>
+<meta name="description" content="Валерий Щербаков – автор-исполнитель песен собственного сочинения, музыкант, поэт, композитор. Фото, песни, приглашение на концерты и праздники.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23E0785A'/%3E%3Ccircle cx='50' cy='50' r='14' fill='%2314090C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
 <body>
-<h1>Демо-сайт открывается на GitHub</h1>
-<p>Нажмите кнопку – откроется демо. Если автоматически не перекинуло, кнопка всегда работает.</p>
-<a class="btn" href="https://andreikovalev68.github.io/shcherbakov-shanson/">Открыть демо-сайт</a>
-<small>andreikovalev68.github.io/shcherbakov-shanson/</small>
-<script>setTimeout(function(){location.replace("https://andreikovalev68.github.io/shcherbakov-shanson/");},2000);</script>
-</body></html>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand disp" href="#top"><i aria-hidden="true"></i>Валерий Щербаков</a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#foto">Фото</a>
+      <a href="#songs">Песни</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="btn btn-sm" href="#contacts">Пригласить</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <canvas class="fx" id="stars" aria-hidden="true"></canvas>
+  <canvas class="fx" id="fw" aria-hidden="true"></canvas>
+  <div class="h1w">
+    <h1 class="h1 t3d">Валерий Щербаков</h1>
+  </div>
+  <div class="h1w">
+    <p class="h1-sub t3d">Автор-исполнитель песен собственного сочинения, музыкант, поэт, композитор</p>
+  </div>
+  <div class="stream" id="stream" aria-hidden="true"><div class="persp" id="persp"><div class="ish3d" id="ish3d"></div></div>
+    <img class="mic" src="assets/mic-cutout.png" alt="" width="580" height="830">
+  </div>
+  <div class="wrap hero-cta">
+    <p class="sub">Приглашайте на концерты, праздники и вечера. Здесь – фото, песни и прямая связь с артистом.</p>
+    <div class="cta">
+      <a class="btn" href="#contacts">Пригласить на выступление</a>
+      <a class="btn btn-dark" href="#songs">Слушать песни</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="foto">
+  <div class="wrap">
+    <span class="eyebrow">Фото</span>
+    <h2 class="h2">Валерий на сцене и вне её</h2>
+    <div class="gal3">
+      <a href="assets/scena.jpg"><img src="assets/scena.jpg" alt="Валерий Щербаков на сцене с бас-гитарой" loading="lazy"><span>На сцене</span></a>
+      <a href="assets/portret.jpg"><img src="assets/portret.jpg" alt="Портрет Валерия Щербакова" loading="lazy"><span>Портрет</span></a>
+      <a href="assets/gitara.jpg"><img src="assets/gitara.jpg" alt="Валерий Щербаков с гитарой" loading="lazy"><span>С гитарой</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-alt" id="songs">
+  <div class="wrap">
+    <span class="eyebrow">Репертуар</span>
+    <h2 class="h2">Песни</h2>
+    <div class="soon"><b>Скоро здесь будут песни</b><p>Названия, обложки и кнопка «Слушать на всех площадках» появятся, когда Валерий пришлёт список песен и ссылки.</p></div>
+  </div>
+</section>
+
+<section class="sec" id="contacts">
+  <div class="wrap">
+    <span class="eyebrow">Контакты</span>
+    <h2 class="h2">Пригласить на мероприятие</h2>
+    <ul class="cl">
+      <li><span>Телефон</span><b><a href="tel:+79117657358">8 911 765-73-58</a></b></li>
+    </ul>
+    <div class="cta cta-contacts">
+      <a class="btn" href="https://max.ru/u/79117657358" target="_blank" rel="noopener">Написать в MAX</a>
+      <a class="btn btn-dark" href="https://vk.ru/id731453175" target="_blank" rel="noopener">ВКонтакте</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>© Валерий Щербаков</span>
+    <a class="up" href="#top">Наверх ↑</a>
+  </div>
+</footer>
+
+<a class="callbar" href="tel:+79117657358">Позвонить 8 911 765-73-58</a>
+<div class="lb" id="lb" hidden><img id="lbi" alt=""><button type="button" aria-label="Закрыть">×</button></div>
+
+<script src="site.js"></script>
+</body>
+</html>

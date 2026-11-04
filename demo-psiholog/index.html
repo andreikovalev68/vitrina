@@ -1,19 +1,352 @@
 <!doctype html>
-<html lang="ru"><head>
+<html lang="ru">
+<head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="2; url=https://andreikovalev68.github.io/demo-psiholog/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Демо-сайт</title>
+<title>Психолог в Ярославле – консультации очно и онлайн</title>
+<meta name="description" content="Психолог в Ярославле: индивидуальные консультации очно и онлайн. Запись на первую встречу, формат и стоимость, ответы на частые вопросы.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-body{font-family:Arial,sans-serif;background:#0f172a;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;margin:0;text-align:center;padding:20px}
-a.btn{display:inline-block;margin-top:24px;padding:16px 34px;background:#2563eb;color:#fff;font-size:20px;text-decoration:none;border-radius:12px}
-p{color:#cbd5e1;font-size:18px;max-width:520px}
-small{color:#64748b;margin-top:20px}
-</style></head>
+:root{
+  --bg:#F7F3F0;
+  --surface:#EFE6E2;
+  --blush:#E8C8C4;
+  --sage:#7F917A;
+  --ink:#33262A;
+  --muted:#6B5C60;
+  --accent:#8E4650;
+  --accent-dark:#732F39;
+  --line:#DCCFCA;
+  --serif:"Literata",Georgia,serif;
+  --sans:"Onest",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+.slot{border-bottom:1px dashed var(--muted)}
+
+/* кнопки */
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;
+  padding:15px 30px;border-radius:999px;border:0;cursor:pointer;font:600 17px/1 var(--sans);transition:background .2s}
+.btn:hover{background:var(--accent-dark)}
+.btn--small{padding:11px 22px;font-size:15px}
+.link{color:var(--accent);font-weight:500}
+
+/* шапка */
+header{position:sticky;top:0;z-index:10;background:rgba(247,243,240,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.brand{font:500 20px/1 var(--serif);text-decoration:none}
+nav{display:flex;gap:28px;font-size:15px}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+/* первый экран */
+.hero{padding:56px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px;align-items:center}
+.hero h1{font:500 clamp(40px,6vw,72px)/1.04 var(--serif);letter-spacing:-.02em;margin-bottom:28px}
+.hero .who{font:400 italic 22px/1.4 var(--serif);color:var(--muted);margin-bottom:12px}
+.hero p.lead{max-width:30em;margin-bottom:36px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:22px;align-items:center}
+.hero figure{position:relative}
+.hero figure img{width:100%;height:auto;max-height:640px;aspect-ratio:4/5;object-fit:cover;border-radius:999px 999px 28px 28px;object-position:35% 20%}
+.hero figure::before{content:"";position:absolute;inset:auto -18px -18px auto;width:62%;height:55%;background:var(--blush);border-radius:28px;z-index:-1}
+
+/* секции */
+section{padding:88px 0;scroll-margin-top:68px}
+section h2{font:500 clamp(30px,4vw,44px)/1.12 var(--serif);letter-spacing:-.015em;margin-bottom:20px}
+.tint{background:var(--surface)}
+.intro{max-width:34em;color:var(--muted);margin-bottom:48px}
+
+/* запросы как реплики */
+.talk{display:flex;flex-direction:column;gap:14px;max-width:760px}
+.talk p{max-width:88%;padding:18px 24px;border-radius:26px;font:400 19px/1.45 var(--serif);opacity:0;transform:translateY(12px);transition:opacity .6s,transform .6s}
+.talk p.in{opacity:1;transform:none}
+.talk p:nth-child(odd){background:#fff;border:1px solid var(--line);border-bottom-left-radius:6px;align-self:flex-start}
+.talk p:nth-child(even){background:var(--blush);border-bottom-right-radius:6px;align-self:flex-end}
+.talk-note{margin-top:32px;color:var(--muted);max-width:34em}
+
+/* обо мне */
+.about .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:72px;align-items:start}
+.about img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:28px}
+.facts{list-style:none;padding:0;margin-top:28px;border-top:1px solid var(--line)}
+.facts li{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.facts b{font-weight:500;color:var(--muted)}
+
+/* формат и цена */
+.format{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:#fff}
+.format > div{padding:40px}
+.format > div + div{border-left:1px solid var(--line);background:var(--bg)}
+.format h3{font:500 26px/1.2 var(--serif);margin-bottom:6px}
+.price{font:500 34px/1.2 var(--serif);margin:18px 0 14px}
+.format ul{padding-left:20px;color:var(--muted)}
+.format li{margin-bottom:6px}
+.format-note{margin-top:20px;color:var(--muted);font-size:15px}
+
+/* отзывы */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.reviews blockquote{padding-left:22px;border-left:3px solid var(--sage)}
+.reviews blockquote p{font:400 italic 19px/1.5 var(--serif);margin-bottom:12px}
+.reviews cite{font-style:normal;font-size:15px;color:var(--muted)}
+
+/* FAQ */
+.faq{max-width:760px}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font:500 20px/1.35 var(--serif);position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:18px;font:400 28px/1 var(--sans);color:var(--accent);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 40px 24px 0;color:var(--muted)}
+
+/* контакты */
+.contacts .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px}
+.contact-list{list-style:none;padding:0;margin:24px 0 32px}
+.contact-list li{padding:12px 0;border-bottom:1px solid var(--line)}
+.contact-list b{display:block;font-weight:500;color:var(--muted);font-size:14px}
+.map{border:0;width:100%;height:260px;border-radius:20px;background:var(--surface)}
+form{background:#fff;border:1px solid var(--line);border-radius:28px;padding:36px}
+form h3{font:500 26px/1.2 var(--serif);margin-bottom:6px}
+form > p{color:var(--muted);margin-bottom:22px;font-size:15px}
+label{display:block;font-size:15px;font-weight:500;margin-bottom:6px}
+input,textarea,select{width:100%;font:400 17px/1.4 var(--sans);padding:13px 16px;border:1px solid #BFB1AC;border-radius:14px;background:var(--bg);color:var(--ink);margin-bottom:18px}
+textarea{min-height:110px;resize:vertical}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);font-weight:400;margin-bottom:22px}
+.agree input{width:20px;height:20px;margin:2px 0 0;flex:none}
+.sent{display:none;background:var(--surface);padding:16px 20px;border-radius:14px;margin-top:18px}
+.sent.show{display:block}
+
+footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+
+@media(max-width:900px){
+  nav{display:none}
+  .hero .wrap,.about .wrap,.contacts .wrap{grid-template-columns:1fr;gap:40px}
+  .hero{padding:32px 0 64px}
+  .hero figure{max-width:420px}
+  section{padding:64px 0}
+  .format{grid-template-columns:1fr}
+  .format > div + div{border-left:0;border-top:1px solid var(--line)}
+  .reviews{grid-template-columns:1fr}
+  .talk p{max-width:100%}
+  .facts li{grid-template-columns:1fr;gap:2px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .talk p{opacity:1;transform:none;transition:none}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Как проходит первая консультация?","acceptedAnswer":{"@type":"Answer","text":"Мы знакомимся, вы рассказываете, с чем пришли, а я объясняю, как устроена работа. Решение о продолжении вы принимаете сами."}},
+    {"@type":"Question","name":"Чем онлайн-консультация отличается от очной?","acceptedAnswer":{"@type":"Answer","text":"Формат разговора тот же. Онлайн удобнее, если вы далеко или не хотите тратить время на дорогу."}},
+    {"@type":"Question","name":"Всё, что я расскажу, останется между нами?","acceptedAnswer":{"@type":"Answer","text":"Да. Содержание консультаций конфиденциально."}}
+  ]
+}
+</script>
+</head>
 <body>
-<h1>Демо-сайт открывается на GitHub</h1>
-<p>Нажмите кнопку – откроется демо. Если автоматически не перекинуло, кнопка всегда работает.</p>
-<a class="btn" href="https://andreikovalev68.github.io/demo-psiholog/">Открыть демо-сайт</a>
-<small>andreikovalev68.github.io/demo-psiholog/</small>
-<script>setTimeout(function(){location.replace("https://andreikovalev68.github.io/demo-psiholog/");},2000);</script>
-</body></html>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="slot">Имя Фамилия</span></a>
+    <nav aria-label="Разделы">
+      <a href="#requests">Запросы</a>
+      <a href="#about">Обо мне</a>
+      <a href="#price">Стоимость</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="btn btn--small" href="#contacts">Записаться</a>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <p class="who"><span class="slot">Имя Фамилия</span>, <span class="slot">специализация</span></p>
+      <h1>Психолог в Ярославле</h1>
+      <p class="lead">Консультации очно и онлайн. Можно прийти с любым вопросом и рассказать своими словами – разбираться будем вместе, в вашем темпе.</p>
+      <div class="actions">
+        <a class="btn" href="#contacts">Записаться</a>
+        <a class="link" href="#price">Формат и стоимость</a>
+      </div>
+    </div>
+    <figure>
+      <img src="img/hero.webp" width="1122" height="1402" alt="Психолог слушает клиента в спокойном светлом кабинете">
+    </figure>
+  </div>
+</div>
+
+<section id="requests" class="tint">
+  <div class="wrap">
+    <h2>С какими запросами работаю</h2>
+    <p class="intro">Люди приходят со словами, которые знают уже давно. Если что-то из этого про вас, мы можем начать с него.</p>
+    <div class="talk" id="talk">
+      <p>«Я постоянно тревожусь, хотя причины как будто нет»</p>
+      <p>«Устал(а) от одних и тех же ссор в отношениях»</p>
+      <p>«Не получается отдыхать, чувствую вину, когда останавливаюсь»</p>
+      <p>«После расставания или потери не могу прийти в себя»</p>
+      <p>«Хочу понять, чего хочу, но всё время сомневаюсь»</p>
+    </div>
+    <p class="talk-note">Нет вашего запроса в списке? Это нормально. Напишите, и мы обсудим, подходит ли вам консультация. <span class="slot">Список запросов уточнить у специалиста</span></p>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <img src="img/about.jpg" width="900" height="490" loading="lazy" alt="Консультация психолога: разговор в кабинете">
+    <div>
+      <h2>Обо мне</h2>
+      <p><span class="slot">Короткий текст о себе: как пришли в профессию и как работаете</span></p>
+      <ul class="facts">
+        <li><b>Образование</b><span class="slot">вуз, год, специальность</span></li>
+        <li><b>Дополнительное обучение</b><span class="slot">курсы, подходы, сертификаты</span></li>
+        <li><b>Опыт</b><span class="slot">сколько лет практики</span></li>
+        <li><b>Подход</b><span class="slot">метод, на котором строится работа</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="price" class="tint">
+  <div class="wrap">
+    <h2>Формат и стоимость</h2>
+    <p class="intro">Один формат разговора, два способа встретиться.</p>
+    <div class="format">
+      <div>
+        <h3>Очно, в Ярославле</h3>
+        <p class="price"><span class="slot">цена</span> ₽</p>
+        <ul>
+          <li>Длительность: <span class="slot">минут</span></li>
+          <li>Адрес: <span class="slot">адрес кабинета</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Онлайн</h3>
+        <p class="price"><span class="slot">цена</span> ₽</p>
+        <ul>
+          <li>Длительность: <span class="slot">минут</span></li>
+          <li>Связь: <span class="slot">Zoom, Telegram или другое</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="format-note"><span class="slot">Пакеты встреч и условия переноса, если есть</span></p>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <h2>Отзывы</h2>
+    <p class="intro">Только настоящие отзывы клиентов, которые согласились их опубликовать.</p>
+    <div class="reviews">
+      <blockquote><p><span class="slot">текст отзыва</span></p><cite><span class="slot">имя, как попросил клиент</span></cite></blockquote>
+      <blockquote><p><span class="slot">текст отзыва</span></p><cite><span class="slot">имя, как попросил клиент</span></cite></blockquote>
+      <blockquote><p><span class="slot">текст отзыва</span></p><cite><span class="slot">имя, как попросил клиент</span></cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="tint">
+  <div class="wrap">
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Как проходит первая консультация?</summary>
+        <p>Мы знакомимся, вы рассказываете, с чем пришли, а я объясняю, как устроена работа. Решение о продолжении вы принимаете сами.</p>
+      </details>
+      <details>
+        <summary>Чем онлайн-консультация отличается от очной?</summary>
+        <p>Формат разговора тот же. Онлайн удобнее, если вы далеко или не хотите тратить время на дорогу.</p>
+      </details>
+      <details>
+        <summary>Всё, что я расскажу, останется между нами?</summary>
+        <p>Да. Содержание консультаций конфиденциально.</p>
+      </details>
+      <details>
+        <summary>Сколько встреч понадобится?</summary>
+        <p>Это зависит от запроса, поэтому обещать число заранее честно нельзя. После первой встречи я скажу, как вижу работу, и вы решите, продолжать ли. <span class="slot">Уточнить у специалиста</span></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="contacts" class="contacts">
+  <div class="wrap">
+    <div>
+      <h2>Записаться на консультацию</h2>
+      <p>Оставьте заявку, и я отвечу в мессенджере или по телефону, как вам удобнее.</p>
+      <ul class="contact-list">
+        <li><b>Телефон</b><span class="slot">телефон</span></li>
+        <li><b>Telegram</b><span class="slot">@имя</span></li>
+        <li><b>Адрес</b>Ярославль, <span class="slot">улица, дом</span></li>
+        <li><b>Часы приёма</b><span class="slot">дни и часы</span></li>
+      </ul>
+      <iframe class="map" title="Карта: Ярославль" loading="lazy"
+        src="https://yandex.ru/map-widget/v1/?ll=39.884%2C57.626&z=12"></iframe>
+    </div>
+
+    <form id="lead" action="#" method="post">
+      <h3>Заявка</h3>
+      <p>Опишите ситуацию в паре слов, подробности расскажете на встрече.</p>
+      <label for="name">Как к вам обращаться</label>
+      <input id="name" name="name" autocomplete="given-name" required>
+      <label for="contact">Телефон или Telegram</label>
+      <input id="contact" name="contact" autocomplete="tel" required>
+      <label for="format">Формат</label>
+      <select id="format" name="format">
+        <option>Очно в Ярославле</option>
+        <option>Онлайн</option>
+        <option>Пока не знаю</option>
+      </select>
+      <label for="msg">Коротко о запросе (по желанию)</label>
+      <textarea id="msg" name="msg"></textarea>
+      <label class="agree" for="agree"><input id="agree" type="checkbox" required>Согласен(на) на обработку персональных данных. <span class="slot">Ссылка на политику</span></label>
+      <button class="btn" type="submit">Записаться</button>
+      <p class="sent" id="sent" role="status">Заявка отправлена. Я свяжусь с вами в ближайшее время.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap"><span class="slot">Имя Фамилия</span> – психолог в Ярославле</div>
+</footer>
+
+<script>
+// реплики появляются по очереди один раз
+(function(){
+  var items=document.querySelectorAll('#talk p');
+  if(!('IntersectionObserver' in window)){items.forEach(function(p){p.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        var i=[].indexOf.call(items,e.target);
+        setTimeout(function(){e.target.classList.add('in')},i*140);
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.4});
+  items.forEach(function(p){io.observe(p)});
+})();
+
+// форма: здесь подключить отправку на e-mail или в Telegram
+document.getElementById('lead').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var data=Object.fromEntries(new FormData(ev.target));
+  console.info('lead',data); // в рабочей версии: fetch на адрес формы / Telegram-бота
+  document.getElementById('sent').classList.add('show');
+  ev.target.reset();
+});
+</script>
+</body>
+</html>

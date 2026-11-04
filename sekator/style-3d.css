@@ -1,0 +1,35 @@
+/* Правило Андрея: главный заголовок жирный и в 3D, кнопки объёмные с бегущим бликом (навык zagolovok-3d). Палитра Б: латунь + тёмное дерево. */
+.s-hero h1 {
+  font-weight: 800; color: #f2e9dd; letter-spacing: -.005em;
+  text-shadow:
+    .015em .015em 0 #e6cf98, .03em .03em 0 #c8a25c, .045em .045em 0 #9c7a3a,
+    .06em .06em 0 #6e5226, .075em .075em 0 #45321a, .1em .14em .14em rgba(0,0,0,.6);
+}
+.s-btn {
+  position: relative; overflow: hidden; font-weight: 800; border: 0;
+  background: linear-gradient(180deg, #e6cf98 0%, #c8a25c 58%); color: #1f170f;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.45), 0 2px 0 #8a6a2e, 0 4px 0 #6e5226, 0 6px 0 #53401d, 0 14px 20px -4px rgba(0,0,0,.55);
+  text-shadow: 0 1px 0 rgba(255,255,255,.55), 0 2px 0 rgba(138,106,46,.5);
+  translate: 0 -4px; animation: s3-bob 2.6s ease-in-out infinite;
+}
+.s-btn::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.6) 50%, transparent 70%);
+  transform: translateX(-130%); animation: s3-wave 2.6s ease-in-out infinite;
+}
+.s-btn:hover { filter: none; animation-play-state: paused; translate: 0 -1px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.45), 0 2px 0 #8a6a2e, 0 4px 0 #6e5226, 0 8px 14px -4px rgba(0,0,0,.55); }
+.s-btn:active { translate: 0 2px; box-shadow: inset 0 2px 0 rgba(255,255,255,.3), 0 1px 0 #6e5226; }
+.s-btn.s-btn--ghost {
+  background: rgba(30,24,21,.55); color: #f2e9dd; border: 0;
+  box-shadow: inset 0 0 0 1.5px rgba(242,233,221,.5), 0 3px 0 rgba(0,0,0,.5), 0 10px 14px -4px rgba(0,0,0,.55);
+  text-shadow: 0 1px 0 rgba(0,0,0,.7), 0 2px 0 rgba(0,0,0,.4); translate: 0 -2px; animation: none;
+}
+.s-btn.s-btn--ghost::after { display: none; }
+@keyframes s3-wave { 0% { transform: translateX(-130%); } 55%, 100% { transform: translateX(130%); } }
+@keyframes s3-bob { 0%, 100% { translate: 0 -4px; } 50% { translate: 0 -6px; } }
+@media (prefers-reduced-motion: reduce) { .s-btn { animation: none; } .s-btn::after { animation: none; display: none; } }
+
+/* Города и заголовки не переносим по слогам: «Ставрополь» – одним словом */
+.s-hero h1, h1, h2, h3, .s-foot p, dd { hyphens: none; -webkit-hyphens: none; overflow-wrap: normal; word-break: normal; }
+.s-hero h1 { text-wrap: balance; }

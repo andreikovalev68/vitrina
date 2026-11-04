@@ -1,0 +1,1 @@
+import{d as e,h as t,m as n,o as r,p as i,s as a,t as o}from"./src-CqdCOa_z.js";var s=t(n(),1),c=i(),l=e();a(),r(`main`).info(`Сайт запущен`),(0,c.createRoot)(document.getElementById(`root`)).render((0,l.jsx)(s.StrictMode,{children:(0,l.jsx)(o,{})}));

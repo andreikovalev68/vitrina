@@ -1,19 +1,398 @@
-<!doctype html>
-<html lang="ru"><head>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="2; url=https://andreikovalev68.github.io/test-site-kovalev/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Демо-сайт</title>
-<style>
-body{font-family:Arial,sans-serif;background:#0f172a;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;margin:0;text-align:center;padding:20px}
-a.btn{display:inline-block;margin-top:24px;padding:16px 34px;background:#2563eb;color:#fff;font-size:20px;text-decoration:none;border-radius:12px}
-p{color:#cbd5e1;font-size:18px;max-width:520px}
-small{color:#64748b;margin-top:20px}
-</style></head>
+<title>Андрей Ковалев – певец, композитор, продюсер</title>
+<meta name="description" content="Андрей Ковалев (Andre) – эстрадно-джазовый вокалист, композитор, продюсер и аранжировщик. Человек-оркестр, автор жанра JAZZ – eccentric – instrument – MAN.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,700&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="alternate" hreflang="ru" href="http://kovalevandre.ru/">
+<link rel="alternate" hreflang="en" href="http://kovalevandre.ru/en/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#13161B">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Андрей Ковалев (Andre)">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Андрей Ковалев (Andre) – певец, композитор, продюсер">
+<meta property="og:description" content="Авторские песни, концертные программы и шоу «человек-оркестр». 36 лет на сцене, 675 проведённых мероприятий.">
+<meta property="og:url" content="http://kovalevandre.ru/">
+<meta property="og:image" content="http://kovalevandre.ru/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Андрей Ковалев (Andre) – певец, композитор, продюсер">
+<meta name="twitter:card" content="summary_large_image">
+</head>
 <body>
-<h1>Демо-сайт открывается на GitHub</h1>
-<p>Нажмите кнопку – откроется демо. Если автоматически не перекинуло, кнопка всегда работает.</p>
-<a class="btn" href="https://andreikovalev68.github.io/test-site-kovalev/">Открыть демо-сайт</a>
-<small>andreikovalev68.github.io/test-site-kovalev/</small>
-<script>setTimeout(function(){location.replace("https://andreikovalev68.github.io/test-site-kovalev/");},2000);</script>
-</body></html>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">Андрей Ковалев</div>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+    <nav class="nav" id="site-nav">
+      <a href="#songs">Песни</a>
+      <a href="#genre">Жанр</a>
+      <a href="#path">Путь</a>
+      <a href="#stage">Сцена</a>
+      <a href="#programs">Программы</a>
+      <a href="#awards">Признание</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <div class="corner">
+      <div class="corner-roles">Певец · Композитор<br>Продюсер · Аранжировщик</div>
+      <a class="corner-phone" href="tel:+79168236666">8&nbsp;916&nbsp;823&nbsp;66&nbsp;66</a>
+      <a class="lang-btn" href="en/" hreflang="en" lang="en">EN</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-main">
+    <div class="identity">
+      <div class="portrait fade d2"><div class="eyebrow">Эстрадно-джазовый<br>вокал</div><img src="img/portret.jpg" width="520" height="780" fetchpriority="high" alt="Андрей Ковалев – портрет"></div>
+      <div class="id-text">
+        <h1 class="fade d1">Андрей<span class="last">Ковалев</span></h1>
+        <div class="alias-row fade d1"><div class="alias">Andre</div><button class="jingle" type="button" data-src="audio/otbivka.mp3" aria-pressed="false" aria-label="Послушать отбивку «Андрей Ковалев»"><span class="jingle-ico" aria-hidden="true">▶</span>Отбивка</button></div>
+        <p class="roles fade d2">Певец, композитор и продюсер. Тридцать шесть лет на профессиональной сцене – от джазовых фестивалей и круизных контрактов до <strong>Кремлёвского концертного зала</strong> и сцены Международного Дома музыки.</p>
+        <a class="cta hero-cta fade d2" href="#songs">Слушать песни</a>
+      </div>
+    </div>
+    <div class="hero-meta fade d3">
+      <div><div class="num">36</div><div class="cap">лет на профессиональной сцене</div></div>
+      <div><div class="num">7</div><div class="cap">международных джазовых фестивалей</div></div>
+      <div><div class="num">675</div><div class="cap">проведённых мероприятий</div></div>
+    </div>
+    </div>
+    <figure class="hero-photos fade d3">
+      <img class="ph-a" src="img/makferrin-rukopozhatie.jpg" width="700" height="1050" alt="Андрей Ковалев и Бобби Макферрин пожимают руки">
+      <img class="ph-b" src="img/makferrin-poem.jpg" width="760" height="570" alt="Андрей Ковалев поет вместе с Бобби Макферрином">
+      <figcaption>Bobby McFerrin <span class="cap-note">(автор песни «Don't Worry, Be Happy»)</span></figcaption>
+    </figure>
+  </div>
+</div>
+
+<section class="songs" id="songs">
+  <div class="wrap">
+    <h2 class="sec-head">Песни</h2>
+    <p class="sec-sub">Песни исполняются в жанрах: K-pop, Pop, Romance, Pop Latina, Bossa nova, Jazz-rock, Pop-funk, Funk-soul-jazz, Alternative pop, EDM, Reggae pop.</p>
+
+    <article class="song-new">
+      <div>
+        <div class="song-new-media">
+          <img class="song-cover" src="img/oblozhka-shine.jpg" width="560" height="560" loading="lazy" decoding="async" alt="Обложка песни «Shine So Beautiful»">
+        </div>
+      </div>
+      <div class="song-new-text">
+        <p class="song-flag">Новая песня</p>
+        <h3>Shine So Beautiful</h3>
+        <p class="song-meta">Сингл, 2026 · музыка и исполнение – Андрей Ковалев, слова – Андрей Макаренко</p>
+        <a class="cta" href="https://band.link/3LV07" target="_blank" rel="noopener">Слушать на всех площадках</a>
+      </div>
+    </article>
+
+    <div class="song-list">
+      <article class="song">
+        <img src="img/oblozhka-angelina.jpg" width="640" height="640" loading="lazy" decoding="async" alt="Обложка песни «Анджелина ДжолЯ»">
+        <div>
+          <h3>Анджелина ДжолЯ</h3>
+          <p>Сингл 2026 года. Музыка, слова и исполнение – Андрей Ковалев.</p>
+          <a class="song-link" href="https://band.link/lXKEV" target="_blank" rel="noopener">Слушать на всех площадках</a>
+        </div>
+      </article>
+      <article class="song">
+        <img src="img/oblozhka-zhdi-menya.jpg" width="320" height="320" loading="lazy" decoding="async" alt="Обложка песни «Жди меня»">
+        <div>
+          <h3>Жди меня</h3>
+          <p>Лирическая баллада. Музыка, слова и исполнение – Андрей Ковалев.</p>
+          <a class="song-link" href="https://band.link/TKZv3" target="_blank" rel="noopener">Слушать на всех площадках</a>
+        </div>
+      </article>
+      <article class="song">
+        <img src="img/oblozhka-khoroshiy-ya.jpg" width="320" height="320" loading="lazy" decoding="async" alt="Обложка песни «Хороший Я»">
+        <div>
+          <h3>Хороший Я</h3>
+          <p>Романтическая песня на стихи Жанны Сербинович.</p>
+          <a class="song-link" href="https://band.link/BNjaX" target="_blank" rel="noopener">Слушать на всех площадках</a>
+        </div>
+      </article>
+    </div>
+
+    <aside class="channels" aria-label="Каналы с песнями">
+      <div class="channels-text">
+        <p class="song-flag">Слушайте первыми</p>
+        <h3>Каналы «Песни Андрея Ковалева»</h3>
+        <p>Анонсы, премьеры и пресейвы новых песен – раньше, чем на площадках. Подписывайтесь там, где вам удобно.</p>
+      </div>
+      <div class="socials channels-links">
+        <a class="soc soc-tg" href="https://t.me/andreykovalevpesny" target="_blank" rel="noopener">
+          <svg class="soc-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M5.4 11.7l11.3-4.4c.5-.2 1 .1.8.9l-1.9 9c-.1.6-.5.8-1 .5l-2.9-2.1-1.4 1.3c-.2.2-.3.3-.6.3l.2-2.9 5.3-4.8c.2-.2 0-.3-.3-.1l-6.6 4.1-2.8-.9c-.6-.2-.6-.6.1-.9z" fill="#229ED9"/></svg>Канал в Telegram
+        </a>
+        <a class="soc soc-max" href="https://max.ru/channel_andreykovalev" target="_blank" rel="noopener">
+          <img class="soc-ico" src="img/max.png" width="24" height="24" loading="lazy" alt="" aria-hidden="true">Канал в MAX
+        </a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="genre" id="genre">
+  <div class="wrap genre-grid">
+    <div>
+      <p class="genre-quote">Один человек – целый оркестр.</p>
+    </div>
+    <div class="genre-body">
+      <p>Андрей Ковалев исполняет в собственном оригинальном жанре – <span class="genre-tag">JAZZ &ndash; eccentric &ndash; instrument &ndash; MAN</span>. Его выступление это шоу звуков, в котором зал становится частью музыки: голосом имитируются ударные, бас-гитара и тромбон, а несколько партий звучат одновременно.</p>
+      <p>Композиции строятся а-каппельно, на слоговом пении и живых инструментах с характерным тембром. Музыкальный провокатор – в лучшем смысле слова: никто в зале не остаётся просто слушателем.</p>
+      <ul class="tools">
+        <li><span>&#9679;</span> Варган-хомус – шаманский обертоновый звук</li>
+        <li><span>&#9679;</span> Индийская флейта</li>
+        <li><span>&#9679;</span> Скэт, слоговое пение</li>
+        <li><span>&#9679;</span> Вокальная имитация ударных, баса и тромбона</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="path">
+  <div class="wrap">
+    <h2 class="sec-head">Путь</h2>
+    <p class="sec-sub">От Эстонского джазового оркестра до собственных концертных программ и продюсерской работы.</p>
+    <div class="path">
+      <div class="step">
+        <div class="year">1990–1992</div>
+        <div>
+          <h3>Эстонский джазовый оркестр</h3>
+          <p>Работа в оркестре, выступления в составе «Нарвского диксиленда» – Нарва, Таллин.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="year">1992</div>
+        <div>
+          <h3>«Ленконцерт», ансамбль «Джаз-комфорт»</h3>
+          <p>Санкт-Петербургский оркестр, легендарный состав. Выступления на семи международных джазовых фестивалях.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="year">1992–1996</div>
+        <div>
+          <h3>Санкт-Петербургский университет культуры и искусств</h3>
+          <p>Дирижёр эстрадно-джазового оркестра, преподаватель эстрадно-джазового вокала.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="year">1990-е</div>
+        <div>
+          <h3>Контракты за рубежом</h3>
+          <p>Вокалист по контрактам с зарубежными компаниями:</p>
+          <ol class="step-list">
+            <li>немецкая компания «Hapag-Lloyd»;</li>
+            <li>швейцарская компания «International Cruise and Hotel Management».</li>
+          </ol>
+          <p>Рестораны и музыкальные клубы Новой Зеландии, Германии, Франции.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="year">2003</div>
+        <div>
+          <h3>Ансамбль Владимира Полякова</h3>
+          <p>Солист и руководитель ансамбля композитора, лауреата «Песни года» Владимира Полякова.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="year">с 2005</div>
+        <div>
+          <h3>Шоу-бизнес: арт-директор и продюсер</h3>
+          <p>Концертирующий певец и ведущий мероприятий. Организация праздничных программ, выставок, конференций и концертов в клубах, ресторанах, арт-центрах и event-агентствах.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stage">
+  <div class="wrap">
+    <h2 class="sec-head">Сцена и партнёры</h2>
+    <p class="sec-sub">Совместные выступления и импровизации со звёздами мировой и российской сцены.</p>
+    <div class="stage-grid">
+      <ul class="names">
+        <li><span class="who">Бобби Макферрин <span class="who-note">(автор песни «Don't Worry, Be Happy»)</span></span><span class="what">импровизационная опера «Боббл», Международный Дом музыки</span></li>
+        <li><span class="who">Чик Кориа</span><span class="what">Зал им. Чайковского, Москва</span></li>
+        <li><span class="who">Пелагея</span><span class="what">«Боббл»</span></li>
+        <li><span class="who">Нино Катамадзе</span><span class="what">«Боббл»</span></li>
+        <li><span class="who">Тина Кузнецова</span><span class="what">«Боббл»</span></li>
+        <li><span class="who">Валерий Сюткин</span><span class="what">шоу «Как стать звездой», радио «Европа Плюс»</span></li>
+        <li><span class="who">Владимир Кузьмин</span><span class="what"></span></li>
+        <li><span class="who">Вилли Токарев</span><span class="what"></span></li>
+        <li><span class="who">Группа «Самоцветы»</span><span class="what"></span></li>
+        <li><span class="who">Оркестры А. Кролла и О. Лундстрема</span><span class="what">приглашение к работе</span></li>
+        <li><span class="who">«A Cappella Express»</span><span class="what">европейская вокальная группа</span></li>
+      </ul>
+    </div>
+    <div class="stage-photos">
+      <figure><img src="img/tokarev.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Андрей Ковалев и Вилли Токарев"><figcaption>Работа с Вилли Токаревым</figcaption></figure>
+      <figure><img src="img/kuzmin.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Андрей Ковалев и Владимир Кузьмин"><figcaption>Работа с Владимиром Кузьминым</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="programs">
+  <div class="wrap">
+    <h2 class="sec-head">Концертные программы</h2>
+    <p class="sec-sub">Сольные программы Гильдии артистов эстрады – сольно, с ансамблем или с оркестром.</p>
+    <div class="programs">
+      <div class="program">
+        <img src="img/afisha-doroga-k-schastyu.jpg" width="800" height="533" loading="lazy" decoding="async" alt="Афиша концертной программы «Дорога к счастью»">
+        <h3>Дорога к счастью</h3>
+        <p>Концертная программа с песнями о главном – лирика, джазовая свобода и живой контакт с залом.</p>
+      </div>
+      <div class="program">
+        <img src="img/afisha-pesni-andreya-kovaleva.jpg" width="800" height="533" loading="lazy" decoding="async" alt="Афиша программы «Песни Андрея Ковалева»">
+        <h3>Песни Андрея Ковалева</h3>
+        <p>Авторская программа: собственные композиции разных лет в концертных аранжировках.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="sec-head">Авторские проекты</h2>
+    <p class="sec-sub">Арт-программы, права на которые принадлежат артисту. Все реализованы.</p>
+    <div class="projects">
+      <div class="project">
+        <img src="img/doroga-k-schastyu-proekt.jpg" width="1000" height="563" loading="lazy" decoding="async" alt="Концертная программа «Россия – дорога к счастью», Андрей Ковалев">
+        <h3>Дорога к счастью</h3>
+        <p>Международный проект. Андрей представил его на приёме у Президента России, проект направлен на рассмотрение в Министерство культуры РФ.</p>
+      </div>
+      <div class="project">
+        <img src="img/kak-stat-zvezdoy.jpg" width="1000" height="563" loading="lazy" decoding="async" alt="Заставка проекта «Как стать звездой»">
+        <h3>Как стать звездой</h3>
+        <p>Интерактивная программа, где зритель выходит на сцену и поёт вместе с артистом.</p>
+      </div>
+      <div class="project">
+        <h3>Россия зовёт!</h3>
+        <p>Патриотическая концертная программа для больших площадок и государственных событий.</p>
+      </div>
+      <div class="project">
+        <img class="tall" src="img/andzhelina-afisha.jpg" width="603" height="1200" loading="lazy" decoding="async" alt="Афиша шоу «АндЖелина Джоли и Ковалев Андрей» в клубе «Драйв Холл»">
+        <h3>АндЖелина Джоли</h3>
+        <p>Шоу в клубе «Драйв Холл» с танцевальной программой.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap two">
+    <div>
+      <h2 class="sec-head">Залы</h2>
+      <ul class="plain halls">
+        <li>Кремлёвский концертный зал</li>
+        <li>Международный Дом музыки</li>
+        <li>Концертный зал им. П. И. Чайковского</li>
+        <li>«Метрополь»</li>
+        <li>«Прага»</li>
+        <li>Нижегородская ярмарка</li>
+      </ul>
+      <p class="geo">Москва · Санкт-Петербург · Нижний Новгород · Брянск · Таллин · Нарва · Баден-Баден · Окленд</p>
+    </div>
+    <div class="events">
+      <h2 class="sec-head">События</h2>
+      <ul class="plain">
+        <li>Кубок Президента РФ по футболу среди инвалидов, Кремль</li>
+        <li>Юбилейный правительственный концерт для Расула Гамзатова</li>
+        <li>Форум «Россия Единая»</li>
+        <li>День города Москвы</li>
+        <li>День милиции</li>
+        <li>Международная выставка «Профессия досуг», Крокус Сити</li>
+        <li>Международная выставка «Индустрия праздника»</li>
+        <li>СТС, «Европа Плюс» – «Джаз России»</li>
+        <li>Газпром · Роскосмос · Росавиация</li>
+        <li>Альфа-Банк · ВТБ</li>
+        <li>«Балтика» · «Efes Pilsner» · Oriflame</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="recog" id="awards">
+  <div class="wrap">
+  <div class="recog-inner">
+    <div>
+      <h2 class="sec-head">Признание</h2>
+    </div>
+    <div>
+      <p>Артистическая деятельность отмечена правительственными письмами с одобрением от:</p>
+      <ul class="letters">
+        <li>Администрации Президента Российской Федерации</li>
+        <li>Генерального штаба Российской Федерации</li>
+        <li>Министерства культуры Российской Федерации</li>
+        <li>Министерства обороны Российской Федерации</li>
+        <li>Министерства культуры Ставропольского края</li>
+        <li>Севастопольской Краснознамённой гвардейской бригады</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="docs">
+    <h3 class="docs-head">Грамоты и благодарности</h3>
+    <p class="docs-sub">Нажмите на документ, чтобы рассмотреть его.</p>
+    <ul class="docs-grid">
+      <li><a class="doc" href="img/docs/minoborony-2016.jpg" target="_blank" rel="noopener"><span class="doc-frame"><img src="img/docs/minoborony-2016-mini.jpg" width="457" height="640" loading="lazy" alt="Письмо Министерства обороны Российской Федерации, 2016"></span><span class="doc-cap"><b>Министерство обороны РФ</b> · 2016<br>Письмо о концертной программе «Никто не забыт, ничто не забыто»</span></a></li>
+      <li><a class="doc" href="img/docs/rosaviatsiya-2015.jpg" target="_blank" rel="noopener"><span class="doc-frame"><img src="img/docs/rosaviatsiya-2015-mini.jpg" width="457" height="640" loading="lazy" alt="Благодарность ФГУП «Администрация гражданских аэропортов (аэродромов)», 2015"></span><span class="doc-cap"><b>Росавиация, ФГУП «Администрация гражданских аэропортов»</b> · 2015<br>Благодарность ведущему концерта ко Дню Воздушного Флота России</span></a></li>
+      <li><a class="doc" href="img/docs/vch-63791-2014.jpg" target="_blank" rel="noopener"><span class="doc-frame"><img src="img/docs/vch-63791-2014-mini.jpg" width="465" height="640" loading="lazy" alt="Грамота войсковой части 63791, 2014"></span><span class="doc-cap"><b>Войсковая часть 63791, Военная академия Генштаба ВС РФ</b> · 2014<br>Грамота за участие в празднике 50-го отдельного батальона</span></a></li>
+      <li><a class="doc" href="img/docs/brigada-27-2016.jpg" target="_blank" rel="noopener"><span class="doc-frame"><img src="img/docs/brigada-27-2016-mini.jpg" width="480" height="640" loading="lazy" alt="Грамота 27-й гвардейской Севастопольской Краснознамённой бригады, 2016"></span><span class="doc-cap"><b>27-я гвардейская Севастопольская Краснознамённая бригада</b> · 2016<br>Грамота за концерты во время учений и принятия Присяги</span></a></li>
+      <li><a class="doc" href="img/docs/industriya-prazdnika-2006.jpg" target="_blank" rel="noopener"><span class="doc-frame"><img src="img/docs/industriya-prazdnika-2006-mini.jpg" width="325" height="448" loading="lazy" alt="Диплом выставки «Индустрия праздника 2006»"></span><span class="doc-cap"><b>Выставка «Индустрия праздника»</b> · 2006<br>Диплом за верность искусству и творческий вклад</span></a></li>
+      <li><a class="doc" href="img/docs/event-forum.jpg" target="_blank" rel="noopener"><span class="doc-frame"><img src="img/docs/event-forum-mini.jpg" width="640" height="465" loading="lazy" alt="Почётная грамота бизнес-форума «Event-forum. Диалоги»"></span><span class="doc-cap"><b>Бизнес-форум «Event-forum. Диалоги»</b><br>Почётная грамота за самую яркую и артистичную подачу деловой информации</span></a></li>
+      <li><a class="doc" href="img/docs/centr-gagarina-2021.jpg" target="_blank" rel="noopener"><span class="doc-frame"><img src="img/docs/centr-gagarina-2021-mini.jpg" width="465" height="640" loading="lazy" alt="Благодарственное письмо Краевого центра имени Ю. А. Гагарина, 2021"></span><span class="doc-cap"><b>Краевой центр творчества детей и юношества им. Ю. А. Гагарина</b> · 2021<br>Благодарственное письмо руководителю студии «Как стать звездой»</span></a></li>
+      <li><a class="doc" href="img/docs/centr-gagarina-2022.jpg" target="_blank" rel="noopener"><span class="doc-frame"><img src="img/docs/centr-gagarina-2022-mini.jpg" width="461" height="640" loading="lazy" alt="Грамота Краевого центра имени Ю. А. Гагарина, 2022"></span><span class="doc-cap"><b>Краевой центр им. Ю. А. Гагарина</b> · 2022<br>Грамота за организацию массовых мероприятий</span></a></li>
+      <li><a class="doc" href="img/docs/afisha-yubileyny-koncert.jpg" target="_blank" rel="noopener"><span class="doc-frame"><img src="img/docs/afisha-yubileyny-koncert-mini.jpg" width="452" height="640" loading="lazy" alt="Афиша юбилейного концерта Андрея Ковалева «Музыка скажет за меня, в музыке огонь моей души»"></span><span class="doc-cap"><b>Юбилейный концерт Андрея Ковалева</b> · 2013<br>Афиша концерта «Музыка скажет за меня, в музыке огонь моей души»</span></a></li>
+    </ul>
+  </div>
+  </div>
+</section>
+
+<dialog class="doc-view" aria-label="Просмотр документа">
+  <button class="doc-close" type="button" aria-label="Закрыть">×</button>
+  <img alt="">
+</dialog>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="sec-head">Контакты</h2>
+    <a class="cta cta-small" href="https://t.me/andreykovalev68">Написать в Telegram</a>
+    <div class="contact-lines">
+      <div>Телефон: <a href="tel:+79168236666">8 916 823 66 66</a></div>
+      <div>E-mail: <a href="mailto:1prazdnik68@mail.ru">1prazdnik68@mail.ru</a></div>
+      <div>Telegram: <a href="https://t.me/andreykovalev68">@andreykovalev68</a></div>
+      <div>Каналы с песнями: <a href="https://t.me/andreykovalevpesny" target="_blank" rel="noopener">Telegram</a> · <a href="https://max.ru/channel_andreykovalev" target="_blank" rel="noopener">MAX</a></div>
+    </div>
+    <div class="socials">
+      <a class="soc soc-max" href="https://max.ru/u/f9LHodD0cOJHEV5UIWrDG4EsrNa-ARCWaVCAJSu9IwRGfF7Y2P0AXXWQNxs" target="_blank" rel="noopener">
+        <img class="soc-ico" src="img/max.png" width="24" height="24" loading="lazy" alt="" aria-hidden="true">MAX
+      </a>
+      <a class="soc soc-yt" href="https://www.youtube.com/channel/UC1ZiBDK86qS6Nwf5QTrrt1Q" target="_blank" rel="noopener">
+        <svg class="soc-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4.5" width="22" height="15" rx="4.5" fill="#fff"/><path d="M10 8.8v6.4l5.6-3.2z" fill="#FF0000"/></svg>YouTube
+      </a>
+      <a class="soc soc-vk" href="https://vk.ru/andreikovalev68" target="_blank" rel="noopener">
+        <span class="soc-ico soc-ico-vk" aria-hidden="true">VK</span>ВКонтакте
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Андрей Ковалев – певец, композитор, продюсер</div>
+    <div>Гильдия артистов эстрады</div>
+  </div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>

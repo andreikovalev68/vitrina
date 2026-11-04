@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Все пять страниц сайта NO SHAME</title>
+<style>
+:root{--night:#0d0e1f;--plum:#181638;--line:#34306a;--ice:#f0eeff;--mist:#b4b0d6;--rasp:#e4285f;--rasp-hi:#ff6f93;--rasp-edge:#8c1038}
+*{box-sizing:border-box;margin:0}
+body{background:var(--night);color:var(--ice);font:400 1rem/1.5 "Golos Text",system-ui,sans-serif;padding:24px 16px 48px}
+h1{font:800 clamp(1.3rem,3.2vw,2rem)/1.2 "Unbounded","Arial Black",system-ui,sans-serif;text-align:center}
+.lead{color:var(--mist);text-align:center;margin:8px auto 22px;max-width:60ch}
+.row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;max-width:1500px;margin:0 auto}
+.p{display:grid;gap:10px;justify-items:center}
+.p h2{font:800 1rem/1.2 "Unbounded","Arial Black",system-ui,sans-serif}
+.frame{width:100%;aspect-ratio:9/17;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#000;position:relative}
+.frame iframe{position:absolute;left:0;top:0;width:390px;height:737px;border:0;transform-origin:0 0}
+a.open{display:inline-block;text-decoration:none;color:#fff;font:800 .9rem/1.2 "Unbounded","Arial Black",system-ui,sans-serif;padding:12px 18px;border-radius:12px;
+  background:linear-gradient(180deg,var(--rasp-hi),var(--rasp) 58%);box-shadow:inset 0 2px 0 rgba(255,255,255,.45),0 4px 0 var(--rasp-edge)}
+@media (max-width:1100px){.row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.row{grid-template-columns:1fr}.frame{max-width:390px}}
+</style>
+</head>
+<body>
+<h1>Все пять страниц сайта NO SHAME</h1>
+<p class="lead">Каждая страница показана в телефонном виде. Листайте внутри окошка или нажмите «Открыть».</p>
+<div class="row">
+  <section class="p"><h2>1. Главная</h2><div class="frame"><iframe src="index.html" title="Главная" loading="lazy"></iframe></div><a class="open" href="index.html">Открыть</a></section>
+  <section class="p"><h2>2. О школе</h2><div class="frame"><iframe src="o-shkole.html" title="О школе" loading="lazy"></iframe></div><a class="open" href="o-shkole.html">Открыть</a></section>
+  <section class="p"><h2>3. Курсы</h2><div class="frame"><iframe src="kurs.html" title="Курсы" loading="lazy"></iframe></div><a class="open" href="kurs.html">Открыть</a></section>
+  <section class="p"><h2>4. Как проходит урок</h2><div class="frame"><iframe src="urok.html" title="Как проходит урок" loading="lazy"></iframe></div><a class="open" href="urok.html">Открыть</a></section>
+  <section class="p"><h2>5. Запись</h2><div class="frame"><iframe src="kontakty.html" title="Запись" loading="lazy"></iframe></div><a class="open" href="kontakty.html">Открыть</a></section>
+</div>
+<script>
+// подгоняем масштаб телефонного окошка под ширину колонки
+function fit(){document.querySelectorAll('.frame').forEach(function(f){var s=f.clientWidth/390;var i=f.querySelector('iframe');i.style.transform='scale('+s+')';i.style.height=(f.clientHeight/s)+'px';});}
+addEventListener('load',fit);addEventListener('resize',fit);
+</script>
+</body>
+</html>

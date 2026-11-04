@@ -1,19 +1,185 @@
 <!doctype html>
-<html lang="ru"><head>
+<html lang="ru">
+<head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="2; url=https://andreikovalev68.github.io/tire-rus/">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Демо-сайт</title>
+<meta name="robots" content="noindex, nofollow" data-publish>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tire-rus · Шиномонтаж</title>
+<meta name="description" content="Выбираете услугу, день и время – запись уходит в WhatsApp. Легковые и грузовые, шины и диски, хранение. Пн–сб 9:00–19:00.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Шиномонтаж Tire‑rus в Ставрополе">
+<meta property="og:description" content="Выбираете услугу, день и время – запись уходит в WhatsApp. Легковые и грузовые, шины и диски, хранение. Пн–сб 9:00–19:00.">
+<meta property="og:image" content="assets/hero.webp">
+<link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%276%27 y=%276%27 width=%2720%27 height=%2720%27 rx=%275%27 fill=%27%23ff7a2f%27/%3E%3C/svg%3E">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/unbounded-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-cyrillic.woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
 <style>
-body{font-family:Arial,sans-serif;background:#0f172a;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;margin:0;text-align:center;padding:20px}
-a.btn{display:inline-block;margin-top:24px;padding:16px 34px;background:#2563eb;color:#fff;font-size:20px;text-decoration:none;border-radius:12px}
-p{color:#cbd5e1;font-size:18px;max-width:520px}
-small{color:#64748b;margin-top:20px}
-</style></head>
-<body>
-<h1>Демо-сайт открывается на GitHub</h1>
-<p>Нажмите кнопку – откроется демо. Если автоматически не перекинуло, кнопка всегда работает.</p>
-<a class="btn" href="https://andreikovalev68.github.io/tire-rus/">Открыть демо-сайт</a>
-<small>andreikovalev68.github.io/tire-rus/</small>
-<script>setTimeout(function(){location.replace("https://andreikovalev68.github.io/tire-rus/");},2000);</script>
-</body></html>
+:root { --c-canvas: #0d0b09; --c-surface: #181310; --c-ink: #f4eee4; --c-ink-soft: #a69c8e; --c-accent: #ff7a2f; --c-accent-ink: #1a0b03; --c-accent-deep: #ff7a2f; --f-display: "Unbounded", "Arial Black", system-ui, sans-serif; --f-text: "Manrope", "Segoe UI", system-ui, sans-serif; --h1k: 0.8; }
+</style>
+<link rel="stylesheet" href="style-prod.css">
+<link rel="stylesheet" href="style-3d.css">
+</head>
+<body class="s-prod" id="top" data-wa="79624983888" data-tg="" data-max="">
+<header class="s-bar" data-s-bar>
+  <a class="s-bar__brand" href="#top"><i aria-hidden="true"></i>Tire-rus</a>
+  <div class="s-bar__right">
+    <a class="s-bar__tel" href="tel:+78652662888">+7 (8652) 66-28-88</a>
+    <a class="s-btn s-btn--sm" href="#widget">Записаться онлайн</a>
+  </div>
+</header>
+<main>
+  <section class="s-hero">
+    <div class="s-hero__text">
+      <p class="s-eyebrow">Шиномонтаж · шины и диски · хранение</p>
+      <h1>Шиномонтаж Tire‑rus в Ставрополе</h1>
+      <p class="s-lead">Выбираете услугу, день и время – запись уходит в WhatsApp. Легковые и грузовые, шины и диски, хранение. Пн–сб 9:00–19:00.</p>
+      <figure class="s-hero__side"><img src="assets/side.webp" alt="Шиномонтаж Tire-rus: здание с синей крышей" decoding="async"></figure>
+      <ul class="s-ticks"><li>4,5 на Яндекс Картах, 28 отзывов</li><li>Пн–сб 09:00–19:00</li><li>Легковой R16 – 1 300 ₽</li></ul>
+      <p class="s-rating"><b>4,5</b> на Яндекс.Картах · 28 отзывов</p>
+      <figure class="s-hero__photo"><img class="" src="assets/hero.webp" alt="Здание шиномонтажа Tire-rus с синей крышей и вывеской «Шиномонтаж»" loading="lazy" decoding="async"></figure>
+    </div>
+    <div class="s-hero__widget" id="widget"><form class="s-widget" data-s-booking data-days="7" data-closed="0" data-slots="09:00,10:00,11:00,12:00,13:00,14:00,15:00,16:00,17:00,18:00" data-message="Здравствуйте! Хочу записаться в Tire-rus: {услуга}, {день} в {время}." onsubmit="return false">
+      <h2 class="s-widget__title">Запись в Tire-rus</h2>
+      <fieldset><legend>Услуга</legend>
+        <div class="s-chips s-chips--col"><label class="s-chip s-chip--row"><input type="radio" name="svc" value="0" data-name="Шиномонтаж, легковой R16" data-price="1300" data-from="" data-min="" checked><span>Шиномонтаж, легковой R16</span><b>1 300 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="1" data-name="Шиномонтаж, легковой R17" data-price="1400" data-from="" data-min=""><span>Шиномонтаж, легковой R17</span><b>1 400 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="2" data-name="Шиномонтаж, кроссовер R18" data-price="1700" data-from="" data-min=""><span>Шиномонтаж, кроссовер R18</span><b>1 700 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="3" data-name="Ремонт колеса (латка)" data-price="400" data-from="" data-min=""><span>Ремонт колеса (латка)</span><b>400 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="4" data-name="Хранение шин R16" data-price="900" data-from="" data-min=""><span>Хранение шин R16</span><b>900 ₽</b></label></div>
+      </fieldset>
+      <fieldset><legend>День</legend><div class="s-chips" data-s-days></div></fieldset>
+      <fieldset><legend>Время</legend><div class="s-chips" data-s-times></div></fieldset>
+      <div class="s-bubble" aria-live="polite"><span class="s-bubble__label">Ваше сообщение</span><p data-s-bubble></p></div>
+      <div class="s-send">
+        <a class="s-btn s-btn--wide" data-s-msg="whatsapp" href="#">Записаться в WhatsApp</a>
+        
+      </div>
+      <p class="s-send__note" data-s-copied hidden>Текст скопирован – вставьте его в чат.</p>
+      
+    </form></div>
+    <figure class="s-hero__bg" aria-hidden="true"><img class="" src="assets/hero.webp" alt="Здание шиномонтажа Tire-rus с синей крышей и вывеской «Шиномонтаж»" decoding="async" fetchpriority="high"></figure>
+  </section>
+
+  
+
+  <section class="s-section s-reveal" id="prices">
+    <header class="s-section__head"><h2>Прайс Tire-rus</h2><p>Цены с карточки на Яндекс Картах (раздел «Шиномонтаж»).</p></header>
+    <div class="s-board"><div class="s-board__group">
+      <h3 class="s-board__title">Шиномонтаж: легковой автомобиль</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">R12</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">900 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R13</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R14</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R15</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 100 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R16</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 300 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R17</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 400 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R18</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 600 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R19</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R20</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R21</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 000 ₽</span></li>
+      </ul>
+    </div>
+<div class="s-board__group">
+      <h3 class="s-board__title">Кроссовер</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">R16</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 300 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R17</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 500 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R18</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 700 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R19</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R20</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R21</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 000 ₽</span></li>
+      </ul>
+    </div>
+<div class="s-board__group">
+      <h3 class="s-board__title">Внедорожник</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">R15</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R16</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R17</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R18</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R19</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 100 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R20</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 200 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R21</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 300 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R22</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 500 ₽</span></li>
+      </ul>
+    </div>
+<div class="s-board__group">
+      <h3 class="s-board__title">Дополнительно</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">Доплата за RunFlat</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">100 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Ремонт колеса (латка)</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">400 ₽</span></li>
+      </ul>
+    </div>
+<div class="s-board__group">
+      <h3 class="s-board__title">Сезонное хранение шин</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">R13</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">600 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R14</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">700 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R15</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">800 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R16</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">900 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R17</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R18</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 100 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R19</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 200 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R20</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 300 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R21</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 400 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">R22</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 500 ₽</span></li>
+      </ul>
+    </div></div>
+    <p class="s-note">Хранение с дисками – на 200 ₽ дороже. На карточке прайс отмечен как давно не обновлявшийся – цены уточняйте при записи.</p>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Как записаться</h2></header>
+    <ol class="s-steps">
+      <li class="s-steps__item"><span class="s-steps__n">01</span><h3>Выбираете услугу, день и время</h3><p>Ниже, в форме записи: сообщение уходит в WhatsApp с готовым текстом.</p></li>
+      <li class="s-steps__item"><span class="s-steps__n">02</span><h3>Или пишете и звоните сами</h3><p>Контакты – в конце страницы, работаем пн–сб 09:00–19:00.</p></li>
+      <li class="s-steps__item"><span class="s-steps__n">03</span><h3>Приходите: Краснофлотская улица, 157/1</h3><p>Адрес и карта – в конце страницы.</p></li>
+    </ol>
+  </section>
+
+  <section class="s-photos s-reveal" aria-label="Фото"><figure><img class="" src="assets/p1.webp" alt="Шиномонтаж Tire-rus с синей крышей на улице" loading="lazy" decoding="async"><figcaption>Как найти</figcaption></figure><figure><img class="" src="assets/p2.webp" alt="Склад покрышек" loading="lazy" decoding="async"><figcaption>Шины на складе</figcaption></figure><figure><img class="" src="assets/p3.webp" alt="Здание с синей крышей среди деревьев" loading="lazy" decoding="async"><figcaption>Здание</figcaption></figure></section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Что вас ждёт</h2></header>
+    <ul class="s-promises">
+      <li><h3>Цены на услуги и на шины</h3><p>Гости пишут в отзывах: цены адекватные и на услуги, и на шины.</p></li>
+      <li><h3>Балансировка с точностью</h3><p>Клиент отмечает: отбалансировали даже МТ-резину с точностью в 5 г.</p></li>
+      <li><h3>Шины и диски в наличии</h3><p>В отзыве: всегда есть то, что нужно, и сразу шиномонтаж.</p></li>
+      <li><h3>Запись заранее</h3><p>На карточке указана предварительная запись.</p></li>
+    </ul>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head s-section__head--reviews"><h2>Отзывы с Яндекс.Карт</h2><p class="s-reviews__rating"><span class="s-reviews__num">4,5</span><span class="s-reviews__stars" style="--r: 4.5" aria-label="рейтинг 4,5 из 5"></span><span class="s-reviews__count">28 отзывов</span><a class="s-reviews__all" href="https://yandex.ru/maps/org/tire_rus/1019434922/" target="_blank" rel="noopener">Читать все отзывы на Яндекс.Картах</a></p></header>
+    <ul class="s-reviews">
+      <li><blockquote>«уже много лет переобуваюсь только тут грамотные ребята собрали как колеса на паркетник 19 так и МТ резину на внедорожник при этом смогли отбалансировать даже её с точностью в 5гр»</blockquote><p class="s-reviews__who">Evgeny K. · 29 апреля</p></li>
+      <li><blockquote>«регулярно обслуживаю свою машину у ребят! персонал вежливый, оперативный и квалифицированный. цены адекватные и на услуги и на шины! однозначно рекомендую!!!»</blockquote><p class="s-reviews__who">ANNA B. · 2 марта</p></li>
+      <li><blockquote>«Отличные цены на шины. Уже не первый год беру тут. Сразу и шиномонтаж. Всегда есть то что мне нужно.»</blockquote><p class="s-reviews__who">Андрей Соловьев · 13 июня</p></li>
+    </ul>
+    <p class="s-note">Отзывы с карточки на Яндекс.Картах, без правок.</p>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Частые вопросы</h2></header>
+    <div class="s-faq"><details><summary>Сколько стоит шиномонтаж?</summary><p>Легковой автомобиль: от 900 ₽ (R12) до 2 000 ₽ (R19–R21), по карточке на Яндекс Картах.</p></details><details><summary>Работаете с грузовыми?</summary><p>Да, на карточке указан грузовой шиномонтаж.</p></details><details><summary>Есть хранение шин?</summary><p>Да: сезонное хранение от 600 ₽ (R13), с дисками – на 200 ₽ дороже.</p></details><details><summary>Где вы находитесь?</summary><p>Ставрополь, Краснофлотская улица, 157/1.</p></details></div>
+  </section>
+
+  <section class="s-section s-final s-reveal" id="contacts">
+    <header class="s-section__head"><h2>Запишитесь на удобное время</h2></header>
+    <div class="s-contacts">
+      <dl>
+        <div><dt>Адрес</dt><dd>Краснофлотская улица, 157/1, Ставрополь</dd></div>
+        <div><dt>Часы</dt><dd>пн–сб 09:00–19:00</dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+78652662888">+7 (8652) 66-28-88</a></dd></div>
+      </dl>
+      <div class="s-contacts__actions">
+        <a class="s-btn" href="#widget">Записаться онлайн</a>
+        <a class="s-btn s-btn--ghost" data-s-msg="whatsapp" href="#">WhatsApp</a>
+        
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="s-foot"><p>Tire-rus · Ставрополь</p><p>Шиномонтаж, шины и диски, сезонное хранение</p></footer>
+<nav class="s-dock" aria-label="Быстрая связь"><a class="s-btn" href="#widget">Записаться онлайн</a><a class="s-btn s-btn--ghost" href="tel:+78652662888">Позвонить</a></nav>
+<script src="style.js" defer></script>
+</body>
+</html>

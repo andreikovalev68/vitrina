@@ -1,19 +1,160 @@
 <!doctype html>
-<html lang="ru"><head>
+<html lang="ru">
+<head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="2; url=https://andreikovalev68.github.io/pitstop/">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Демо-сайт</title>
-<style>
-body{font-family:Arial,sans-serif;background:#0f172a;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;margin:0;text-align:center;padding:20px}
-a.btn{display:inline-block;margin-top:24px;padding:16px 34px;background:#2563eb;color:#fff;font-size:20px;text-decoration:none;border-radius:12px}
-p{color:#cbd5e1;font-size:18px;max-width:520px}
-small{color:#64748b;margin-top:20px}
-</style></head>
-<body>
-<h1>Демо-сайт открывается на GitHub</h1>
-<p>Нажмите кнопку – откроется демо. Если автоматически не перекинуло, кнопка всегда работает.</p>
-<a class="btn" href="https://andreikovalev68.github.io/pitstop/">Открыть демо-сайт</a>
-<small>andreikovalev68.github.io/pitstop/</small>
-<script>setTimeout(function(){location.replace("https://andreikovalev68.github.io/pitstop/");},2000);</script>
-</body></html>
+<meta name="robots" content="noindex, nofollow" data-publish>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ПитСтоп · Барбершоп в Ставрополе</title>
+<meta name="description" content="Выбираете услугу, день и время – запись уходит в WhatsApp. Мужская стрижка – 1500 ₽, с бородой – 2000 ₽.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Барбершоп «ПитСтоп» в Ставрополе">
+<meta property="og:description" content="Выбираете услугу, день и время – запись уходит в WhatsApp. Мужская стрижка – 1500 ₽, с бородой – 2000 ₽.">
+<meta property="og:image" content="assets/hero.webp">
+<link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%276%27 y=%276%27 width=%2720%27 height=%2720%27 rx=%275%27 fill=%27%2335b3b0%27/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/tenor-sans-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/onest-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face { font-family: "Onest"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/fonts/onest-400-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Onest"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/fonts/onest-400-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Onest"; font-style: normal; font-weight: 500; font-display: swap; src: url("assets/fonts/onest-500-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Onest"; font-style: normal; font-weight: 500; font-display: swap; src: url("assets/fonts/onest-500-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Onest"; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/fonts/onest-600-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Onest"; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/fonts/onest-600-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Tenor Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/fonts/tenor-sans-400-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Tenor Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/fonts/tenor-sans-400-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+:root { --c-canvas: #f3e7e4; --c-surface: #fbf6f4; --c-ink: #2b292e; --c-ink-soft: #645b62; --c-accent: #34313a; --c-accent-ink: #f8f0ee; --c-accent-deep: #8c4b55; --f-display: "Tenor Sans", "Georgia", serif; --f-text: "Onest", "Segoe UI", system-ui, sans-serif; --h1k: 1; }
+</style>
+<link rel="stylesheet" href="style-prod.css">
+<link rel="stylesheet" href="style-3d.css">
+</head>
+<body class="s-prod" id="top" data-wa="79624448474" data-tg="" data-max="">
+<header class="s-bar" data-s-bar>
+  <a class="s-bar__brand" href="#top"><i aria-hidden="true"></i>ПитСтоп</a>
+  <div class="s-bar__right">
+    <a class="s-bar__tel" href="tel:+79624448474">+7 (962) 444-84-74</a>
+    <a class="s-btn s-btn--sm" href="#widget">Записаться онлайн</a>
+  </div>
+</header>
+<main>
+  <section class="s-hero">
+    <div class="s-hero__text">
+      <p class="s-eyebrow">Стрижка · борода · бритьё</p>
+      <h1>Барбершоп «ПитСтоп» в Ставрополе</h1>
+      <p class="s-lead">Выбираете услугу, день и время – запись уходит в WhatsApp. Мужская стрижка – 1500 ₽, с бородой – 2000 ₽.</p>
+      <ul class="s-ticks"><li>5,0 на Яндекс Картах, 68 отзывов</li><li>Ежедневно с 10:00 до 21:00</li><li>Мужская стрижка – 1500 ₽, борода – 1000 ₽</li></ul>
+      <p class="s-rating"><b>5,0</b> на Яндекс.Картах · 68 отзывов</p>
+      <figure class="s-hero__side"><img src="assets/vhod.webp" alt="Вход в барбершоп «ПитСтоп» с улицы Мира: вывеска и пандус" loading="lazy" decoding="async"></figure>
+      <figure class="s-hero__photo"><img class="" src="assets/hero.webp" alt="Зал барбершопа «ПитСтоп»: подсвеченный логотип на стене и диван из кузова автомобиля" loading="lazy" decoding="async"></figure>
+    </div>
+    <div class="s-hero__widget" id="widget"><form class="s-widget" data-s-booking data-days="7" data-closed="" data-slots="10:00,11:00,12:00,13:00,14:00,15:00,16:00,17:00,18:00,19:00,20:00" data-message="Здравствуйте! Хочу записаться в «ПитСтоп»: {услуга}, {день} в {время}." onsubmit="return false">
+      <h2 class="s-widget__title">Запись в «ПитСтоп»</h2>
+      <fieldset><legend>Услуга</legend>
+        <div class="s-chips s-chips--col"><label class="s-chip s-chip--row"><input type="radio" name="svc" value="0" data-name="Мужская стрижка" data-price="1500" data-from="" data-min="" checked><span>Мужская стрижка</span><b>1 500 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="1" data-name="Стрижка машинкой" data-price="800" data-from="" data-min=""><span>Стрижка машинкой</span><b>800 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="2" data-name="Мужская стрижка + борода" data-price="2000" data-from="" data-min=""><span>Мужская стрижка + борода</span><b>2 000 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="3" data-name="Моделирование бороды" data-price="1000" data-from="" data-min=""><span>Моделирование бороды</span><b>1 000 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="4" data-name="Королевское бритьё" data-price="1400" data-from="" data-min=""><span>Королевское бритьё</span><b>1 400 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="5" data-name="Детская стрижка до 10 лет" data-price="1000" data-from="" data-min=""><span>Детская стрижка до 10 лет</span><b>1 000 ₽</b></label></div>
+      </fieldset>
+      <fieldset><legend>День</legend><div class="s-chips" data-s-days></div></fieldset>
+      <fieldset><legend>Время</legend><div class="s-chips" data-s-times></div></fieldset>
+      <div class="s-bubble" aria-live="polite"><span class="s-bubble__label">Ваше сообщение</span><p data-s-bubble></p></div>
+      <div class="s-send">
+        <a class="s-btn s-btn--wide" data-s-msg="whatsapp" href="#">Записаться в WhatsApp</a>
+        
+      </div>
+      <p class="s-send__note" data-s-copied hidden>Текст скопирован – вставьте его в чат.</p>
+      
+    </form></div>
+    <figure class="s-hero__bg" aria-hidden="true"><img class="" src="assets/hero.webp" alt="Зал барбершопа «ПитСтоп»: подсвеченный логотип на стене и диван из кузова автомобиля" decoding="async" fetchpriority="high"></figure>
+  </section>
+
+  
+
+  <section class="s-section s-reveal" id="prices">
+    <header class="s-section__head"><h2>Прайс «ПитСтопа»</h2><p>Цены с карточки барбершопа на Яндекс Картах.</p></header>
+    <div class="s-board"><div class="s-board__group">
+      <h3 class="s-board__title">Стрижки</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">Мужская стрижка<em>мытьё головы при необходимости, стрижка, укладка со стайлингом</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 500 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Стрижка ножницами, удлинённая</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 600 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Стрижка машинкой<em>триммером, шейвером, машинкой под одну насадку</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">800 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Окантовка<em>только краевая линия головы триммером</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">500 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Детская стрижка до 10 лет</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Детская стрижка 10–14 лет<em>мытьё головы, стрижка, укладка</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 200 ₽</span></li>
+      </ul>
+    </div>
+<div class="s-board__group">
+      <h3 class="s-board__title">Борода и бритьё</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">Моделирование бороды<em>форма бороды, чёткие контуры, подготовка кожи</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Мужская стрижка + борода</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Стрижка машинкой + борода</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 600 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Королевское бритьё</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 400 ₽</span></li>
+      </ul>
+    </div>
+<div class="s-board__group">
+      <h3 class="s-board__title">Тонирование и уход</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">Тонирование бороды<em>камуфляж седых волос бороды и усов</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">800 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Тонирование волос головы</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 200 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Тонирование бороды и волос головы</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">1 800 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Укладка<em>мытьё, сушка, стайлинг</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">500 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Воск</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">200 ₽</span></li>
+      </ul>
+    </div></div>
+    <p class="s-note">Окончательную цену называют в барбершопе.</p>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Как записаться</h2></header>
+    <ol class="s-steps">
+      <li class="s-steps__item"><span class="s-steps__n">01</span><h3>Выбираете услугу, день и время</h3><p>Ниже, в форме записи: сообщение уходит в WhatsApp с готовым текстом.</p></li>
+      <li class="s-steps__item"><span class="s-steps__n">02</span><h3>Или пишете и звоните сами</h3><p>Контакты – в конце страницы, работаем ежедневно с 10:00 до 21:00.</p></li>
+      <li class="s-steps__item"><span class="s-steps__n">03</span><h3>Приходите: улица Мира, 360</h3><p>Адрес и карта – в конце страницы.</p></li>
+    </ol>
+  </section>
+
+  <section class="s-photos s-reveal" aria-label="Фото"><figure><img class="" src="assets/zal.webp" alt="Рабочие места барберов с чёрными креслами и зеркалами" loading="lazy" decoding="async"><figcaption>Рабочий зал</figcaption></figure><figure><img class="" src="assets/bar.webp" alt="Барная стойка и полки с коллекцией моделей автомобилей" loading="lazy" decoding="async"><figcaption>Бар и коллекция</figcaption></figure><figure><img class="" src="assets/zona.webp" alt="Зона ожидания: диван из кузова автомобиля и витрины с моделями" loading="lazy" decoding="async"><figcaption>Зона ожидания</figcaption></figure></section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Что вас ждёт</h2></header>
+    <ul class="s-promises">
+      <li><h3>Атмосфера старинного мужского клуба</h3><p>Так пишут в отзывах: приставки, нарды и коллекции моделек в зале ожидания.</p></li>
+      <li><h3>Интерьер, который хочется рассматривать</h3><p>Про интерьер 10 отзывов на карточке, все положительные.</p></li>
+      <li><h3>Чай и кофе при входе</h3><p>Гости пишут в отзывах: при входе предлагают чай или кофе.</p></li>
+      <li><h3>Детские и подростковые стрижки</h3><p>В прайсе – стрижка до 10 лет и от 10 до 14 лет.</p></li>
+    </ul>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head s-section__head--reviews"><h2>Отзывы с Яндекс.Карт</h2><p class="s-reviews__rating"><span class="s-reviews__num">5,0</span><span class="s-reviews__stars" style="--r: 5" aria-label="рейтинг 5,0 из 5"></span><span class="s-reviews__count">68 отзывов</span><a class="s-reviews__all" href="https://yandex.ru/maps/org/pitstop/174747835452/" target="_blank" rel="noopener">Читать все отзывы на Яндекс.Картах</a></p></header>
+    <ul class="s-reviews">
+      <li><blockquote>«Обалденные мастера! Лучший барбершоп в городе. Изумительный результат.»</blockquote><p class="s-reviews__who">Ангелина Мищенко · 21 октября 2025</p></li>
+      <li><blockquote>«Уютная атмосфера, приветливый персонал и профессиональные барберы. Стрижка сделана на высшем уровне.»</blockquote><p class="s-reviews__who">сергей ч. · 14 мая 2025</p></li>
+      <li><blockquote>«Отличное место, специалисты знают своё дело! Пока стригли сыночку, я наслаждалась рассматриванием интерьера - очень круто сделано»</blockquote><p class="s-reviews__who">Татьяна К. · 10 июля</p></li>
+    </ul>
+    <p class="s-note">Отзывы с карточки на Яндекс.Картах, без правок.</p>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Частые вопросы</h2></header>
+    <div class="s-faq"><details><summary>Сколько стоит стрижка?</summary><p>Мужская – 1500 ₽, удлинённая ножницами – 1600 ₽, машинкой – 800 ₽, детская до 10 лет – 1000 ₽.</p></details><details><summary>Есть ли борода и бритьё?</summary><p>Да: моделирование бороды – 1000 ₽, стрижка и борода – 2000 ₽, королевское бритьё – 1400 ₽.</p></details><details><summary>Как записаться?</summary><p>Через форму на сайте или по телефону +7 (962) 444-84-74. На карточке барбершопа есть и онлайн-запись.</p></details><details><summary>Где вы находитесь и когда работаете?</summary><p>Ставрополь, улица Мира, 360. Ежедневно с 10:00 до 21:00.</p></details></div>
+  </section>
+
+  <section class="s-section s-final s-reveal" id="contacts">
+    <header class="s-section__head"><h2>Запишитесь на удобное время</h2></header>
+    <div class="s-contacts">
+      <dl>
+        <div><dt>Адрес</dt><dd>улица Мира, 360, Ставрополь</dd></div>
+        <div><dt>Часы</dt><dd>ежедневно 10:00–21:00</dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+79624448474">+7 (962) 444-84-74</a></dd></div>
+      </dl>
+      <div class="s-contacts__actions">
+        <a class="s-btn" href="#widget">Записаться онлайн</a>
+        <a class="s-btn s-btn--ghost" data-s-msg="whatsapp" href="#">WhatsApp</a>
+        
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="s-foot"><p>ПитСтоп · Ставрополь</p><p>Мужские и детские стрижки, борода, королевское бритьё, тонирование</p></footer>
+<nav class="s-dock" aria-label="Быстрая связь"><a class="s-btn" href="#widget">Записаться онлайн</a><a class="s-btn s-btn--ghost" href="tel:+79624448474">Позвонить</a></nav>
+<script src="style.js" defer></script>
+</body>
+</html>

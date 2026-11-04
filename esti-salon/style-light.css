@@ -1,0 +1,70 @@
+/* Эсти: светлый вариант. Правило Андрея: H1 жирный и в 3D, кнопки объёмные с бегущим бликом. */
+:root {
+  --c-canvas: #fbf7f4; --c-surface: #ffffff; --c-ink: #2b2328; --c-ink-soft: #6c5f66;
+  --c-accent: #d4326b; --c-accent-ink: #ffffff; --c-accent-deep: #a8214f;
+  --f-display: "Playfair Display", Georgia, serif;
+  --hair: #eadfdc; --r: 18px;
+  color-scheme: light;
+}
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap");
+body { background: var(--c-canvas); color: var(--c-ink); }
+
+/* главная надпись: на всю ширину, жирно, в 3D */
+.s-hero__text { container-type: inline-size; }
+.s-hero h1 {
+  font-family: var(--f-display); font-weight: 800; white-space: nowrap; line-height: 1.12;
+  font-size: 8.3cqw; letter-spacing: -.005em; color: #e0457d; hyphens: none; overflow-wrap: normal; text-wrap: nowrap;
+  text-shadow: .015em .015em 0 #ff9bbd, .03em .03em 0 #c3295f, .045em .045em 0 #a8214f, .06em .06em 0 #8a1940, .075em .075em 0 #6a1131, .1em .14em .14em rgba(80, 10, 35, .35);
+}
+@media (max-width: 700px) { .s-hero h1 { white-space: normal; text-wrap: balance; font-size: clamp(1.9rem, 9.2vw, 2.8rem); } }
+h2, h3 { font-family: var(--f-display); font-weight: 700; hyphens: none; overflow-wrap: normal; word-break: normal; }
+
+/* объёмные кнопки с бегущим бликом */
+.s-btn {
+  position: relative; overflow: hidden; font-weight: 800; border: 0; color: #fff;
+  background: linear-gradient(180deg, #ff7aa6 0%, #d4326b 60%);
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.45), 0 2px 0 #a8214f, 0 4px 0 #8a1940, 0 6px 0 #6a1131, 0 14px 20px -4px rgba(110, 20, 50, .45);
+  text-shadow: 0 1px 0 rgba(120, 10, 45, .55), 0 2px 0 #6a1131;
+  translate: 0 -4px; animation: s3-bob 2.6s ease-in-out infinite;
+}
+.s-btn::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.65) 50%, transparent 70%); transform: translateX(-130%); animation: s3-wave 2.6s ease-in-out infinite; }
+.s-btn:hover { filter: none; animation-play-state: paused; translate: 0 -1px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.45), 0 2px 0 #a8214f, 0 4px 0 #8a1940, 0 8px 14px -4px rgba(110, 20, 50, .45); }
+.s-btn:active { translate: 0 2px; box-shadow: inset 0 2px 0 rgba(255,255,255,.3), 0 1px 0 #8a1940; }
+.s-btn.s-btn--ghost {
+  background: linear-gradient(180deg, #ffffff, #f6ecee); color: #a8214f; border: 0;
+  box-shadow: inset 0 0 0 1.5px #d4326b, 0 3px 0 #e2c8cf, 0 6px 0 #d5b4bd, 0 12px 16px -6px rgba(110, 20, 50, .3);
+  text-shadow: none; translate: 0 -2px; animation: none; }
+.s-btn.s-btn--ghost::after { display: none; }
+@keyframes s3-wave { 0% { transform: translateX(-130%); } 55%, 100% { transform: translateX(130%); } }
+@keyframes s3-bob { 0%, 100% { translate: 0 -4px; } 50% { translate: 0 -6px; } }
+@media (prefers-reduced-motion: reduce) { .s-btn { animation: none; } .s-btn::after { animation: none; display: none; } }
+
+.s-hero__bg::after { background: linear-gradient(180deg, color-mix(in srgb, #fbf7f4 55%, transparent), #fbf7f4 96%); }
+.s-hero__bg img { opacity: .38; }
+
+/* фото хозяйки справа под главной надписью: на всех экранах */
+.s-hero__side { display: block; float: right; margin: 6px 0 10px 14px; width: min(170px, 40%); }
+.s-hero__text::after { content: ""; display: block; clear: both; }
+.s-hero__side img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 28%; border-radius: var(--r); border: 1px solid var(--hair); box-shadow: 0 18px 30px -14px rgba(90, 20, 50, .45); }
+.s-hero__side figcaption { margin-top: 10px; font-weight: 700; font-size: .95rem; line-height: 1.3; color: var(--c-ink); text-align: right; }
+@media (min-width: 901px) {
+  .s-hero__text { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 34%); column-gap: 28px; align-content: start; }
+  .s-hero__text > .s-eyebrow, .s-hero__text > h1, .s-hero__text > .s-hero__photo { grid-column: 1 / -1; }
+  .s-hero__text > .s-lead, .s-hero__text > .s-ticks, .s-hero__text > .s-rating { grid-column: 1; }
+  .s-hero__side { grid-column: 2; grid-row: 3 / span 3; margin: 18px 0 0; width: auto; float: none; align-self: start; }
+}
+
+/* карточки услуг и фото */
+.s-svc2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 16px; margin-bottom: 28px; }
+.s-svc2__card { background: var(--c-surface); border: 1px solid var(--hair); border-radius: var(--r); padding: 20px; box-shadow: 0 16px 28px -20px rgba(90, 20, 50, .35); }
+.s-svc2__card h3 { margin: 0 0 8px; font-size: 1.12rem; }
+.s-svc2__card p { margin: 0; color: var(--c-ink-soft); }
+.s-svc2__price { display: inline-block; margin-top: 12px; font: 800 1.2rem/1.1 var(--f-display); color: var(--c-accent-deep); }
+.s-photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 14px; }
+.s-photos figure { margin: 0; }
+.s-photos img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--r); border: 1px solid var(--hair); box-shadow: 0 14px 26px -16px rgba(90, 20, 50, .4); }
+.s-photos figcaption { margin-top: 6px; font-size: .86rem; color: var(--c-ink-soft); }
+
+html, body { overflow-x: clip; }

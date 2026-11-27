@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://andreikovalev68.github.io/sitemap.xml
+Sitemap: https://kovalev-sajty.ru/sitemap.xml
